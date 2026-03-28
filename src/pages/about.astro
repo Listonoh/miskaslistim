@@ -1,0 +1,248 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header     from '../components/Header.astro';
+import Footer     from '../components/Footer.astro';
+
+const base = import.meta.env.BASE_URL;
+
+const team = [
+  {
+    name:  'Miska Procházková',
+    role:  'Founder & Head Tea Sommelier',
+    img:   'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=500&q=80',
+    bio:   'After a decade travelling through China, Japan and India, Miska returned home to Prague with a suitcase full of teas and a dream. Listim is that dream, now in its seventh year.',
+  },
+  {
+    name:  'Tomáš Blažek',
+    role:  'Pastry Chef',
+    img:   'https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?w=500&q=80',
+    bio:   'Trained in Vienna and inspired by Persian sweets, Tomáš crafts our daily pastry selection. He insists that every bite should taste like a memory.',
+  },
+  {
+    name:  'Karolína Nováková',
+    role:  'Front-of-House & Tea Guide',
+    img:   'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=500&q=80',
+    bio:   'Karolína spent two years at a Japanese teahouse before joining Listim. She leads our weekend ceremonies and knows every tea by heart — and by nose.',
+  },
+];
+
+const values = [
+  { icon: '🌱', title: 'Sustainability',  text: 'We source directly from growers, eliminating middlemen and ensuring fair wages.' },
+  { icon: '🤝', title: 'Community',       text: 'Monthly free workshops, a lending library, and a table that is always open.'    },
+  { icon: '🧘', title: 'Mindfulness',     text: 'We ask guests to slow down. No screens at the ceremonial bar. Just presence.'   },
+];
+---
+
+<BaseLayout title="About Us" description="Learn the story behind Miska's Listim — our founder, our team, and our philosophy.">
+  <Header slot="header" />
+
+  <!-- Page hero -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="page-hero__eyebrow">Our Story</p>
+      <h1>About Miska's Listim</h1>
+      <p class="page-hero__subtitle">Curiosity, craft &amp; a very good cup of tea.</p>
+    </div>
+  </section>
+
+  <!-- Origin story -->
+  <section class="section">
+    <div class="container story-grid">
+      <div class="story-text">
+        <p class="eyebrow">How it began</p>
+        <h2>A love letter<br />to the world's teas</h2>
+        <div class="divider"></div>
+        <p>
+          Miska Procházková spent the better part of her twenties as a cultural journalist,
+          travelling to remote tea-growing regions across Asia. Every plantation she visited
+          — from Darjeeling's mist-wrapped hills to the volcanic soils of Rwanda — left
+          an indelible mark on her palate and her perspective.
+        </p>
+        <p style="margin-top:1rem">
+          In 2018, she returned to her hometown of Prague with a simple mission: to share
+          what she had learned. Listim ("tea" in playful Czech shorthand) opened its doors
+          in a converted courtyard off Náměstí Míru, and the neighbourhood has never been
+          the same since.
+        </p>
+      </div>
+      <div class="story-img">
+        <img
+          src="https://images.unsplash.com/photo-1556910110-5e0a26b88820?w=700&q=80"
+          alt="Rustic teahouse interior with warm lighting and wooden shelves"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">What We Stand For</p>
+        <h2>Our Values</h2>
+        <div class="divider divider--center"></div>
+      </div>
+      <div class="values-grid">
+        {values.map(v => (
+          <div class="value-card">
+            <span class="value-icon">{v.icon}</span>
+            <h3>{v.title}</h3>
+            <p>{v.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">The People</p>
+        <h2>Meet Our Team</h2>
+        <div class="divider divider--center"></div>
+      </div>
+      <div class="team-grid">
+        {team.map(member => (
+          <div class="team-card">
+            <img src={member.img} alt={member.name} class="team-card__photo" loading="lazy" />
+            <div class="team-card__body">
+              <h3 class="team-card__name">{member.name}</h3>
+              <p  class="team-card__role">{member.role}</p>
+              <p  class="team-card__bio">{member.bio}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Visit us CTA -->
+  <section class="visit-cta section--alt section">
+    <div class="container visit-cta__inner">
+      <div>
+        <h2>Come Visit Us</h2>
+        <div class="divider"></div>
+        <p>We are open Tuesday through Sunday, 9 am – 7 pm. Walk-ins welcome; reservations recommended for ceremonies.</p>
+        <a href={`${base}menu/`} class="btn btn--primary" style="margin-top:1.5rem">See Our Menu</a>
+      </div>
+      <div class="visit-info">
+        <div class="info-block">
+          <h4>Address</h4>
+          <p>12 Leaf Lane, Tea Quarter<br />Praha 1, 110 00</p>
+        </div>
+        <div class="info-block">
+          <h4>Opening Hours</h4>
+          <p>Tue – Fri: 9:00 – 19:00<br />Sat – Sun: 10:00 – 20:00</p>
+        </div>
+        <div class="info-block">
+          <h4>Contact</h4>
+          <p>
+            <a href="mailto:hello@miskaslistim.cz">hello@miskaslistim.cz</a><br />
+            <a href="tel:+420123456789">+420 123 456 789</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .story-grid {
+    display:     grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap:         4rem;
+    align-items: center;
+  }
+  .story-img img {
+    border-radius: var(--radius-md);
+    box-shadow:    var(--shadow);
+    width:         100%;
+    max-height:    500px;
+    object-fit:    cover;
+  }
+  .story-text p { color: #5c4a3e; }
+
+  /* Values */
+  .values-grid {
+    display:               grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap:                   2rem;
+  }
+  .value-card {
+    background:    var(--clr-cream);
+    border-radius: var(--radius-md);
+    padding:       2rem;
+    text-align:    center;
+    box-shadow:    var(--shadow);
+  }
+  .value-icon {
+    font-size:     2.5rem;
+    display:       block;
+    margin-bottom: 1rem;
+  }
+  .value-card h3 { margin-bottom: .5rem; }
+  .value-card p  { color: #6b5b4e; font-size: .95rem; margin: 0 auto; }
+
+  /* Team */
+  .team-grid {
+    display:               grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap:                   2rem;
+  }
+  .team-card {
+    background:    var(--clr-cream);
+    border-radius: var(--radius-md);
+    overflow:      hidden;
+    box-shadow:    var(--shadow);
+    transition:    transform .25s;
+  }
+  .team-card:hover { transform: translateY(-4px); }
+  .team-card__photo {
+    width:      100%;
+    height:     260px;
+    object-fit: cover;
+    object-position: top;
+  }
+  .team-card__body  { padding: 1.5rem; }
+  .team-card__name  { font-size: 1.3rem; margin-bottom: .15rem; }
+  .team-card__role  { color: var(--clr-caramel); font-size: .85rem; text-transform: uppercase; letter-spacing: .08em; margin-bottom: .75rem; }
+  .team-card__bio   { font-size: .95rem; color: #6b5b4e; }
+
+  /* Visit CTA */
+  .visit-cta__inner {
+    display:     grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap:         4rem;
+    align-items: start;
+  }
+  .visit-info { display: flex; flex-direction: column; gap: 1.5rem; }
+  .info-block h4 {
+    font-family:  var(--ff-display);
+    color:        var(--clr-terracotta);
+    font-size:    1rem;
+    margin-bottom: .25rem;
+  }
+  .info-block p  { font-size: .95rem; color: #5c4a3e; }
+  .info-block a  { color: var(--clr-terracotta); }
+
+  /* Section head */
+  .section-head { text-align: center; margin-bottom: 3rem; }
+  .eyebrow {
+    font-family: var(--ff-display);
+    font-style:  italic;
+    color:       var(--clr-caramel);
+    font-size:   1.05rem;
+    margin-bottom: .25rem;
+  }
+  .page-hero__eyebrow {
+    font-family: var(--ff-display);
+    font-style:  italic;
+    color:       var(--clr-caramel);
+    font-size:   1.1rem;
+    margin-bottom: .25rem;
+  }
+</style>

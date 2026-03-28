@@ -1,0 +1,164 @@
+/* ============================================================
+   Miska's Listim – Global Styles
+   Warm, elegant palette inspired by loose-leaf tea
+   ============================================================ */
+
+/* ── Google Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap');
+
+/* ── Custom Properties ── */
+:root {
+  --clr-cream:      #fdf6ed;
+  --clr-parchment:  #f3e8d2;
+  --clr-caramel:    #c8956c;
+  --clr-terracotta: #b5624a;
+  --clr-brown:      #5c3d2e;
+  --clr-dark:       #2e1f13;
+  --clr-gold:       #d4a755;
+
+  --ff-display: 'Cormorant Garamond', Georgia, serif;
+  --ff-body:    'Lato', system-ui, sans-serif;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --shadow:    0 4px 24px rgba(46,31,19,.12);
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family:      var(--ff-body);
+  background-color: var(--clr-cream);
+  color:            var(--clr-dark);
+  line-height:      1.7;
+  font-size:        1rem;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+a   { color: inherit; text-decoration: none; }
+
+/* ── Typography ── */
+h1, h2, h3, h4 {
+  font-family: var(--ff-display);
+  font-weight: 600;
+  line-height: 1.2;
+  color:       var(--clr-brown);
+}
+
+h1 { font-size: clamp(2.4rem, 5vw, 4rem); }
+h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); }
+h3 { font-size: clamp(1.3rem, 2.5vw, 1.8rem); }
+
+p  { max-width: 68ch; }
+
+/* ── Layout helpers ── */
+.container {
+  width:   min(90%, 1140px);
+  margin:  0 auto;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.section--alt {
+  background: var(--clr-parchment);
+}
+
+/* ── Divider ── */
+.divider {
+  width:  80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--clr-caramel), var(--clr-gold));
+  border-radius: 2px;
+  margin: 1rem 0 2rem;
+}
+
+.divider--center { margin-inline: auto; }
+
+/* ── Buttons ── */
+.btn {
+  display:         inline-block;
+  padding:         .75rem 2rem;
+  border-radius:   var(--radius-sm);
+  font-family:     var(--ff-body);
+  font-size:       .9rem;
+  letter-spacing:  .08em;
+  text-transform:  uppercase;
+  cursor:          pointer;
+  transition:      all .25s ease;
+}
+
+.btn--primary {
+  background: var(--clr-terracotta);
+  color:      #fff;
+  border:     2px solid var(--clr-terracotta);
+}
+.btn--primary:hover {
+  background: var(--clr-brown);
+  border-color: var(--clr-brown);
+}
+
+.btn--outline {
+  background:  transparent;
+  color:       var(--clr-terracotta);
+  border:      2px solid var(--clr-terracotta);
+}
+.btn--outline:hover {
+  background:  var(--clr-terracotta);
+  color:       #fff;
+}
+
+/* ── Card ── */
+.card {
+  background:    var(--clr-cream);
+  border-radius: var(--radius-md);
+  overflow:      hidden;
+  box-shadow:    var(--shadow);
+  transition:    transform .25s ease, box-shadow .25s ease;
+}
+.card:hover {
+  transform:  translateY(-4px);
+  box-shadow: 0 8px 32px rgba(46,31,19,.18);
+}
+.card__img { width: 100%; height: 220px; object-fit: cover; }
+.card__body { padding: 1.5rem; }
+.card__tag {
+  display:       inline-block;
+  font-size:     .75rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color:         var(--clr-caramel);
+  margin-bottom: .5rem;
+}
+.card__title { margin-bottom: .75rem; }
+.card__text  { color: #6b5b4e; font-size: .95rem; }
+
+/* ── Grid helpers ── */
+.grid-3 {
+  display:               grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap:                   2rem;
+}
+.grid-2 {
+  display:               grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap:                   2rem;
+}
+
+/* ── Page hero ── */
+.page-hero {
+  background:      var(--clr-parchment);
+  padding:         5rem 0 3rem;
+  text-align:      center;
+}
+.page-hero__subtitle {
+  font-family:    var(--ff-display);
+  font-style:     italic;
+  font-size:      1.2rem;
+  color:          var(--clr-caramel);
+  margin-top:     .5rem;
+}

@@ -1,0 +1,276 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header     from '../components/Header.astro';
+import Footer     from '../components/Footer.astro';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Welcome">
+  <Header slot="header" />
+
+  <!-- ── Hero ── -->
+  <section class="hero">
+    <div class="hero__overlay"></div>
+    <img
+      src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=1600&q=80"
+      alt="Hands cradling a warm cup of tea"
+      class="hero__bg"
+      loading="eager"
+    />
+    <div class="container hero__content">
+      <p class="hero__eyebrow">Welcome to</p>
+      <h1>Miska's <em>Listim</em></h1>
+      <p class="hero__sub">
+        A sanctuary of calm in the heart of Prague — crafted teas,<br />
+        seasonal menus &amp; stories worth sharing.
+      </p>
+      <div class="hero__cta">
+        <a href={`${base}menu/`}  class="btn btn--primary">Explore Menu</a>
+        <a href={`${base}about/`} class="btn btn--outline-light">Our Story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Feature strip ── -->
+  <section class="features section">
+    <div class="container">
+      <div class="features__grid">
+        {[
+          { icon: '🌿', title: 'Single-Origin Teas',  text: 'Direct from small farms in Darjeeling, Fujian, and the Rift Valley.' },
+          { icon: '🍰', title: 'Seasonal Pastries',   text: 'Baked fresh each morning using heritage grains and local ingredients.'  },
+          { icon: '🪴', title: 'Calming Atmosphere',  text: 'Leave the city behind. Our space is designed for slow, mindful moments.'},
+        ].map(f => (
+          <div class="feature-card">
+            <span class="feature-card__icon">{f.icon}</span>
+            <h3>{f.title}</h3>
+            <p>{f.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Story teaser ── -->
+  <section class="story section section--alt">
+    <div class="container story__inner">
+      <div class="story__text">
+        <p class="eyebrow">Our Story</p>
+        <h2>Born from a love<br />of leaves &amp; light</h2>
+        <div class="divider"></div>
+        <p>
+          Miska opened Listim in 2018 after years of travelling through Asia's tea-growing
+          regions. Every item on our menu reflects a memory, a conversation, or a landscape
+          that moved her. Come sit at our table and feel it for yourself.
+        </p>
+        <a href={`${base}about/`} class="btn btn--primary" style="margin-top:1.5rem">Meet Miska</a>
+      </div>
+      <div class="story__image">
+        <img
+          src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?w=700&q=80"
+          alt="Interior of a cosy teahouse with warm lighting"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Menu highlights ── -->
+  <section class="highlights section">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">From Our Menu</p>
+        <h2>Curated for the season</h2>
+        <div class="divider divider--center"></div>
+      </div>
+      <div class="grid-3">
+        {[
+          {
+            img:  'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&q=75',
+            tag:  'Signature',
+            name: 'First Flush Darjeeling',
+            desc: 'Bright, floral & delicately muscatel. Served with warm oat milk on request.',
+          },
+          {
+            img:  'https://images.unsplash.com/photo-1582793988951-9aed5509eb97?w=600&q=75',
+            tag:  'Seasonal',
+            name: 'Osmanthus Oolong',
+            desc: 'Stone-fruit sweetness layered over a smooth, amber liquor.',
+          },
+          {
+            img:  'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=75',
+            tag:  'Bakery',
+            name: 'Cardamom Rose Cake',
+            desc: 'A lightly spiced sponge finished with rose-water cream and pistachios.',
+          },
+        ].map(item => (
+          <div class="card">
+            <img src={item.img} alt={item.name} class="card__img" loading="lazy" />
+            <div class="card__body">
+              <span class="card__tag">{item.tag}</span>
+              <h3 class="card__title">{item.name}</h3>
+              <p class="card__text">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div style="text-align:center; margin-top:2.5rem">
+        <a href={`${base}menu/`} class="btn btn--outline">View Full Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Latest news teaser ── -->
+  <section class="news-teaser section section--alt">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Latest from the Teahouse</p>
+        <h2>News &amp; Stories</h2>
+        <div class="divider divider--center"></div>
+      </div>
+      <div class="grid-2">
+        {[
+          {
+            img:  'https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=700&q=75',
+            date: 'March 2025',
+            title:'Spring Tea Ceremony Evenings',
+            text: 'Join us on Friday evenings for an intimate guided ceremony celebrating the new harvest.',
+          },
+          {
+            img:  'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=700&q=75',
+            date: 'February 2025',
+            title:'New Arrival: Yunnan Gold Tips',
+            text: 'A honey-sweet black tea from a family-run garden in Yunnan — limited stock available.',
+          },
+        ].map(post => (
+          <div class="card news-card">
+            <img src={post.img} alt={post.title} class="card__img" loading="lazy" />
+            <div class="card__body">
+              <span class="card__tag">{post.date}</span>
+              <h3 class="card__title">{post.title}</h3>
+              <p class="card__text">{post.text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div style="text-align:center; margin-top:2.5rem">
+        <a href={`${base}news/`} class="btn btn--outline">All News</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  /* ── Hero ── */
+  .hero {
+    position:   relative;
+    min-height: min(92vh, 780px);
+    display:    flex;
+    align-items: center;
+    overflow:   hidden;
+    color:      #fff;
+  }
+  .hero__bg {
+    position:   absolute;
+    inset:      0;
+    width:      100%;
+    height:     100%;
+    object-fit: cover;
+    object-position: center 60%;
+  }
+  .hero__overlay {
+    position:   absolute;
+    inset:      0;
+    background: linear-gradient(135deg, rgba(46,31,19,.75) 0%, rgba(92,61,46,.45) 100%);
+  }
+  .hero__content {
+    position:   relative;
+    z-index:    1;
+    padding:    6rem 0 4rem;
+  }
+  .hero__eyebrow {
+    font-family:    var(--ff-display);
+    font-style:     italic;
+    font-size:      1.2rem;
+    color:          var(--clr-gold);
+    margin-bottom:  .5rem;
+  }
+  .hero h1 { color: #fff; }
+  .hero h1 em { color: var(--clr-gold); font-style: italic; }
+  .hero__sub {
+    font-size:    1.15rem;
+    margin-top:   1rem;
+    opacity:      .9;
+    max-width:    52ch;
+    line-height:  1.6;
+  }
+  .hero__cta {
+    display:   flex;
+    gap:       1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+  .btn--outline-light {
+    background:  transparent;
+    color:       #fff;
+    border:      2px solid rgba(255,255,255,.7);
+    display:     inline-block;
+    padding:     .75rem 2rem;
+    border-radius: var(--radius-sm);
+    font-family: var(--ff-body);
+    font-size:   .9rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    transition:  all .25s;
+  }
+  .btn--outline-light:hover {
+    background:  rgba(255,255,255,.15);
+    border-color: #fff;
+  }
+
+  /* ── Features ── */
+  .features__grid {
+    display:               grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap:                   2rem;
+    text-align:            center;
+  }
+  .feature-card { padding: 2rem 1.5rem; }
+  .feature-card__icon {
+    font-size:     2.5rem;
+    display:       block;
+    margin-bottom: 1rem;
+  }
+  .feature-card h3 { margin-bottom: .5rem; }
+  .feature-card p  { font-size: .95rem; color: #6b5b4e; margin: 0 auto; }
+
+  /* ── Story ── */
+  .story__inner {
+    display:     grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap:         4rem;
+    align-items: center;
+  }
+  .story__image img {
+    border-radius: var(--radius-md);
+    box-shadow:    var(--shadow);
+    width:         100%;
+    max-height:    480px;
+    object-fit:    cover;
+  }
+
+  /* ── Section heading ── */
+  .section-head {
+    text-align:    center;
+    margin-bottom: 3rem;
+  }
+  .eyebrow {
+    font-family:    var(--ff-display);
+    font-style:     italic;
+    color:          var(--clr-caramel);
+    font-size:      1.05rem;
+    margin-bottom:  .25rem;
+  }
+</style>
