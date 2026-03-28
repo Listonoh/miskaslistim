@@ -1,0 +1,138 @@
+---
+const base = import.meta.env.BASE_URL;
+
+const navLinks = [
+  { href: `${base}`,        label: 'Home'    },
+  { href: `${base}about/`,  label: 'About'   },
+  { href: `${base}menu/`,   label: 'Menu'    },
+  { href: `${base}news/`,   label: 'News'    },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href={base} class="logo" aria-label="Miska's Listim home">
+      <span class="logo__leaf">🍃</span>
+      <span class="logo__name">Miska's <em>Listim</em></span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+      <ul role="list">
+        {navLinks.map(({ href, label }) => (
+          <li>
+            <a
+              href={href}
+              class:list={['nav-link', { active: currentPath === href || (href !== base && currentPath.startsWith(href)) }]}
+            >
+              {label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position:   sticky;
+    top:        0;
+    z-index:    100;
+    background: rgba(253,246,237,.95);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--clr-parchment);
+    box-shadow: 0 2px 12px rgba(46,31,19,.06);
+  }
+
+  .header-inner {
+    display:         flex;
+    align-items:     center;
+    justify-content: space-between;
+    padding-block:   1rem;
+  }
+
+  .logo {
+    display:     flex;
+    align-items: center;
+    gap:         .5rem;
+    font-family: var(--ff-display);
+    font-size:   1.5rem;
+    color:       var(--clr-brown);
+    font-weight: 600;
+  }
+  .logo em { color: var(--clr-terracotta); font-style: italic; }
+  .logo__leaf { font-size: 1.3rem; }
+
+  /* Nav */
+  .site-nav ul {
+    display:    flex;
+    gap:        2rem;
+    list-style: none;
+  }
+
+  .nav-link {
+    font-size:      .9rem;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color:          var(--clr-brown);
+    padding-bottom: 2px;
+    border-bottom:  2px solid transparent;
+    transition:     border-color .2s, color .2s;
+  }
+  .nav-link:hover,
+  .nav-link.active {
+    color:        var(--clr-terracotta);
+    border-color: var(--clr-terracotta);
+  }
+
+  /* Mobile toggle */
+  .nav-toggle {
+    display:        none;
+    flex-direction: column;
+    gap:            5px;
+    background:     none;
+    border:         none;
+    cursor:         pointer;
+    padding:        4px;
+  }
+  .nav-toggle span {
+    display:          block;
+    width:            24px;
+    height:           2px;
+    background:       var(--clr-brown);
+    border-radius:    2px;
+    transition:       transform .25s;
+  }
+
+  @media (max-width: 640px) {
+    .nav-toggle { display: flex; }
+
+    .site-nav {
+      display:    none;
+      position:   absolute;
+      top:        100%;
+      left:       0;
+      right:      0;
+      background: var(--clr-cream);
+      border-top: 1px solid var(--clr-parchment);
+      padding:    1rem 5%;
+    }
+    .site-nav.open { display: block; }
+    .site-nav ul   { flex-direction: column; gap: 1rem; }
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const nav    = document.getElementById('siteNav');
+  toggle?.addEventListener('click', () => {
+    const open = nav?.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+</script>

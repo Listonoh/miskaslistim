@@ -1,0 +1,270 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header     from '../components/Header.astro';
+import Footer     from '../components/Footer.astro';
+
+interface MenuItem {
+  name:  string;
+  desc:  string;
+  price: string;
+  tag?:  string;
+}
+
+interface MenuCategory {
+  id:      string;
+  title:   string;
+  icon:    string;
+  img:     string;
+  imgAlt:  string;
+  items:   MenuItem[];
+}
+
+const categories: MenuCategory[] = [
+  {
+    id:     'loose-leaf',
+    title:  'Loose-Leaf Teas',
+    icon:   '🍃',
+    img:    'https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=700&q=80',
+    imgAlt: 'Loose-leaf tea in a wooden bowl',
+    items: [
+      { name: 'First Flush Darjeeling',   desc: 'Bright, floral & muscatel. Grown at 2,000 m elevation.', price: '95 Kč',  tag: 'Signature' },
+      { name: 'Osmanthus Oolong',          desc: 'Stone-fruit sweetness over a smooth amber liquor.',        price: '110 Kč'               },
+      { name: 'Yunnan Gold Tips',          desc: 'Honey-sweet black tea with malty warmth. Limited stock.',  price: '120 Kč', tag: 'New'    },
+      { name: 'Gyokuro Shade-Grown',       desc: 'Deep umami with a lingering sweet finish.',                price: '140 Kč'               },
+      { name: 'Silver Needle White',       desc: 'Delicate, peachy and faintly floral.',                    price: '130 Kč'               },
+      { name: 'Pu-erh Vintage 2015',       desc: 'Earthy, complex, and deeply satisfying.',                 price: '160 Kč'               },
+    ],
+  },
+  {
+    id:     'specialty',
+    title:  'Specialty Drinks',
+    icon:   '☕',
+    img:    'https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=700&q=80',
+    imgAlt: 'A beautifully presented specialty tea drink',
+    items: [
+      { name: 'Masala Chai Latte',         desc: 'House blend of spices, ginger & whole milk. Oat milk available.', price: '85 Kč', tag: 'Bestseller' },
+      { name: 'Cold Brew Oolong',           desc: 'Slow-steeped overnight. Refreshingly silky.',                     price: '90 Kč'                   },
+      { name: 'Hojicha Oat Latte',         desc: 'Roasted green tea, steamed oat milk and a dusting of cinnamon.',  price: '95 Kč'                   },
+      { name: 'Rose Hibiscus Cooler',      desc: 'Hibiscus, rose water & a squeeze of yuzu. Served over ice.',      price: '80 Kč'                   },
+    ],
+  },
+  {
+    id:     'pastry',
+    title:  'Pastry & Food',
+    icon:   '🍰',
+    img:    'https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?w=700&q=80',
+    imgAlt: 'Cardamom pastry on a vintage plate',
+    items: [
+      { name: 'Cardamom Rose Cake',        desc: 'Lightly spiced sponge with rose-water cream & pistachios.',       price: '85 Kč', tag: 'Chef\'s Pick' },
+      { name: 'Earl Grey Shortbread',      desc: 'Buttery, bergamot-scented biscuits. Three per serving.',          price: '55 Kč'                     },
+      { name: 'Matcha Financier',          desc: 'Almond-flour cake with a vibrant matcha glaze.',                  price: '70 Kč'                     },
+      { name: 'Tahini Honey Toast',        desc: 'Toasted sourdough, tahini, wildflower honey & sesame.',           price: '95 Kč'                     },
+      { name: 'Seasonal Fruit Tart',       desc: 'Changes monthly. Ask our team what\'s fresh today.',             price: '90 Kč'                     },
+    ],
+  },
+  {
+    id:     'ceremony',
+    title:  'Tea Ceremonies',
+    icon:   '🪴',
+    img:    'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=700&q=80',
+    imgAlt: 'Gongfu tea ceremony setup on a wooden tray',
+    items: [
+      { name: 'Gongfu Ceremony (2 guests)', desc: 'A guided 60-minute session with a seasonal oolong or puerh.',   price: '490 Kč', tag: 'Reservation required' },
+      { name: 'Japanese Chado (2 guests)',  desc: 'Traditional matcha ceremony with wagashi sweets. 45 minutes.',  price: '450 Kč', tag: 'Reservation required' },
+      { name: 'Private Tea Journey (4 p.)', desc: 'Three teas, three cultures. A 90-minute guided tasting.',       price: '1 200 Kč'                           },
+    ],
+  },
+];
+---
+
+<BaseLayout title="Menu" description="Explore Miska's Listim full menu — loose-leaf teas, specialty drinks, pastries and tea ceremonies.">
+  <Header slot="header" />
+
+  <!-- Page hero -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="page-hero__eyebrow">What We Offer</p>
+      <h1>Our Menu</h1>
+      <p class="page-hero__subtitle">Thoughtfully sourced, carefully prepared.</p>
+    </div>
+  </section>
+
+  <!-- Category nav -->
+  <nav class="cat-nav" aria-label="Menu categories">
+    <div class="container cat-nav__list">
+      {categories.map(c => (
+        <a href={`#${c.id}`} class="cat-nav__link">
+          <span>{c.icon}</span> {c.title}
+        </a>
+      ))}
+    </div>
+  </nav>
+
+  <!-- Categories -->
+  {categories.map((cat, i) => (
+    <section id={cat.id} class:list={['menu-section section', { 'section--alt': i % 2 !== 0 }]}>
+      <div class="container">
+        <div class="menu-section__head">
+          <div class="menu-section__text-head">
+            <p class="eyebrow">{cat.icon} {cat.title}</p>
+            <h2>{cat.title}</h2>
+            <div class="divider"></div>
+          </div>
+          <img
+            src={cat.img}
+            alt={cat.imgAlt}
+            class="menu-section__img"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="menu-items">
+          {cat.items.map(item => (
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <h3 class="menu-item__name">
+                  {item.name}
+                  {item.tag && <span class="menu-item__tag">{item.tag}</span>}
+                </h3>
+                <p class="menu-item__desc">{item.desc}</p>
+              </div>
+              <span class="menu-item__price">{item.price}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- Allergen note -->
+  <section class="allergen section--alt section">
+    <div class="container allergen__inner">
+      <span class="allergen__icon">ℹ️</span>
+      <p>
+        All items may contain traces of nuts, gluten, or dairy. Please inform our team of any
+        allergies or dietary requirements and we will do our best to accommodate you.
+        Prices include VAT.
+      </p>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  /* Category nav */
+  .cat-nav {
+    background:  var(--clr-brown);
+    position:    sticky;
+    top:         65px;
+    z-index:     90;
+  }
+  .cat-nav__list {
+    display:   flex;
+    gap:       1.5rem;
+    overflow-x: auto;
+    padding:   .75rem 0;
+    scrollbar-width: none;
+  }
+  .cat-nav__list::-webkit-scrollbar { display: none; }
+  .cat-nav__link {
+    white-space:    nowrap;
+    color:          var(--clr-parchment);
+    font-size:      .85rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    opacity:        .8;
+    transition:     opacity .2s;
+    padding:        .25rem 0;
+    border-bottom:  2px solid transparent;
+  }
+  .cat-nav__link:hover { opacity: 1; border-color: var(--clr-gold); }
+
+  /* Menu section */
+  .menu-section__head {
+    display:     flex;
+    gap:         3rem;
+    align-items: flex-start;
+    margin-bottom: 2.5rem;
+    flex-wrap:   wrap;
+  }
+  .menu-section__text-head { flex: 1; min-width: 200px; }
+  .menu-section__img {
+    width:         300px;
+    height:        200px;
+    object-fit:    cover;
+    border-radius: var(--radius-md);
+    box-shadow:    var(--shadow);
+    flex-shrink:   0;
+  }
+  @media (max-width: 600px) {
+    .menu-section__img { width: 100%; height: 180px; }
+  }
+
+  /* Menu items */
+  .menu-items { display: flex; flex-direction: column; gap: 0; }
+  .menu-item {
+    display:       flex;
+    justify-content: space-between;
+    align-items:   baseline;
+    gap:           1rem;
+    padding:       1rem 0;
+    border-bottom: 1px solid rgba(92,61,46,.12);
+    flex-wrap:     wrap;
+  }
+  .menu-item:last-child { border-bottom: none; }
+  .menu-item__info { flex: 1; }
+  .menu-item__name {
+    font-family:   var(--ff-display);
+    font-size:     1.15rem;
+    color:         var(--clr-brown);
+    display:       flex;
+    align-items:   center;
+    gap:           .5rem;
+    flex-wrap:     wrap;
+    margin-bottom: .2rem;
+  }
+  .menu-item__tag {
+    font-size:     .7rem;
+    font-family:   var(--ff-body);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    background:    var(--clr-caramel);
+    color:         #fff;
+    padding:       .15rem .5rem;
+    border-radius: 50px;
+  }
+  .menu-item__desc { font-size: .9rem; color: #6b5b4e; }
+  .menu-item__price {
+    font-family:  var(--ff-display);
+    font-size:    1.1rem;
+    color:        var(--clr-terracotta);
+    white-space:  nowrap;
+    font-weight:  600;
+  }
+
+  /* Allergen */
+  .allergen__inner {
+    display:     flex;
+    gap:         1rem;
+    align-items: flex-start;
+  }
+  .allergen__icon { font-size: 1.3rem; flex-shrink: 0; margin-top: .1rem; }
+  .allergen__inner p { font-size: .9rem; color: #6b5b4e; }
+
+  /* Common */
+  .eyebrow {
+    font-family:   var(--ff-display);
+    font-style:    italic;
+    color:         var(--clr-caramel);
+    font-size:     1.05rem;
+    margin-bottom: .25rem;
+  }
+  .page-hero__eyebrow {
+    font-family: var(--ff-display);
+    font-style:  italic;
+    color:       var(--clr-caramel);
+    font-size:   1.1rem;
+    margin-bottom: .25rem;
+  }
+</style>
