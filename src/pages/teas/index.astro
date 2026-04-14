@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const base = import.meta.env.BASE_URL;
+
+type TeaCard = {
+  slug: string;
+  title: string;
+  description: string;
+  source: string;
+  image: string | null;
+};
+
+const teaModules = Object.entries(import.meta.glob('./*.md', { eager: true }));
+
+const teas: TeaCard[] = teaModules
+  .map(([path, mod]) => {
+    const slug = path.replace('./', '').replace(/\.md$/, '');
+    const frontmatter = (mod as { frontmatter?: Record<string, unknown> }).frontmatter ?? {};
+    const rawImage = typeof frontmatter.coverImage === 'string' ? frontmatter.coverImage : null;
+    const image = rawImage ? `${base}${rawImage.replace(/^\/+/, '')}` : null;
+
+    return {
+      slug,
+      title: typeof frontmatter.title === 'string' ? frontmatter.title : slug,
+      description:
+        typeof frontmatter.description === 'string'
+          ? frontmatter.description
+          : 'Tea profile and brewing guide.',
+      source: typeof frontmatter.source === 'string' ? frontmatter.source : 'Unknown source',
+      image,
+    };
+  })
+  .sort((a, b) => a.title.localeCompare(b.title));
+---
+
+<BaseLayout title="Teas" description="Browse all teas at Miska's Listim.">
+  <Header slot="header" />
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="page-hero__eyebrow">Tea Library</p>
+      <h1>All Teas</h1>
+      <p class="page-hero__subtitle">Choose a tea and open its full tasting profile.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="tea-cards-grid">
+        {teas.map((tea) => (
+          <a href={`${base}teas/${tea.slug}/`} class="tea-card-link">
+            <article class="card tea-card">
+              {tea.image ? (
+                <img src={tea.image} alt={tea.title} class="card__img tea-card__img" loading="lazy" />
+              ) : (
+                <div class="tea-card__img tea-card__img--fallback" aria-hidden="true"></div>
+              )}
+              <div class="card__body">
+                <span class="card__tag">{tea.source}</span>
+                <h2 class="card__title tea-card__title">{tea.title}</h2>
+                <p class="card__text">{tea.description}</p>
+              </div>
+            </article>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .tea-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.8rem;
+  }
+
+  .tea-card-link {
+    display: block;
+  }
+
+  .tea-card {
+    height: 100%;
+  }
+
+  .tea-card__img {
+    height: 240px;
+  }
+
+  .tea-card__img--fallback {
+    background:
+      radial-gradient(circle at 25% 30%, rgba(212, 167, 85, 0.4), transparent 45%),
+      linear-gradient(140deg, #f3e8d2 0%, #fdf6ed 55%, #e8d5bd 100%);
+  }
+
+  .tea-card__title {
+    font-size: 1.45rem;
+  }
+</style>

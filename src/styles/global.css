@@ -162,3 +162,118 @@ p  { max-width: 68ch; }
   color:          var(--clr-caramel);
   margin-top:     .5rem;
 }
+
+/* ── Tea detail markdown pages ── */
+.tea-hero__source {
+  margin-top: 1rem;
+  color: var(--clr-brown);
+  font-size: .95rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.tea-post__container {
+  width: min(92%, 860px);
+}
+
+.tea-cover {
+  margin-bottom: 1.2rem;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.tea-cover img {
+  width: 100%;
+  max-height: 460px;
+  object-fit: cover;
+}
+
+.prose-tea {
+  background: var(--clr-cream);
+  border: 1px solid rgba(92,61,46,.12);
+  border-radius: var(--radius-md);
+  padding: clamp(1.2rem, 2.5vw, 2.2rem);
+  box-shadow: var(--shadow);
+}
+
+.prose-tea > * + * {
+  margin-top: 1rem;
+}
+
+.prose-tea h2,
+.prose-tea h3 {
+  color: var(--clr-brown);
+}
+
+.prose-tea h2 {
+  margin-top: 1.8rem;
+  padding-top: .3rem;
+  border-top: 1px solid rgba(92,61,46,.12);
+}
+
+.prose-tea h2:first-of-type {
+  margin-top: 0;
+  border-top: 0;
+  padding-top: 0;
+}
+
+.prose-tea ul {
+  padding-left: 1.1rem;
+}
+
+.prose-tea li {
+  margin: .2rem 0;
+}
+
+.prose-tea table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  border: 1px solid rgba(92,61,46,.12);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.prose-tea th,
+.prose-tea td {
+  text-align: left;
+  padding: .65rem .8rem;
+  border-bottom: 1px solid rgba(92,61,46,.12);
+}
+
+.prose-tea th {
+  background: var(--clr-parchment);
+  color: var(--clr-brown);
+  font-weight: 700;
+}
+
+.prose-tea tr:last-child td {
+  border-bottom: 0;
+}
+
+.tea-gallery {
+  margin-top: 1.8rem;
+}
+
+.tea-gallery h2 {
+  margin-bottom: .8rem;
+}
+
+.tea-gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+}
+
+.tea-gallery__item {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.tea-gallery__item img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}

@@ -1,0 +1,59 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const { frontmatter } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const title = frontmatter?.title ?? 'Tea Detail';
+const description = frontmatter?.description ?? 'Tea tasting notes and brewing guide.';
+const source = frontmatter?.source ?? 'Unknown source';
+const coverImage = frontmatter?.coverImage
+  ? `${base}${String(frontmatter.coverImage).replace(/^\/+/, '')}`
+  : null;
+const galleryImages = Array.isArray(frontmatter?.galleryImages)
+  ? frontmatter.galleryImages.map((img: string) => `${base}${String(img).replace(/^\/+/, '')}`)
+  : [];
+---
+
+<BaseLayout title={title} description={description}>
+  <Header slot="header" />
+
+  <section class="page-hero tea-hero">
+    <div class="container">
+      <p class="page-hero__eyebrow">Tea Detail</p>
+      <h1>{title}</h1>
+      <p class="page-hero__subtitle">Curated tasting notes and brewing guidance.</p>
+      <p class="tea-hero__source">Source: {source}</p>
+    </div>
+  </section>
+
+  <section class="tea-post section">
+    <div class="container tea-post__container">
+      {coverImage && (
+        <figure class="tea-cover">
+          <img src={coverImage} alt={`${title} tea leaves`} loading="eager" />
+        </figure>
+      )}
+
+      <article class="prose-tea">
+        <slot />
+      </article>
+
+      {galleryImages.length > 0 && (
+        <section class="tea-gallery" aria-label="Tea gallery">
+          <h2>Gallery</h2>
+          <div class="tea-gallery__grid">
+            {galleryImages.map((img, i) => (
+              <figure class="tea-gallery__item">
+                <img src={img} alt={`${title} detail ${i + 1}`} loading="lazy" />
+              </figure>
+            ))}
+          </div>
+        </section>
+      )}
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

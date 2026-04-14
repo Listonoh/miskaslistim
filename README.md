@@ -102,3 +102,26 @@ miskaslistim/
 ├── astro.config.mjs
 └── package.json
 ```
+
+## website colors
+common:
+background: rgb(224, 212, 189)
+
+first room (forest simple gradient siluets):
+trees gradient: rgb(165, 152, 123)
+
+second room (rigged mountain range with setting sun)
+front mountains: rgb(73, 108, 119)
+mid mountains: rgb(168, 195, 194)
+far mountains rgb(203, 214, 218)
+sun: rgb(212, 93, 71)
+
+third room (japanese clouds)
+clouds: rgb(73, 108, 119)
+
+font on buissness cards is "merriweather"
+
+temporary page 
+logo 
+pripravujeme cajovnu 
+newsleters?
