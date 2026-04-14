@@ -17,66 +17,7 @@ interface NewsPost {
 }
 
 const posts: NewsPost[] = [
-  {
-    slug:     'spring-tea-ceremony-2025',
-    title:    'Spring Tea Ceremony Evenings',
-    date:     'March 14, 2025',
-    category: 'Events',
-    excerpt:  'Join us on Friday evenings in April for an intimate guided ceremony celebrating the new harvest. Led by Karolína, each session is limited to six guests for an unhurried, immersive experience.',
-    img:      'https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=900&q=80',
-    imgAlt:   'Tea ceremony setup with steam rising from a clay teapot',
-    featured: true,
-  },
-  {
-    slug:     'yunnan-gold-tips-arrival',
-    title:    'New Arrival: Yunnan Gold Tips',
-    date:     'February 28, 2025',
-    category: 'Tea News',
-    excerpt:  'A honey-sweet black tea from a family-run garden in Yunnan — limited stock available now at the teahouse. Miska describes it as "morning light in a cup". Come taste for yourself.',
-    img:      'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=900&q=80',
-    imgAlt:   'Golden loose-leaf tea leaves on a dark surface',
-    featured: true,
-  },
-  {
-    slug:     'workshop-tea-and-food-pairing',
-    title:    'Workshop: Tea & Food Pairing',
-    date:     'January 19, 2025',
-    category: 'Workshops',
-    excerpt:  'Tomáš and Miska team up for a playful Saturday afternoon exploring how teas complement and contrast different flavours. From white teas with cheese to aged puerh with dark chocolate.',
-    img:      'https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=900&q=80',
-    imgAlt:   'Table spread with tea, small bites and tasting notes',
-    featured: false,
-  },
-  {
-    slug:     'winter-menu-2024',
-    title:    'Our Winter Menu is Here',
-    date:     'December 1, 2024',
-    category: 'Menu Updates',
-    excerpt:  'Warming spiced blends, chestnut financiers and a new mulled tea punch join the menu for the colder months. The winter season runs through February — drop by before the warmth fades.',
-    img:      'https://images.unsplash.com/photo-1506619216599-9d16d0903dfd?w=900&q=80',
-    imgAlt:   'Warm hands wrapped around a mug by a frosty window',
-    featured: false,
-  },
-  {
-    slug:     'third-culture-tea-pop-up',
-    title:    'Third Culture Tea Pop-Up',
-    date:     'November 8, 2024',
-    category: 'Events',
-    excerpt:  'We hosted a pop-up with three tea makers whose backgrounds span Korea, Morocco and New Zealand. A celebration of how a single plant can speak so many different languages.',
-    img:      'https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=900&q=80',
-    imgAlt:   'Colourful tea vessels from different cultures on display',
-    featured: false,
-  },
-  {
-    slug:     'reading-corner-opens',
-    title:    'The Reading Corner is Open',
-    date:     'October 5, 2024',
-    category: 'Teahouse',
-    excerpt:  'We cleared a quiet nook at the back of the teahouse and filled it with books on tea, travel, botany and slow living. Take one, leave one — or simply settle in for an afternoon.',
-    img:      'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=900&q=80',
-    imgAlt:   'Cosy reading nook with warm lamp and bookshelf',
-    featured: false,
-  },
+  
 ];
 
 const featured = posts.filter(p => p.featured);
@@ -85,7 +26,7 @@ const rest     = posts.filter(p => !p.featured);
 const categories = [...new Set(posts.map(p => p.category))];
 ---
 
-<BaseLayout title="News" description="Stories, events, and updates from Miska's Listim teahouse in Prague.">
+<BaseLayout title="News" description="Stories, events, and updates from Teahouse miska s listim teahouse in Prague.">
   <Header slot="header" />
 
   <!-- Page hero -->

@@ -1,4 +1,4 @@
-# 🍃 Miska's Listim
+# 🍃 Teahouse miska s listim
 
 A multi-page static website for a teahouse, built with **Astro**. Features a warm, elegant design with rich earthy tones.
 
