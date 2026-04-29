@@ -7,7 +7,6 @@ coverImage: teas/turzum_black/Turzum_Beauty-900x900w.jpg
 galleryImages:
   - teas/turzum_black/Turzum_Beauty1-900x900w.jpg
   - teas/turzum_black/Turzum_Beauty3-900x900w.jpg
-  - teas/turzum_black/Turzum_Beauty-900x900w.jpg
 ---
 
 ## Description

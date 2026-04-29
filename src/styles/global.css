@@ -277,3 +277,118 @@ p  { max-width: 68ch; }
   aspect-ratio: 1 / 1;
   object-fit: cover;
 }
+
+/* ── Generic markdown pages ── */
+.post-hero__meta {
+  margin-top: 1rem;
+  color: var(--clr-brown);
+  font-size: .95rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.post__container {
+  width: min(92%, 860px);
+}
+
+.post-cover {
+  margin-bottom: 1.2rem;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.post-cover img {
+  width: 100%;
+  max-height: 460px;
+  object-fit: cover;
+}
+
+.prose-post {
+  background: var(--clr-cream);
+  border: 1px solid rgba(92,61,46,.12);
+  border-radius: var(--radius-md);
+  padding: clamp(1.2rem, 2.5vw, 2.2rem);
+  box-shadow: var(--shadow);
+}
+
+.prose-post > * + * {
+  margin-top: 1rem;
+}
+
+.prose-post h2,
+.prose-post h3 {
+  color: var(--clr-brown);
+}
+
+.prose-post h2 {
+  margin-top: 1.8rem;
+  padding-top: .3rem;
+  border-top: 1px solid rgba(92,61,46,.12);
+}
+
+.prose-post h2:first-of-type {
+  margin-top: 0;
+  border-top: 0;
+  padding-top: 0;
+}
+
+.prose-post ul {
+  padding-left: 1.1rem;
+}
+
+.prose-post li {
+  margin: .2rem 0;
+}
+
+.prose-post table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  border: 1px solid rgba(92,61,46,.12);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.prose-post th,
+.prose-post td {
+  text-align: left;
+  padding: .65rem .8rem;
+  border-bottom: 1px solid rgba(92,61,46,.12);
+}
+
+.prose-post th {
+  background: var(--clr-parchment);
+  color: var(--clr-brown);
+  font-weight: 700;
+}
+
+.prose-post tr:last-child td {
+  border-bottom: 0;
+}
+
+.post-gallery {
+  margin-top: 1.8rem;
+}
+
+.post-gallery h2 {
+  margin-bottom: .8rem;
+}
+
+.post-gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+}
+
+.post-gallery__item {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.post-gallery__item img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}

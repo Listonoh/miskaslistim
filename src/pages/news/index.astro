@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const base = import.meta.env.BASE_URL;
+
+type NewsCard = {
+	slug: string;
+	title: string;
+	description: string;
+	tag: string;
+	image: string | null;
+};
+
+const newsModules = Object.entries(import.meta.glob('./*.md', { eager: true }));
+
+const newsItems: NewsCard[] = newsModules
+	.map(([path, mod]) => {
+		const slug = path.replace('./', '').replace(/\.md$/, '');
+		const frontmatter = (mod as { frontmatter?: Record<string, unknown> }).frontmatter ?? {};
+		const rawImage = typeof frontmatter.coverImage === 'string' ? frontmatter.coverImage : null;
+		const image = rawImage ? `${base}${rawImage.replace(/^\/+/, '')}` : null;
+		const tag =
+			typeof frontmatter.tag === 'string'
+				? frontmatter.tag
+				: typeof frontmatter.metaValue === 'string'
+					? frontmatter.metaValue
+					: 'News';
+
+		return {
+			slug,
+			title: typeof frontmatter.title === 'string' ? frontmatter.title : slug,
+			description:
+				typeof frontmatter.description === 'string'
+					? frontmatter.description
+					: 'Updates and stories from the teahouse.',
+			tag,
+			image,
+		};
+	})
+	.sort((a, b) => a.title.localeCompare(b.title));
+---
+
+<BaseLayout title="News" description="Read the latest news from Teahouse miska s listim.">
+	<Header slot="header" />
+
+	<section class="page-hero">
+		<div class="container">
+			<p class="page-hero__eyebrow">Teahouse Journal</p>
+			<h1>All News</h1>
+			<p class="page-hero__subtitle">Every markdown update gets its own page automatically.</p>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container">
+			<div class="content-cards-grid">
+				{newsItems.map((item) => (
+					<a href={`${base}news/${item.slug}/`} class="content-card-link">
+						<article class="card content-card">
+							{item.image ? (
+								<img src={item.image} alt={item.title} class="card__img content-card__img" loading="lazy" />
+							) : (
+								<div class="content-card__img content-card__img--fallback" aria-hidden="true"></div>
+							)}
+							<div class="card__body">
+								<span class="card__tag">{item.tag}</span>
+								<h2 class="card__title content-card__title">{item.title}</h2>
+								<p class="card__text">{item.description}</p>
+							</div>
+						</article>
+					</a>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<Footer slot="footer" />
+</BaseLayout>
+
+<style>
+	.content-cards-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+		gap: 1.8rem;
+	}
+
+	.content-card-link {
+		display: block;
+	}
+
+	.content-card {
+		height: 100%;
+	}
+
+	.content-card__img {
+		height: 240px;
+	}
+
+	.content-card__img--fallback {
+		background:
+			radial-gradient(circle at 25% 30%, rgba(212, 167, 85, 0.4), transparent 45%),
+			linear-gradient(140deg, #f3e8d2 0%, #fdf6ed 55%, #e8d5bd 100%);
+	}
+
+	.content-card__title {
+		font-size: 1.45rem;
+	}
+</style>
