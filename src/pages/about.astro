@@ -10,7 +10,7 @@ const team = [
     name:  'Misa Clark',
     role:  'Co-Founder & Head Tea Sommelier',
     img:   '',
-    bio:   'After a decade travelling through China, Japan and India, Misa returned home to Prague with a suitcase full of teas and a dream. Listim is that dream, now in its seventh year.',
+    bio:   '',
   },
   {
     name:  'Jan "Listek" Urban',
@@ -20,14 +20,14 @@ const team = [
   },
 ];
 
-const values = [
-  { icon: '🌱', title: 'Sustainability',  text: 'We source directly from growers, eliminating middlemen and ensuring fair wages.' },
-  { icon: '🤝', title: 'Community',       text: 'Monthly free workshops, a lending library, and a table that is always open.'    },
-  { icon: '🧘', title: 'Mindfulness',     text: 'We ask guests to slow down. No screens at the ceremonial bar. Just presence.'   },
+const moto = [
+  'Místo, které si užívat všemi smysly.',
+  'Klid a mindfulness.',
+  'Výdech po práci',
 ];
 ---
 
-<BaseLayout title="About Us" description="Learn the story behind Teahouse miska s listim — our founder, our team, and our philosophy.">
+<BaseLayout title="About Us" description="Pro4 jsme zalo6ili cajovnu Miska s Listim a co pro nas znamena caj.">
   <Header slot="header" />
 
   <!-- Page hero -->
@@ -69,20 +69,17 @@ const values = [
     </div>
   </section>
 
-  <!-- Values -->
+  <!-- Motto -->
   <section class="section section--alt">
     <div class="container">
       <div class="section-head">
-        <p class="eyebrow">What We Stand For</p>
-        <h2>Our Values</h2>
+        <h2>Co očekávat od čajovny</h2>
         <div class="divider divider--center"></div>
       </div>
       <div class="values-grid">
-        {values.map(v => (
+        {moto.map(v => (
           <div class="value-card">
-            <span class="value-icon">{v.icon}</span>
-            <h3>{v.title}</h3>
-            <p>{v.text}</p>
+            <p>{v}</p>
           </div>
         ))}
       </div>
@@ -112,34 +109,6 @@ const values = [
     </div>
   </section>
 
-  <!-- Visit us CTA -->
-  <section class="visit-cta section--alt section">
-    <div class="container visit-cta__inner">
-      <div>
-        <h2>Come Visit Us</h2>
-        <div class="divider"></div>
-        <p>We are open Tuesday through Sunday, 9 am – 7 pm. Walk-ins welcome; reservations recommended for ceremonies.</p>
-        <a href={`${base}menu/`} class="btn btn--primary" style="margin-top:1.5rem">See Our Menu</a>
-      </div>
-      <div class="visit-info">
-        <div class="info-block">
-          <h4>Address</h4>
-          <p>12 Leaf Lane, Tea Quarter<br />Praha 1, 110 00</p>
-        </div>
-        <div class="info-block">
-          <h4>Opening Hours</h4>
-          <p>Tue – Fri: 9:00 – 19:00<br />Sat – Sun: 10:00 – 20:00</p>
-        </div>
-        <div class="info-block">
-          <h4>Contact</h4>
-          <p>
-            <a href="mailto:hello@miskaslistim.cz">hello@miskaslistim.cz</a><br />
-            <a href="tel:+420123456789">+420 123 456 789</a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <Footer slot="footer" />
 </BaseLayout>
@@ -160,7 +129,7 @@ const values = [
   }
   .story-text p { color: #5c4a3e; }
 
-  /* Values */
+  /* Motto */
   .values-grid {
     display:               grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));

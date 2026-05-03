@@ -19,15 +19,14 @@ const base = import.meta.env.BASE_URL;
       loading="eager"
     />
     <div class="container hero__content">
-      <p class="hero__eyebrow">Welcome to</p>
-      <h1>Miska's <em>Listim</em></h1>
+      <p class="hero__eyebrow">Zastavení na cestě</p>
+      <h1>Chvíle v přítomnosti</h1>
       <p class="hero__sub">
-        A sanctuary of calm in the heart of Prague — crafted teas,<br />
-        seasonal menus &amp; stories worth sharing.
+        K dopolední práci na dálku, odpolední kreativitě a večernímu posezení s přáteli. 
       </p>
       <div class="hero__cta">
-        <a href={`${base}menu/`}  class="btn btn--primary">Explore Menu</a>
-        <a href={`${base}about/`} class="btn btn--outline-light">Our Story</a>
+        <a href={`${base}menu/`}  class="btn btn--primary">Naše menu</a>
+        <a href={`${base}about/`} class="btn btn--outline-light">Náš příběh</a>
       </div>
     </div>
   </section>
@@ -37,9 +36,8 @@ const base = import.meta.env.BASE_URL;
     <div class="container">
       <div class="features__grid">
         {[
-          { icon: '🌿', title: 'Single-Origin Teas',  text: 'Direct from small farms in Darjeeling, Fujian, and the Rift Valley.' },
-          { icon: '🍰', title: 'Seasonal Pastries',   text: 'Baked fresh each morning using heritage grains and local ingredients.'  },
-          { icon: '🪴', title: 'Calming Atmosphere',  text: 'Leave the city behind. Our space is designed for slow, mindful moments.'},
+          { icon: '🍵', title: 'Miska',  text: 'Ochutnejte naše čaje v menším množství.' },
+          { icon: '🍵', title: 'Vícenálev',   text: 'Zažijte plný zážitek z našeho čaje, u ktereho můžete sledovat jak se čaj mění v dalších nálevech.'  },
         ].map(f => (
           <div class="feature-card">
             <span class="feature-card__icon">{f.icon}</span>
@@ -51,19 +49,18 @@ const base = import.meta.env.BASE_URL;
     </div>
   </section>
 
-  <!-- ── Story teaser ── -->
+  <!-- ── Koncept ── -->
   <section class="story section section--alt">
     <div class="container story__inner">
       <div class="story__text">
-        <p class="eyebrow">Our Story</p>
-        <h2>Born from a love<br />of leaves &amp; light</h2>
+        <p class="eyebrow">Náš koncept</p>
+        <h2>Nestálá čajová nabídka</h2>
         <div class="divider"></div>
         <p>
-          Miska opened Listim in 2018 after years of travelling through Asia's tea-growing
-          regions. Every item on our menu reflects a memory, a conversation, or a landscape
-          that moved her. Come sit at our table and feel it for yourself.
+          Chceme vám nabízet čerstvé a zajímavé čaje. 
+          Rozhodli jsme se jít jinou cestou, než jiné čajovny. 
+          V naší nabídce najdete výběr 10 čajů různých zpracování i zemí původu. 
         </p>
-        <a href={`${base}about/`} class="btn btn--primary" style="margin-top:1.5rem">Meet Miska</a>
       </div>
       <div class="story__image">
         <img
@@ -79,8 +76,8 @@ const base = import.meta.env.BASE_URL;
   <section class="highlights section">
     <div class="container">
       <div class="section-head">
-        <p class="eyebrow">From Our Menu</p>
-        <h2>Curated for the season</h2>
+        <p class="eyebrow">Z naší nabídky</p>
+        <h2>Pečlivě vybrané pro sezónu</h2>
         <div class="divider divider--center"></div>
       </div>
       <div class="grid-3">
