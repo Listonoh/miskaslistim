@@ -52,8 +52,6 @@ h1 { font-size: clamp(2.4rem, 5vw, 4rem); }
 h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); }
 h3 { font-size: clamp(1.3rem, 2.5vw, 1.8rem); }
 
-p  { max-width: 68ch; }
-
 /* ── Layout helpers ── */
 .container {
   width:   min(90%, 1140px);
