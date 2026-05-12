@@ -19,14 +19,14 @@ const base = import.meta.env.BASE_URL;
       loading="eager"
     />
     <div class="container hero__content">
-      <p class="hero__eyebrow">Zastavení na cestě</p>
-      <h1>Chvíle v přítomnosti</h1>
+      <p class="hero__eyebrow">zastavení na cestě</p>
+      <h1>chvíle v přítomnosti</h1>
       <p class="hero__sub">
-        K dopolední práci na dálku, odpolední kreativitě a večernímu posezení s přáteli. 
+        k dopolední práci na dálku, odpolední kreativitě a večernímu posezení s přáteli
       </p>
       <div class="hero__cta">
-        <a href={`${base}menu/`}  class="btn btn--primary">Naše menu</a>
-        <a href={`${base}about/`} class="btn btn--outline-light">Náš příběh</a>
+        <a href={`${base}menu/`}  class="btn btn--primary">naše menu</a>
+        <a href={`${base}about/`} class="btn btn--outline-light">náš příběh</a>
       </div>
     </div>
   </section>
@@ -53,8 +53,8 @@ const base = import.meta.env.BASE_URL;
   <section class="story section section--alt">
     <div class="container">
       <div class="section-head">
-        <p class="eyebrow">Náš koncept</p>
-        <h2>Nestálá čajová nabídka</h2>
+        <p class="eyebrow">náš koncept</p>
+        <h2>nestálá čajová nabídka</h2>
         <div class="divider divider--center"></div>
         <p>
           Chceme vám nabízet čerstvé a zajímavé čaje. 
@@ -69,8 +69,8 @@ const base = import.meta.env.BASE_URL;
   <section class="highlights section">
     <div class="container">
       <div class="section-head">
-        <p class="eyebrow">Z naší nabídky</p>
-        <h2>Pečlivě vybrané pro sezónu</h2>
+        <p class="eyebrow">z naší nabídky</p>
+        <h2>pečlivě vybrané pro sezónu</h2>
         <div class="divider divider--center"></div>
       </div>
       <div class="grid-3">
@@ -114,23 +114,23 @@ const base = import.meta.env.BASE_URL;
   <section class="news-teaser section section--alt">
     <div class="container">
       <div class="section-head">
-        <p class="eyebrow">Latest from the Teahouse</p>
-        <h2>News &amp; Stories</h2>
+        <p class="eyebrow">latest from the teahouse</p>
+        <h2>news &amp; stories</h2>
         <div class="divider divider--center"></div>
       </div>
       <div class="grid-2">
         {[
           {
             img:  'https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=700&q=75',
-            date: 'March 2025',
-            title:'Spring Tea Ceremony Evenings',
-            text: 'Join us on Friday evenings for an intimate guided ceremony celebrating the new harvest.',
+            date: 'march 2025',
+            title:'spring tea ceremony evenings',
+            text: 'join us on friday evenings for an intimate guided ceremony celebrating the new harvest',
           },
           {
             img:  'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=700&q=75',
-            date: 'February 2025',
-            title:'New Arrival: Yunnan Gold Tips',
-            text: 'A honey-sweet black tea from a family-run garden in Yunnan — limited stock available.',
+            date: 'february 2025',
+            title:'new arrival: yunnan gold tips',
+            text: 'a honey-sweet black tea from a family-run garden in yunnan — limited stock available',
           },
         ].map(post => (
           <div class="card news-card">
@@ -144,7 +144,7 @@ const base = import.meta.env.BASE_URL;
         ))}
       </div>
       <div style="text-align:center; margin-top:2.5rem">
-        <a href={`${base}news/`} class="btn btn--outline">All News</a>
+        <a href={`${base}news/`} class="btn btn--outline">all news</a>
       </div>
     </div>
   </section>
@@ -192,7 +192,6 @@ const base = import.meta.env.BASE_URL;
     font-size:    1.15rem;
     margin-top:   1rem;
     opacity:      .9;
-    max-width:    52ch;
     line-height:  1.6;
   }
   .hero__cta {

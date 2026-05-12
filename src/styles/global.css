@@ -1,10 +1,11 @@
 /* ============================================================
-   Teahouse miska s listim – Global Styles
+   čajovna miska s listím – Global Styles
    Warm, elegant palette inspired by loose-leaf tea
    ============================================================ */
 
 /* ── Google Fonts ── */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 /* ── Custom Properties ── */
 :root {
