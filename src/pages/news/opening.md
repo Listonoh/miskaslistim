@@ -1,24 +1,20 @@
 ---
 layout: ../../layouts/ContentPostLayout.astro
-title: Opening Weekend Notes
-description: A short update about the latest opening weekend at Teahouse miska s listim.
+title: Otvíráme!
+description: Jak se to stalo?
 eyebrow: News Detail
 subtitle: Latest updates and stories from the teahouse.
 metaLabel: Published
-metaValue: April 2026
-tag: April 2026
+metaValue: červen 2026
+tag: červen 2026
 ---
 
-## A New Chapter
+### Začátek
 
-We are preparing a fresh rotation of teas, recipes, and seasonal gatherings for the coming weeks.
+Je potřeba oslavit. Čajovnu jsme nevytvořili sami. Pomohli jste nám. Teď už zbývá to jen společně oslavit.
 
-## What To Expect
+### Plán
 
-- New markdown posts in this section will automatically appear on the News overview page.
-- Each markdown file gets its own standalone page.
-- Images for news entries can be stored under public/news.
 
-## Next Steps
+### A dál?
 
-Add more files next to this one in src/pages/news to grow the archive.
