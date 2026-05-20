@@ -2,40 +2,15 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header     from '../components/Header.astro';
 import Footer     from '../components/Footer.astro';
+import { generateLooseLeafMenu } from '../data/teaHelpers';
+import type { MenuCategory, MenuItem } from '../data/teaHelpers';
 
-interface MenuItem {
-  name:  string;
-  desc:  string;
-  price: string;
-  tag?:  string;
-}
-
-interface MenuCategory {
-  id:      string;
-  title:   string;
-  icon:    string;
-  img:     string;
-  imgAlt:  string;
-  items:   MenuItem[];
-}
+const { url } = Astro.request;
+const baseUrl = url.origin + '/';
+const looseLeafMenu = await generateLooseLeafMenu(baseUrl);
 
 const categories: MenuCategory[] = [
-  {
-    id:     'loose-leaf',
-    title:  'čaj',
-    icon:   '🍃',
-    img:    'https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=700&q=80',
-    imgAlt: 'čajové lístky',
-    items: [
-      { name: 'First Flush Darjeeling',   desc: 'Bright, floral & muscatel. Grown at 2,000 m elevation.', price: '95 Kč',  tag: 'Signature' },
-      { name: 'Osmanthus Oolong',          desc: 'Stone-fruit sweetness over a smooth amber liquor.',        price: '110 Kč'               },
-      { name: 'Yunnan Gold Tips',          desc: 'Honey-sweet black tea with malty warmth. Limited stock.',  price: '120 Kč', tag: 'New'    },
-      { name: 'Gyokuro Shade-Grown',       desc: 'Deep umami with a lingering sweet finish.',                price: '140 Kč'               },
-      { name: 'Silver Needle White',       desc: 'Delicate, peachy and faintly floral.',                    price: '130 Kč'               },
-      { name: 'Pu-erh Vintage 2015',       desc: 'Earthy, complex, and deeply satisfying.',                 price: '160 Kč'               },
-    ],
-  },
-
+  looseLeafMenu,
   {
     id:     'studené',
     title:  'studené nápoje',
@@ -128,8 +103,7 @@ const categories: MenuCategory[] = [
       <div class="container">
         <div class="menu-section__head">
           <div class="menu-section__text-head">
-            <p class="eyebrow">{cat.icon} {cat.title}</p>
-            <h2>{cat.title}</h2>
+            <h3>{cat.icon} {cat.title}</h3>
             <div class="divider"></div>
           </div>
           <img
@@ -141,6 +115,7 @@ const categories: MenuCategory[] = [
         </div>
 
         <div class="menu-items">
+          {cat.legend && <p class="menu-legend">{cat.legend}</p>}
           {cat.items.map(item => (
             <div class="menu-item">
               <div class="menu-item__info">
@@ -223,6 +198,14 @@ const categories: MenuCategory[] = [
 
   /* Menu items */
   .menu-items { display: flex; flex-direction: column; gap: 0; }
+  .menu-legend {
+    font-size: .85rem;
+    color: #8b7355;
+    font-style: italic;
+    margin-bottom: 1rem;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid rgba(92,61,46,.15);
+  }
   .menu-item {
     display:       flex;
     justify-content: space-between;

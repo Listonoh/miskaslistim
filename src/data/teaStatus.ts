@@ -4,11 +4,16 @@ export type TeaStatus = 'skladem' | 'skoro dopité' | 'pripravuje se' | 'neni';
 
 export type TeaStockItem = {
   slug: string;
+  name?: string;
+  description?: string;
   status: TeaStatus;
   amountGrams?: number;
   thresholdGrams?: number;
   updatedAt?: string;
-  note?: string;
+  priceBowl?: number;
+  pricePerInfusion?: number;
+  priceGongfu?: number;
+  discountPercent?: number;
 };
 
 const stock = teaStock as TeaStockItem[];

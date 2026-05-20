@@ -4,28 +4,43 @@
     "status": "skladem",
     "amountGrams": 100,
     "thresholdGrams": 150,
-    "updatedAt": "2026-05-20",
-    "note": "Aktualni sarze"
+    "updatedAt": "2026-05-21",
+    "priceBowl": 95,
+    "pricePerInfusion": 150,
+    "priceGongfu": 280,
+    "discountPercent": 0
   },
   {
     "slug": "sencha",
     "status": "skladem",
     "amountGrams": 420,
     "thresholdGrams": 120,
-    "updatedAt": "2026-05-20"
+    "updatedAt": "2026-05-15",
+    "priceBowl": 110,
+    "pricePerInfusion": 150,
+    "priceGongfu": 320,
+    "discountPercent": 0
   },
   {
     "slug": "nonaipara_fm",
     "status": "skladem",
     "amountGrams": 300,
     "thresholdGrams": 100,
-    "updatedAt": "2026-05-20"
+    "updatedAt": "2026-05-19",
+    "priceBowl": 120,
+    "pricePerInfusion": 150,
+    "priceGongfu": 350,
+    "discountPercent": 10
   },
   {
     "slug": "turzum_black",
     "status": "skladem",
     "amountGrams": 260,
     "thresholdGrams": 80,
-    "updatedAt": "2026-05-20"
+    "updatedAt": "2026-05-20",
+    "priceBowl": 140,
+    "pricePerInfusion": 150,
+    "priceGongfu": 400,
+    "discountPercent": 0
   }
 ]

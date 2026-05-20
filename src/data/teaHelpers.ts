@@ -1,5 +1,6 @@
 import { getTeaStockMap, resolveTeaStatus } from './teaStatus';
-import type { TeaStatus } from './teaStatus';
+import type { TeaStatus, TeaStockItem } from './teaStatus';
+import teaStock from './tea-stock.json';
 
 export type TeaCard = {
   slug: string;
@@ -11,6 +12,23 @@ export type TeaCard = {
   addedDate: Date | null;
 };
 
+export interface MenuItem {
+  name: string;
+  desc: string;
+  price: string;
+  tag?: string;
+}
+
+export interface MenuCategory {
+  id: string;
+  title: string;
+  icon: string;
+  img: string;
+  imgAlt: string;
+  items: MenuItem[];
+  legend?: string;
+}
+
 const parseAddedDate = (dateStr: unknown): Date | null => {
   if (typeof dateStr !== 'string') return null;
   const [day, month, year] = dateStr.split('.').map(Number);
@@ -18,7 +36,75 @@ const parseAddedDate = (dateStr: unknown): Date | null => {
   return new Date(year, month - 1, day);
 };
 
+
 const isTeaCard = (tea: TeaCard | null): tea is TeaCard => tea !== null;
+
+// Pomocná funkce pro získání dat pro menu z MD + stock
+function mergeTeaData(
+  tea: TeaCard,
+  stockMap: Map<string, TeaStockItem>,
+  mostRecentDate: Date | null
+): MenuItem {
+  const stock = stockMap.get(tea.slug);
+  const tags: string[] = [];
+  if (stock) {
+    // "New" tag
+    if (mostRecentDate && stock.updatedAt && isSameDay(parseISODate(stock.updatedAt)!, mostRecentDate)) {
+      tags.push('New');
+    }
+    // Sleva
+    if (stock.discountPercent && stock.discountPercent > 0) {
+      tags.push(`-${stock.discountPercent}%`);
+    }
+  }
+  // Ceny
+  const prices = [stock?.priceBowl, stock?.pricePerInfusion, stock?.priceGongfu];
+  const price = prices.every(p => p !== undefined) ? `${prices.join('/')} Kč` : '';
+  return {
+    name: tea.title,
+    desc: tea.description,
+    price,
+    tag: tags.length > 0 ? tags.join(' ') : undefined,
+  };
+}
+
+const parseISODate = (dateStr?: string): Date | null => {
+  if (!dateStr) return null;
+  return new Date(dateStr);
+};
+
+const getMostRecentDate = (): Date | null => {
+  const stock = teaStock as TeaStockItem[];
+  const dates = stock
+    .map(item => parseISODate(item.updatedAt))
+    .filter((date): date is Date => date !== null);
+  
+  if (dates.length === 0) return null;
+  return new Date(Math.max(...dates.map(d => d.getTime())));
+};
+
+const isSameDay = (date1: Date, date2: Date): boolean => {
+  return date1.toISOString().split('T')[0] === date2.toISOString().split('T')[0];
+};
+
+export async function generateLooseLeafMenu(baseUrl: string): Promise<MenuCategory> {
+  const teas = await loadAllTeas(baseUrl);
+  const stockMap = getTeaStockMap();
+  const mostRecentDate = getMostRecentDate();
+  const items: MenuItem[] = teas
+    .filter(tea => tea.status !== 'neni')
+    .map(tea => mergeTeaData(tea, stockMap, mostRecentDate));
+  console.log('Generated menu items:', items);
+  return {
+    id: 'loose-leaf',
+    title: 'čaj',
+    icon: '🍃',
+    img: 'https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=700&q=80',
+    imgAlt: 'čajové lístky',
+    items: items,
+    legend: 'miska / jednonalev / vycenalev',
+  };
+}
 
 export async function loadAllTeas(baseUrl: string): Promise<TeaCard[]> {
   const stockMap = getTeaStockMap();
