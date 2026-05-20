@@ -17,8 +17,8 @@ export function getTeaStockMap(): Map<string, TeaStockItem> {
   return new Map(stock.map((item) => [item.slug, item]));
 }
 
-export function resolveTeaStatus(item?: TeaStockItem): TeaStatus | '' {
-  if (!item) return '';
+export function resolveTeaStatus(item?: TeaStockItem): TeaStatus | null {
+  if (!item) return null;
 
   const { status, amountGrams, thresholdGrams=100 } = item;
 
@@ -30,7 +30,7 @@ export function resolveTeaStatus(item?: TeaStockItem): TeaStatus | '' {
   return status;
 }
 
-export function normalizeStatusLabel(status?: string): string {
+export function normalizeStatusLabel(status?: string | null): string {
   const value = (status ?? '').trim().toLowerCase();
 
   if (value === 'in stock' || value === 'available' || value === 'skladem') return 'Skladem';

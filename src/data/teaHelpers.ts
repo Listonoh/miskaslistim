@@ -1,12 +1,12 @@
-import { getTeaStockMap, normalizeStatusLabel, resolveTeaStatus, statusClassByLabel } from './teaStatus';
+import { getTeaStockMap, resolveTeaStatus } from './teaStatus';
+import type { TeaStatus } from './teaStatus';
 
 export type TeaCard = {
   slug: string;
   title: string;
   description: string;
   source: string;
-  availability: string;
-  availabilityClass: string;
+  status: TeaStatus | null;
   image: string | null;
   addedDate: Date | null;
 };
@@ -34,7 +34,7 @@ export async function loadAllTeas(baseUrl: string): Promise<TeaCard[]> {
       const frontmatter = (mod as { frontmatter?: Record<string, unknown> }).frontmatter ?? {};
       const rawImage = typeof frontmatter.coverImage === 'string' ? frontmatter.coverImage : null;
       const image = rawImage ? `${baseUrl}${rawImage.replace(/^\/+/, '')}` : null;
-      const availability = normalizeStatusLabel(resolveTeaStatus(stockMap.get(slug)));
+      const status = resolveTeaStatus(stockMap.get(slug));
 
       return {
         slug,
@@ -44,8 +44,7 @@ export async function loadAllTeas(baseUrl: string): Promise<TeaCard[]> {
             ? frontmatter.description
             : 'Tea profile and brewing guide.',
         source: typeof frontmatter.source === 'string' ? frontmatter.source : 'Unknown source',
-        availability,
-        availabilityClass: statusClassByLabel(availability),
+        status,
         image,
         addedDate: parseAddedDate(frontmatter.addedDate),
       };
@@ -60,9 +59,7 @@ export async function loadAllTeas(baseUrl: string): Promise<TeaCard[]> {
 
 export async function loadAvailableTeas(baseUrl: string, limit?: number): Promise<TeaCard[]> {
   const allTeas = await loadAllTeas(baseUrl);
-  const availableTeas = allTeas.filter(
-    (tea) => tea.availabilityClass !== 'tea-hero__availability--out-of-stock'
-  );
+  const availableTeas = allTeas.filter((tea) => tea.status !== 'neni');
 
   return typeof limit === 'number' ? availableTeas.slice(0, limit) : availableTeas;
 }

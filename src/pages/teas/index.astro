@@ -3,9 +3,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { loadAllTeas } from '../../data/teaHelpers';
+import { normalizeStatusLabel, statusClassByLabel } from '../../data/teaStatus';
 
 const base = import.meta.env.BASE_URL;
 const teas = await loadAllTeas(base);
+const teasWithAvailability = teas.map((tea) => {
+  const availability = normalizeStatusLabel(tea.status);
+  return {
+    ...tea,
+    availability,
+    availabilityClass: statusClassByLabel(availability),
+  };
+});
 ---
 
 <BaseLayout title="Teas" description="Čaje z čajovny miska s listím.">
@@ -22,7 +31,7 @@ const teas = await loadAllTeas(base);
   <section class="section">
     <div class="container">
       <div class="tea-cards-grid">
-        {teas.map((tea) => (
+        {teasWithAvailability.map((tea) => (
           <a href={`${base}teas/${tea.slug}/`} class="tea-card-link">
             <article class="card tea-card">
               {tea.image ? (
@@ -32,9 +41,9 @@ const teas = await loadAllTeas(base);
               )}
               <div class="card__body">
                 <span class="card__tag">{tea.source}</span>
-                {tea.availability && (
-                  <span class:list={['tea-card__availability', 'tea-hero__availability', tea.availabilityClass]}>
-                    {tea.availability}
+                {availability && (
+                  <span class:list={['tea-card__availability', 'tea-hero__availability', availabilityClass]}>
+                    {availability}
                   </span>
                 )}
                 <h2 class="card__title tea-card__title">{tea.title}</h2>
