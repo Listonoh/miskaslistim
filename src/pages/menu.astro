@@ -35,6 +35,22 @@ const categories: MenuCategory[] = [
       { name: 'Pu-erh Vintage 2015',       desc: 'Earthy, complex, and deeply satisfying.',                 price: '160 Kč'               },
     ],
   },
+
+  {
+    id:     'studené',
+    title:  'studené nápoje',
+    icon:   '🪴',
+    img:    'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=700&q=80',
+    imgAlt: 'Gongfu tea ceremony setup on a wooden tray',
+    items: [
+      { name: 'cold brew čaj', desc: 'za studena louhovaný čaj jemné chuti',   price: '80 Kč', },
+      { name: 'domácí limonáda',  desc: 'sirup vařený z ovoce a cukru, konzervovaný kyselinou citrónovou',  price: '78 Kč', },
+      { name: 'matcha s kokosovou vodou', desc: 'ledové letní osvěžení',       price: '108 Kč'                           },
+      { name: 'ledové matcha latte', desc: 's kravským nebo ovesným mlékem',       price: '127 Kč'                           },
+      { name: 'ledové chai latte', desc: 's mlékem',       price: '127 Kč'                           },
+    
+    ],
+  },
   {
     id:     'specialty',
     title:  'čajové speciality',
@@ -42,15 +58,31 @@ const categories: MenuCategory[] = [
     img:    'https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=700&q=80',
     imgAlt: 'A beautifully presented specialty tea drink',
     items: [
-      { name: 'Masala Chai Latte',         desc: 'House blend of spices, ginger & whole milk. Oat milk available.', price: '85 Kč', tag: 'Bestseller' },
-      { name: 'Cold Brew Oolong',           desc: 'Slow-steeped overnight. Refreshingly silky.',                     price: '90 Kč'                   },
-      { name: 'Hojicha Oat Latte',         desc: 'Roasted green tea, steamed oat milk and a dusting of cinnamon.',  price: '95 Kč'                   },
-      { name: 'Rose Hibiscus Cooler',      desc: 'Hibiscus, rose water & a squeeze of yuzu. Served over ice.',      price: '80 Kč'                   },
+      { name: 'Masala',         desc: 'zázvor, skořice, kardamom, hřebíček, bílý pepř, černý čaj a mléko', price: '165 Kč',},
+      { name: 'Matcha affogato',           desc: 'čersvě našlehaná matcha přelitá přes mangovou zmrzlinu',    price: '135 Kč' },
+       ],
+  },
+
+  {
+    id:     'necaje',
+    title:  'nečaje',
+    icon:   '☕',
+    img:    'https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=700&q=80',
+    imgAlt: 'A beautifully presented specialty tea drink',
+    items: [
+      { name: 'kakao',         desc: 'hrnek horkého kakaa', price: '85 Kč', },
+      { name: 'rooibos',       desc: 'čajovník kapský, bez kofeinu',   price: '140 Kč'  },
+      { name: 'zázvor',         desc: 'čerstvý strouhaný zázvor s citronem a medem',  price: '160 Kč'                   },
+      { name: 'máta',      desc: 'nálev ze sušených lístků máty peprné',  price: '150 Kč'                   },
+      { name: 'lípa',      desc: 'nálev ze sušených lístků lípy srdčité',  price: '150 Kč'                   },
+      { name: 'maliník',      desc: 'nálev ze sušených lístků ostružiníku maliníku',  price: '150 Kč'                   },
+      { name: 'kontryhel',      desc: 'nálev ze sušených lístků kontryhelu obecného',  price: '150 Kč'                   },
+   
     ],
   },
   {
     id:     'pastry',
-    title:  'sladké i slané',
+    title:  'sladké i slané jídlo',
     icon:   '🍰',
     img:    'https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?w=700&q=80',
     imgAlt: 'Cardamom pastry on a vintage plate',
@@ -63,18 +95,7 @@ const categories: MenuCategory[] = [
       { name: 'jídlo dne',       desc: 'Changes monthly. Ask our team what\'s fresh today.',             price: '90 Kč'                     },
     ],
   },
-  {
-    id:     'ceremony',
-    title:  'Tea Ceremonies',
-    icon:   '🪴',
-    img:    'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=700&q=80',
-    imgAlt: 'Gongfu tea ceremony setup on a wooden tray',
-    items: [
-      { name: 'Gongfu Ceremony (2 guests)', desc: 'A guided 60-minute session with a seasonal oolong or puerh.',   price: '490 Kč', tag: 'Reservation required' },
-      { name: 'Japanese Chado (2 guests)',  desc: 'Traditional matcha ceremony with wagashi sweets. 45 minutes.',  price: '450 Kč', tag: 'Reservation required' },
-      { name: 'Private Tea Journey (4 p.)', desc: 'Three teas, three cultures. A 90-minute guided tasting.',       price: '1 200 Kč'                           },
-    ],
-  },
+  
 ];
 ---
 
@@ -84,9 +105,9 @@ const categories: MenuCategory[] = [
   <!-- Page hero -->
   <section class="page-hero">
     <div class="container">
-      <p class="page-hero__eyebrow">What We Offer</p>
-      <h1>Our Menu</h1>
-      <p class="page-hero__subtitle">Thoughtfully sourced, carefully prepared.</p>
+      <p class="page-hero__eyebrow">naše nabídka</p>
+      <h1>lístek nejen čajový</h1>
+      <p class="page-hero__subtitle">experimentální</p>
     </div>
   </section>
 
@@ -142,9 +163,7 @@ const categories: MenuCategory[] = [
     <div class="container allergen__inner">
       <span class="allergen__icon">ℹ️</span>
       <p>
-        All items may contain traces of nuts, gluten, or dairy. Please inform our team of any
-        allergies or dietary requirements and we will do our best to accommodate you.
-        Prices include VAT.
+        Seznam alergenů...
       </p>
     </div>
   </section>
