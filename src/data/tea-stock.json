@@ -1,0 +1,31 @@
+[
+  {
+    "slug": "bhutan",
+    "status": "skladem",
+    "amountGrams": 100,
+    "thresholdGrams": 150,
+    "updatedAt": "2026-05-20",
+    "note": "Aktualni sarze"
+  },
+  {
+    "slug": "sencha",
+    "status": "skladem",
+    "amountGrams": 420,
+    "thresholdGrams": 120,
+    "updatedAt": "2026-05-20"
+  },
+  {
+    "slug": "nonaipara_fm",
+    "status": "skladem",
+    "amountGrams": 300,
+    "thresholdGrams": 100,
+    "updatedAt": "2026-05-20"
+  },
+  {
+    "slug": "turzum_black",
+    "status": "skladem",
+    "amountGrams": 260,
+    "thresholdGrams": 80,
+    "updatedAt": "2026-05-20"
+  }
+]

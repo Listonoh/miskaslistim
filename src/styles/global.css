@@ -175,6 +175,42 @@ h3 { font-size: clamp(1.3rem, 2.5vw, 1.8rem); }
   text-transform: uppercase;
 }
 
+.tea-hero__availability {
+  display: inline-block;
+  margin-top: .7rem;
+  padding: .35rem .8rem;
+  border-radius: 999px;
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.tea-hero__availability--in-stock {
+  background: #d9ecd8;
+  color: #265f23;
+}
+
+.tea-hero__availability--out-of-stock {
+  background: #f4d7d0;
+  color: #8f2f21;
+}
+
+.tea-hero__availability--low-stock {
+  background: #f4e7c8;
+  color: #7a5415;
+}
+
+.tea-hero__availability--preparing {
+  background: #dce7f8;
+  color: #274d86;
+}
+
+.tea-hero__availability--on-request {
+  background: #f2e6cf;
+  color: #6f4a18;
+}
+
 .tea-post__container {
   width: min(92%, 860px);
 }

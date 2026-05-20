@@ -8,6 +8,7 @@ galleryImages:
   - teas/sencha/sencha1.jpg
   - teas/sencha/sencha2.jpg
   - teas/sencha/sencha3.jpg
+addedDate: 20.5.2026
 ---
 
 ## Description

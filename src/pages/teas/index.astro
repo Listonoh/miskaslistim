@@ -2,15 +2,27 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import { getTeaStockMap, normalizeStatusLabel, resolveTeaStatus, statusClassByLabel } from '../../data/teaStatus';
 
 const base = import.meta.env.BASE_URL;
+const stockMap = getTeaStockMap();
+
+const parseAddedDate = (dateStr: unknown): Date | null => {
+  if (typeof dateStr !== 'string') return null;
+  const [day, month, year] = dateStr.split('.').map(Number);
+  if (!day || !month || !year) return null;
+  return new Date(year, month - 1, day);
+};
 
 type TeaCard = {
   slug: string;
   title: string;
   description: string;
   source: string;
+  availability: string;
+  availabilityClass: string;
   image: string | null;
+  addedDate: Date | null;
 };
 
 const teaModules = Object.entries(import.meta.glob('./*.md', { eager: true }));
@@ -21,6 +33,7 @@ const teas: TeaCard[] = teaModules
     const frontmatter = (mod as { frontmatter?: Record<string, unknown> }).frontmatter ?? {};
     const rawImage = typeof frontmatter.coverImage === 'string' ? frontmatter.coverImage : null;
     const image = rawImage ? `${base}${rawImage.replace(/^\/+/, '')}` : null;
+    const availability = normalizeStatusLabel(resolveTeaStatus(stockMap.get(slug)));
 
     return {
       slug,
@@ -30,10 +43,17 @@ const teas: TeaCard[] = teaModules
           ? frontmatter.description
           : 'Tea profile and brewing guide.',
       source: typeof frontmatter.source === 'string' ? frontmatter.source : 'Unknown source',
+      availability,
+      availabilityClass: statusClassByLabel(availability),
       image,
+      addedDate: parseAddedDate(frontmatter.addedDate),
     };
   })
-  .sort((a, b) => a.title.localeCompare(b.title));
+  .sort((a, b) => {
+    const timeA = a.addedDate?.getTime() ?? 0;
+    const timeB = b.addedDate?.getTime() ?? 0;
+    return timeB - timeA;
+  });
 ---
 
 <BaseLayout title="Teas" description="Čaje z čajovny miska s listím.">
@@ -60,6 +80,11 @@ const teas: TeaCard[] = teaModules
               )}
               <div class="card__body">
                 <span class="card__tag">{tea.source}</span>
+                {tea.availability && (
+                  <span class:list={['tea-card__availability', 'tea-hero__availability', tea.availabilityClass]}>
+                    {tea.availability}
+                  </span>
+                )}
                 <h2 class="card__title tea-card__title">{tea.title}</h2>
                 <p class="card__text">{tea.description}</p>
               </div>
@@ -100,5 +125,13 @@ const teas: TeaCard[] = teaModules
 
   .tea-card__title {
     font-size: 1.45rem;
+  }
+
+  .tea-card__availability {
+    margin-left: .5rem;
+    font-size: .7rem;
+    letter-spacing: .05em;
+    padding: .2rem .6rem;
+    vertical-align: middle;
   }
 </style>

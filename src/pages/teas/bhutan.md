@@ -9,6 +9,7 @@ galleryImages:
   - teas/bhutan/bhutan-01.jpg
   - teas/bhutan/bhutan-02.jpg
   - teas/bhutan/bhutan-03.jpg
+addedDate: 2.5.2026
 ---
 
 ## Description

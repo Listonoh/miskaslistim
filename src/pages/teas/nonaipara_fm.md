@@ -8,6 +8,7 @@ galleryImages:
   - teas/nonaipara_fm/Nonaipara1-1000x1000w.jpg
   - teas/nonaipara_fm/Nonaipara2-1000x1000w.jpg
   - teas/nonaipara_fm/Nonaipara3-1000x1000w.jpg
+addedDate: 15.5.2026
 ---
 
 ## Description
