@@ -22,10 +22,10 @@ interface MenuCategory {
 const categories: MenuCategory[] = [
   {
     id:     'loose-leaf',
-    title:  'Loose-Leaf Teas',
+    title:  'čaj',
     icon:   '🍃',
     img:    'https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=700&q=80',
-    imgAlt: 'Loose-leaf tea in a wooden bowl',
+    imgAlt: 'čajové lístky',
     items: [
       { name: 'First Flush Darjeeling',   desc: 'Bright, floral & muscatel. Grown at 2,000 m elevation.', price: '95 Kč',  tag: 'Signature' },
       { name: 'Osmanthus Oolong',          desc: 'Stone-fruit sweetness over a smooth amber liquor.',        price: '110 Kč'               },
@@ -37,7 +37,7 @@ const categories: MenuCategory[] = [
   },
   {
     id:     'specialty',
-    title:  'Specialty Drinks',
+    title:  'čajové speciality',
     icon:   '☕',
     img:    'https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=700&q=80',
     imgAlt: 'A beautifully presented specialty tea drink',
@@ -50,16 +50,17 @@ const categories: MenuCategory[] = [
   },
   {
     id:     'pastry',
-    title:  'Pastry & Food',
+    title:  'sladké i slané',
     icon:   '🍰',
     img:    'https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?w=700&q=80',
     imgAlt: 'Cardamom pastry on a vintage plate',
     items: [
-      { name: 'Cardamom Rose Cake',        desc: 'Lightly spiced sponge with rose-water cream & pistachios.',       price: '85 Kč', tag: 'Chef\'s Pick' },
-      { name: 'Earl Grey Shortbread',      desc: 'Buttery, bergamot-scented biscuits. Three per serving.',          price: '55 Kč'                     },
-      { name: 'Matcha Financier',          desc: 'Almond-flour cake with a vibrant matcha glaze.',                  price: '70 Kč'                     },
-      { name: 'Tahini Honey Toast',        desc: 'Toasted sourdough, tahini, wildflower honey & sesame.',           price: '95 Kč'                     },
-      { name: 'Seasonal Fruit Tart',       desc: 'Changes monthly. Ask our team what\'s fresh today.',             price: '90 Kč'                     },
+      { name: 'sušené ovoce',        desc: 'jablka / mango / brusinky',  },
+      { name: 'banana bread',      desc: 'Buttery, bergamot-scented biscuits. Three per serving.',          price: '55 Kč'                     },
+      { name: 'oříšky',          desc: 'Almond-flour cake with a vibrant matcha glaze.',                  price: '70 Kč'                     },
+      { name: 'quesadilla tousty',        desc: 'Toasted sourdough, tahini, wildflower honey & sesame.',           price: '95 Kč'                     },
+      { name: 'hummus',        desc: 'Toasted sourdough, tahini, wildflower honey & sesame.',           price: '95 Kč'                     },
+      { name: 'jídlo dne',       desc: 'Changes monthly. Ask our team what\'s fresh today.',             price: '90 Kč'                     },
     ],
   },
   {
