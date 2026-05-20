@@ -2,8 +2,10 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header     from '../components/Header.astro';
 import Footer     from '../components/Footer.astro';
+import { loadAvailableTeas } from '../data/teaHelpers';
 
 const base = import.meta.env.BASE_URL;
+const availableTeas = await loadAvailableTeas(base, 3);
 ---
 
 <BaseLayout title="Welcome">
@@ -70,38 +72,22 @@ const base = import.meta.env.BASE_URL;
     <div class="container">
       <div class="section-head">
         <p class="eyebrow">z naší nabídky</p>
-        <h2>pečlivě vybrané pro sezónu</h2>
+        <h2>nové čaje</h2>
         <div class="divider divider--center"></div>
       </div>
       <div class="grid-3">
-        {[
-          {
-            img:  'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&q=75',
-            tag:  'Signature',
-            name: 'First Flush Darjeeling',
-            desc: 'Bright, floral & delicately muscatel. Served with warm oat milk on request.',
-          },
-          {
-            img:  'https://images.unsplash.com/photo-1582793988951-9aed5509eb97?w=600&q=75',
-            tag:  'Seasonal',
-            name: 'Osmanthus Oolong',
-            desc: 'Stone-fruit sweetness layered over a smooth, amber liquor.',
-          },
-          {
-            img:  'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=75',
-            tag:  'Bakery',
-            name: 'Cardamom Rose Cake',
-            desc: 'A lightly spiced sponge finished with rose-water cream and pistachios.',
-          },
-        ].map(item => (
-          <div class="card">
-            <img src={item.img} alt={item.name} class="card__img" loading="lazy" />
+        {availableTeas.map(tea => (
+          <a href={`${base}teas/${tea.slug}/`} class="card card-link">
+            {tea.image ? (
+              <img src={tea.image} alt={tea.title} class="card__img" loading="lazy" />
+            ) : (
+              <div class="card__img card__img--fallback" aria-hidden="true"></div>
+            )}
             <div class="card__body">
-              <span class="card__tag">{item.tag}</span>
-              <h3 class="card__title">{item.name}</h3>
-              <p class="card__text">{item.desc}</p>
+              <h3 class="card__title">{tea.title}</h3>
+              <p class="card__text">{tea.description}</p>
             </div>
-          </div>
+          </a>
         ))}
       </div>
       <div style="text-align:center; margin-top:2.5rem">
@@ -245,5 +231,23 @@ const base = import.meta.env.BASE_URL;
     color:          var(--clr-caramel);
     font-size:      1.05rem;
     margin-bottom:  .25rem;
+  }
+
+  /* ── Card link ── */
+  .card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: transform .25s;
+  }
+  .card-link:hover {
+    transform: translateY(-4px);
+  }
+
+  /* ── Card fallback image ── */
+  .card__img--fallback {
+    background:
+      radial-gradient(circle at 25% 30%, rgba(212, 167, 85, 0.4), transparent 45%),
+      linear-gradient(140deg, #f3e8d2 0%, #fdf6ed 55%, #e8d5bd 100%);
   }
 </style>
