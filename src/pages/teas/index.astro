@@ -41,9 +41,9 @@ const teasWithAvailability = teas.map((tea) => {
               )}
               <div class="card__body">
                 <span class="card__tag">{tea.source}</span>
-                {availability && (
-                  <span class:list={['tea-card__availability', 'tea-hero__availability', availabilityClass]}>
-                    {availability}
+                {tea.availability && (
+                  <span class:list={['tea-card__availability', 'tea-hero__availability', tea.availabilityClass]}>
+                    {tea.availability}
                   </span>
                 )}
                 <h2 class="card__title tea-card__title">{tea.title}</h2>
