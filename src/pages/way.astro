@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Kde" description="Jak se dostat do čajovny miska s listím na adrese Poděbradská 242/10, Praha 9.">
+	<Header slot="header" />
+
+	<section class="section way-page">
+		<div class="container">
+			<h1>kde nás najdete</h1>
+			<p class="way-address">
+				<strong>Poděbradská 242/10</strong><br />
+				Praha 9, 190 00
+			</p>
+			<div class="divider"></div>
+
+			<div class="way-grid">
+				<article class="way-card">
+					<p>
+						nejlépe se k nám dostanete vlakem, tramvají, autobusem nebo metrem s krátkou procházkou
+						pokud jedete autem, v okolí je možné zaparkovat v běžném městském režimu na fialové zóně
+					</p>
+					<p>
+						Pro přesnou trasu můžete použít odkaz:
+						<a
+							href="https://www.google.com/maps/search/?api=1&query=Podebradska+242%2F10+Praha"
+							target="_blank"
+							rel="noreferrer"
+						>
+							otevřít v Google Maps
+						</a>
+					</p>
+				</article>
+
+				<article class="way-card">
+					<h2>městská doprava</h2>
+					<ul>
+                        <li>vlak: z Praha-Nádraží Libeň je to k nám kousek a jezdí tu 2x do hodiny vlaky na hlavák a 2x do hodiny na Masaryčku</li>
+						<li>tramvaj a autobus: zastávka Nádraží Libeň je k nám nejblíže</li>
+						<li>metro B: z Vysočanské je to k nám cca 10 minut pěšky, a nebo jednu zastávku autobusem</li>
+					</ul>
+				</article>
+			</div>
+
+			<div class="map-wrap" aria-label="Mapa umístění čajovny">
+				<iframe
+					title="Mapa - Poděbradská 242/10, Praha"
+					src="https://www.google.com/maps?q=Podebradska%20242/10%20Praha&output=embed"
+					loading="lazy"
+					referrerpolicy="no-referrer-when-downgrade"
+					allowfullscreen
+				></iframe>
+			</div>
+		</div>
+	</section>
+
+	<Footer slot="footer" />
+</BaseLayout>
+
+<style>
+	.way-page {
+		padding-top: 3rem;
+		padding-bottom: 5rem;
+	}
+
+	.way-grid {
+		margin-top: 2rem;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+		gap: 1.5rem;
+	}
+
+	.way-address {
+		margin-top: .75rem;
+		max-width: 340px;
+		background: var(--clr-cream);
+		border: 1px solid var(--clr-parchment);
+		border-radius: var(--radius-sm);
+		padding: .65rem .9rem;
+		line-height: 1.55;
+	}
+
+	.way-card {
+		background: var(--clr-cream);
+		border: 1px solid var(--clr-parchment);
+		border-radius: var(--radius-md);
+		padding: 1.25rem;
+	}
+
+	.way-card h2 {
+		margin-bottom: .75rem;
+		font-size: 1.2rem;
+	}
+
+	.way-card ul {
+		margin: 0;
+		padding-left: 1.1rem;
+		line-height: 1.8;
+	}
+
+	.map-wrap {
+		margin-top: 2rem;
+		border-radius: var(--radius-md);
+		overflow: hidden;
+		border: 1px solid var(--clr-parchment);
+		box-shadow: 0 8px 24px rgba(46, 31, 19, .08);
+	}
+
+	.map-wrap iframe {
+		display: block;
+		width: 100%;
+		min-height: 420px;
+		border: 0;
+	}
+
+	@media (max-width: 700px) {
+		.map-wrap iframe {
+			min-height: 320px;
+		}
+	}
+</style>

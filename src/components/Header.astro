@@ -8,6 +8,7 @@ const navLinks = [
   { href: `${base}recipes/`, label: 'recepty' },
   { href: `${base}menu/`,   label: 'menu'    },
   { href: `${base}news/`,   label: 'novinky'    },
+  { href: `${base}way/`,    label: 'kde' },
 
 ];
 
@@ -110,7 +111,7 @@ const currentPath = Astro.url.pathname;
     transition:       transform .25s;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 1000px) {
     .nav-toggle { display: flex; }
 
     .site-nav {
