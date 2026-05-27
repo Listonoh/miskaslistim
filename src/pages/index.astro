@@ -27,7 +27,7 @@ const availableTeas = await loadAvailableTeas(base, 3);
         k dopolední práci na dálku, odpolední kreativitě a večernímu posezení s přáteli
       </p>
       <div class="hero__cta">
-        <a href={`${base}menu/`}  class="btn btn--primary">naše menu</a>
+        <a href={`${base}menu/`}  class="btn btn--primary">menu</a>
         <a href={`${base}about/`} class="btn btn--outline-light">náš příběh</a>
       </div>
     </div>
@@ -60,9 +60,8 @@ const availableTeas = await loadAvailableTeas(base, 3);
         <h2>nestálá čajová nabídka</h2>
         <div class="divider divider--center"></div>
         <p>
-          Chceme vám nabízet čerstvé a zajímavé čaje. 
-          Rozhodli jsme se jít jinou cestou, než jiné čajovny. 
-          V naší nabídce najdete výběr 10 čajů různých zpracování i zemí původu. 
+          10 čajů různých způsobů zpracování i zemí původu. Od každého vždy objednáme omezené množství, a když dojde, došel.
+          Na jeho místo v lístku přijde čaj obdobného zpracování. A tak u nás můžete moct ochutnat vždycky něco nového a čerstvého. 
         </p>
       </div>
     </div>
@@ -147,7 +146,7 @@ const availableTeas = await loadAvailableTeas(base, 3);
     display:    flex;
     align-items: center;
     overflow:   hidden;
-    color:      #fff;
+    color:      var(--clr-cream);
   }
   .hero__bg {
     position: absolute;
@@ -161,7 +160,7 @@ const availableTeas = await loadAvailableTeas(base, 3);
   .hero__overlay {
     position:   absolute;
     inset:      0;
-    background: linear-gradient(135deg, rgba(46,31,19,.75) 0%, rgba(92,61,46,.45) 100%);
+    background: linear-gradient(135deg, var(--clr-overlay-dark-strong) 0%, var(--clr-overlay-dark-medium) 100%);
   }
   .hero__content {
     position:   relative;
@@ -175,7 +174,7 @@ const availableTeas = await loadAvailableTeas(base, 3);
     color:          var(--clr-gold);
     margin-bottom:  .5rem;
   }
-  .hero h1 { color: #fff; }
+  .hero h1 { color: var(--clr-cream); }
   .hero__sub {
     font-size:    1.15rem;
     margin-top:   1rem;
@@ -190,8 +189,8 @@ const availableTeas = await loadAvailableTeas(base, 3);
   }
   .btn--outline-light {
     background:  transparent;
-    color:       #fff;
-    border:      2px solid rgba(255,255,255,.7);
+    color:       var(--clr-cream);
+    border:      2px solid var(--clr-overlay-light-medium);
     display:     inline-block;
     padding:     .75rem 2rem;
     border-radius: var(--radius-sm);
@@ -202,8 +201,8 @@ const availableTeas = await loadAvailableTeas(base, 3);
     transition:  all .25s;
   }
   .btn--outline-light:hover {
-    background:  rgba(255,255,255,.15);
-    border-color: #fff;
+    background:  var(--clr-overlay-light-subtle);
+    border-color: var(--clr-cream);
   }
 
   /* ── Features ── */
@@ -220,7 +219,7 @@ const availableTeas = await loadAvailableTeas(base, 3);
     margin-bottom: 1rem;
   }
   .feature-card h3 { margin-bottom: .5rem; }
-  .feature-card p  { font-size: .95rem; color: #6b5b4e; margin: 0 auto; }
+  .feature-card p  { font-size: .95rem; color: var(--clr-text-muted); margin: 0 auto; }
 
   /* ── Section heading ── */
   .section-head {
@@ -249,7 +248,7 @@ const availableTeas = await loadAvailableTeas(base, 3);
   /* ── Card fallback image ── */
   .card__img--fallback {
     background:
-      radial-gradient(circle at 25% 30%, rgba(212, 167, 85, 0.4), transparent 45%),
-      linear-gradient(140deg, #f3e8d2 0%, #fdf6ed 55%, #e8d5bd 100%);
+      radial-gradient(circle at 25% 30%, var(--clr-accent-soft), var(--clr-transparent) 45%),
+      linear-gradient(140deg, var(--clr-parchment) 0%, var(--clr-cream) 55%, var(--clr-caramel) 100%);
   }
 </style>

@@ -47,10 +47,10 @@ const currentPath = Astro.url.pathname;
     position:   sticky;
     top:        0;
     z-index:    100;
-    background: rgba(253,246,237,.95);
+    background: var(--clr-overlay-light-strong);
     backdrop-filter: blur(6px);
     border-bottom: 1px solid var(--clr-parchment);
-    box-shadow: 0 2px 12px rgba(46,31,19,.06);
+    box-shadow: var(--shadow-soft);
   }
 
   .header-inner {

@@ -102,7 +102,7 @@ export async function generateLooseLeafMenu(baseUrl: string): Promise<MenuCatego
     img: 'https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=700&q=80',
     imgAlt: 'čajové lístky',
     items: items,
-    legend: 'miska / jednonalev / vycenalev',
+    legend: 'miska / jednonálev / vícenalev',
   };
 }
 

@@ -29,10 +29,8 @@ const galleryImages = Array.isArray(frontmatter?.galleryImages)
 
   <section class="page-hero tea-hero">
     <div class="container">
-      <p class="page-hero__eyebrow">Tea Detail</p>
       <h1>{title}</h1>
-      <p class="page-hero__subtitle">Curated tasting notes.</p>
-      <p class="tea-hero__source">Source: {source}</p>
+      <p class="tea-hero__source">Od: {source}</p>
       {availabilityLabel && (
         <p class={`tea-hero__availability ${availabilityClass}`}>Dostupnost: {availabilityLabel}</p>
       )}
@@ -53,7 +51,6 @@ const galleryImages = Array.isArray(frontmatter?.galleryImages)
 
       {galleryImages.length > 0 && (
         <section class="tea-gallery" aria-label="Tea gallery">
-          <h2>Gallery</h2>
           <div class="tea-gallery__grid">
             {galleryImages.map((img, i) => (
               <figure class="tea-gallery__item">

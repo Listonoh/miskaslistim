@@ -22,7 +22,7 @@ const categories: MenuCategory[] = [
       { name: 'domácí limonáda',  desc: 'sirup vařený z ovoce a cukru, konzervovaný kyselinou citrónovou',  price: '78 Kč', },
       { name: 'matcha s kokosovou vodou', desc: 'ledové letní osvěžení',       price: '108 Kč'                           },
       { name: 'ledové matcha latte', desc: 's kravským nebo ovesným mlékem',       price: '127 Kč'                           },
-      { name: 'ledové chai latte', desc: 's mlékem',       price: '127 Kč'                           },
+      { name: 'ledové chai latte', desc: 's kravským nebo ovesným mlékem',       price: '127 Kč'                           },
     
     ],
   },
@@ -62,12 +62,12 @@ const categories: MenuCategory[] = [
     img:    'https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?w=700&q=80',
     imgAlt: 'Cardamom pastry on a vintage plate',
     items: [
-      { name: 'sušené ovoce',        desc: 'jablka / mango / brusinky',  },
-      { name: 'banana bread',      desc: 'Buttery, bergamot-scented biscuits. Three per serving.',          price: '55 Kč'                     },
-      { name: 'oříšky',          desc: 'Almond-flour cake with a vibrant matcha glaze.',                  price: '70 Kč'                     },
-      { name: 'quesadilla tousty',        desc: 'Toasted sourdough, tahini, wildflower honey & sesame.',           price: '95 Kč'                     },
-      { name: 'hummus',        desc: 'Toasted sourdough, tahini, wildflower honey & sesame.',           price: '95 Kč'                     },
-      { name: 'jídlo dne',       desc: 'Changes monthly. Ask our team what\'s fresh today.',             price: '90 Kč'                     },
+      { name: 'sušené ovoce',        desc: 'jablka / mango / brusinky', price:  '68 Kč'   },
+      { name: 'banana bread',      desc: 'vegan, s kousky hořké čokolády',          price: '71 Kč'                     },
+      { name: 'oříšky',          desc: 'mandle',                  price: '70 Kč'                     },
+      { name: 'quesadilla tousty',        desc: 'tortilla placky s fazolemi a sýrem',           price: '95 Kč'                     },
+      { name: 'hummus',        desc: 'cizrna, tahini, oliv. olej, citronová šťáva, česnek, sůl',           price: '95 Kč'                     },
+      { name: 'jídlo dne',       desc: 'od oběda do vyprodání',             price: '168 Kč'                     },
     ],
   },
   
@@ -138,7 +138,7 @@ const categories: MenuCategory[] = [
     <div class="container allergen__inner">
       <span class="allergen__icon">ℹ️</span>
       <p>
-        Seznam alergenů...
+        Seznam alergenů vám rádi dáme.
       </p>
     </div>
   </section>
@@ -200,11 +200,11 @@ const categories: MenuCategory[] = [
   .menu-items { display: flex; flex-direction: column; gap: 0; }
   .menu-legend {
     font-size: .85rem;
-    color: #8b7355;
+    color: var(--clr-text-muted);
     font-style: italic;
     margin-bottom: 1rem;
     padding-bottom: .5rem;
-    border-bottom: 1px solid rgba(92,61,46,.15);
+    border-bottom: 1px solid var(--clr-border-medium);
   }
   .menu-item {
     display:       flex;
@@ -212,7 +212,7 @@ const categories: MenuCategory[] = [
     align-items:   baseline;
     gap:           1rem;
     padding:       1rem 0;
-    border-bottom: 1px solid rgba(92,61,46,.12);
+    border-bottom: 1px solid var(--clr-border-soft);
     flex-wrap:     wrap;
   }
   .menu-item:last-child { border-bottom: none; }
@@ -233,11 +233,11 @@ const categories: MenuCategory[] = [
     text-transform: uppercase;
     letter-spacing: .1em;
     background:    var(--clr-caramel);
-    color:         #fff;
+    color:         var(--clr-cream);
     padding:       .15rem .5rem;
     border-radius: 50px;
   }
-  .menu-item__desc { font-size: .9rem; color: #6b5b4e; }
+  .menu-item__desc { font-size: .9rem; color: var(--clr-text-muted); }
   .menu-item__price {
     font-family:  var(--ff-display);
     font-size:    1.1rem;
@@ -253,7 +253,7 @@ const categories: MenuCategory[] = [
     align-items: flex-start;
   }
   .allergen__icon { font-size: 1.3rem; flex-shrink: 0; margin-top: .1rem; }
-  .allergen__inner p { font-size: .9rem; color: #6b5b4e; }
+  .allergen__inner p { font-size: .9rem; color: var(--clr-text-muted); }
 
   /* Common */
   .eyebrow {
