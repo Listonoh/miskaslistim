@@ -2,45 +2,82 @@
   {
     "slug": "bhutan",
     "status": "skladem",
-    "amountGrams": 100,
+    "amountGrams": 1000,
     "thresholdGrams": 150,
     "updatedAt": "2026-05-21",
-    "priceBowl": 95,
-    "pricePerInfusion": 150,
-    "priceGongfu": 280,
-    "discountPercent": 0
-  },
-  {
-    "slug": "sencha",
-    "status": "skladem",
-    "amountGrams": 420,
-    "thresholdGrams": 120,
-    "updatedAt": "2026-05-15",
-    "priceBowl": 110,
-    "pricePerInfusion": 150,
-    "priceGongfu": 320,
+    "price": 2,
     "discountPercent": 0
   },
   {
     "slug": "nonaipara_fm",
     "status": "skladem",
-    "amountGrams": 300,
-    "thresholdGrams": 100,
+    "amountGrams": 1000,
+    "thresholdGrams": 150,
     "updatedAt": "2026-05-19",
-    "priceBowl": 120,
-    "pricePerInfusion": 150,
-    "priceGongfu": 350,
-    "discountPercent": 10
+    "price": 3,
+    "discountPercent": 0
   },
   {
     "slug": "turzum_black",
     "status": "skladem",
-    "amountGrams": 260,
-    "thresholdGrams": 80,
-    "updatedAt": "2026-05-20",
-    "priceBowl": 140,
-    "pricePerInfusion": 150,
-    "priceGongfu": 400,
+    "amountGrams": 1000,
+    "thresholdGrams": 150,
+    "updatedAt": "2026-05-31",
+    "price": 2,
+    "discountPercent": 0
+  },
+  {
+    "slug": "thailand_hc",
+    "status": "skladem",
+    "amountGrams": 1000,
+    "thresholdGrams": 150,
+    "updatedAt": "2026-05-31",
+    "price": 1,
+    "discountPercent": 0
+  },
+  {
+    "slug": "wild_red",
+    "status": "skladem",
+    "amountGrams": 1000,
+    "thresholdGrams": 150,
+    "updatedAt": "2026-05-31",
+    "price": 1,
+    "discountPercent": 0
+  },
+  {
+    "slug": "rohini_gh",
+    "status": "skladem",
+    "amountGrams": 1000,
+    "thresholdGrams": 150,
+    "updatedAt": "2026-05-31",
+    "price": 3,
+    "discountPercent": 0
+  },
+  {
+    "slug": "taiwan_rj",
+    "status": "skladem",
+    "amountGrams": 1000,
+    "thresholdGrams": 150,
+    "updatedAt": "2026-05-31",
+    "price": 3,
+    "discountPercent": 0
+  },
+  {
+    "slug": "kalapani_wf",
+    "status": "skladem",
+    "amountGrams": 1000,
+    "thresholdGrams": 150,
+    "updatedAt": "2026-05-31",
+    "price": 1,
+    "discountPercent": 0
+  },
+  {
+    "slug": "nilgiri_wf",
+    "status": "skladem",
+    "amountGrams": 1000,
+    "thresholdGrams": 150,
+    "updatedAt": "2026-05-31",
+    "price": 2,
     "discountPercent": 0
   }
 ]

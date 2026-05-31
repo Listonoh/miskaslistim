@@ -1,4 +1,5 @@
 import teaStock from './tea-stock.json';
+import prices from './prices.json';
 
 export type TeaStatus = 'skladem' | 'skoro dopité' | 'pripravuje se' | 'neni';
 
@@ -10,13 +11,12 @@ export type TeaStockItem = {
   amountGrams?: number;
   thresholdGrams?: number;
   updatedAt?: string;
-  priceBowl?: number;
-  pricePerInfusion?: number;
-  priceGongfu?: number;
+  price?: number;
   discountPercent?: number;
 };
 
 const stock = teaStock as TeaStockItem[];
+
 
 export function getTeaStockMap(): Map<string, TeaStockItem> {
   return new Map(stock.map((item) => [item.slug, item]));

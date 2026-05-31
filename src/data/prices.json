@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "bowl": 70,
+        "perInfusion": 140,
+        "gongfu": 210
+    },
+    {
+        "id": 2,
+        "bowl": 80,
+        "perInfusion": 160,
+        "gongfu": 240
+    },
+    {
+        "id": 3,
+        "bowl": 90,
+        "perInfusion": 180,
+        "gongfu": 270
+    }
+]

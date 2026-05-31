@@ -1,6 +1,15 @@
 import { getTeaStockMap, resolveTeaStatus } from './teaStatus';
 import type { TeaStatus, TeaStockItem } from './teaStatus';
 import teaStock from './tea-stock.json';
+import prices from './prices.json';
+
+export type PricesCategories = {
+  id: number;
+  bowl: number;
+  perInfusion: number;
+  gongfu: number; 
+}
+const teaPrices = prices as PricesCategories[];
 
 export type TeaCard = {
   slug: string;
@@ -16,7 +25,7 @@ export interface MenuItem {
   name: string;
   desc: string;
   price: string;
-  tag?: string;
+  tag: string | null;
 }
 
 export interface MenuCategory {
@@ -26,7 +35,7 @@ export interface MenuCategory {
   img: string;
   imgAlt: string;
   items: MenuItem[];
-  legend?: string;
+  legend: string;
 }
 
 const parseAddedDate = (dateStr: unknown): Date | null => {
@@ -56,15 +65,16 @@ function mergeTeaData(
     if (stock.discountPercent && stock.discountPercent > 0) {
       tags.push(`-${stock.discountPercent}%`);
     }
+
   }
   // Ceny
-  const prices = [stock?.priceBowl, stock?.pricePerInfusion, stock?.priceGongfu];
-  const price = prices.every(p => p !== undefined) ? `${prices.join('/')} Kč` : '';
+  const prices = teaPrices.find(p => p.id === stock?.price);
+  const price = prices ? `${prices.bowl} / ${prices.perInfusion} / ${prices.gongfu} Kč` : '';
   return {
     name: tea.title,
     desc: tea.description,
     price,
-    tag: tags.length > 0 ? tags.join(' ') : undefined,
+    tag: tags.length > 0 ? tags.join(' ') : null,
   };
 }
 
