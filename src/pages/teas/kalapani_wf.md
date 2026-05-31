@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/TeaPostLayout.astro
-title: long_name
+title: Nepal Kalapani White Forest
 description: 
-source: SOURCE
+source: klasek
 coverImage: 
 galleryImages:
   - 
@@ -11,7 +11,9 @@ addedDate: 31.5.2026
 ### Popis
 
 
+
 ### Původ
+
 
 
 
@@ -21,8 +23,16 @@ addedDate: 31.5.2026
 
 ### Appearance
 
-- ???
+- 
 
 ### Palate
 
-- ???                                     
+- 
+                                                  
+
+
+
+
+
+
+

@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/TeaPostLayout.astro
-title: long_name
+title: Wild Red
 description: 
 source: SOURCE
 coverImage: 

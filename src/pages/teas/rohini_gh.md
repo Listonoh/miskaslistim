@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/TeaPostLayout.astro
-title: long_name
+title: Rohini exotic golden Honey Oolong Tea
 description: 
 source: SOURCE
 coverImage: 
@@ -21,8 +21,16 @@ addedDate: 31.5.2026
 
 ### Appearance
 
-- ???
+- 
 
 ### Palate
 
-- ???                                     
+- 
+                                                  
+
+
+
+
+
+
+

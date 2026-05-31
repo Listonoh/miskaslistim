@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/TeaPostLayout.astro
-title: long_name
+title: Nilgiri Winter Frost Highland White Tea 2026 ( Private Reserve )
 description: 
 source: SOURCE
 coverImage: 

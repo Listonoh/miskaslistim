@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/TeaPostLayout.astro
-title: long_name
+title: Bio Thailand Chang Rai Hong Cha
 description: 
 source: SOURCE
 coverImage: 
@@ -18,11 +18,17 @@ addedDate: 31.5.2026
 ### Aroma
 
 - ???
-
 ### Appearance
 
-- ???
-
+- 
 ### Palate
 
-- ???                                     
+- 
+                                                  
+
+
+
+
+
+
+
