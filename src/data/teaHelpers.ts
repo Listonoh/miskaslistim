@@ -69,7 +69,7 @@ function mergeTeaData(
   }
   // Ceny
   const prices = teaPrices.find(p => p.id === stock?.price);
-  const price = prices ? `${prices.bowl} / ${prices.perInfusion} / ${prices.gongfu} Kč` : '';
+  const price = prices ? `${prices.bowl} / ${prices.gongfu} Kč` : '';
   return {
     name: tea.title,
     desc: tea.description,
@@ -112,7 +112,7 @@ export async function generateLooseLeafMenu(baseUrl: string): Promise<MenuCatego
     img: 'https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=700&q=80',
     imgAlt: 'čajové lístky',
     items: items,
-    legend: 'miska / jednonálev / vícenalev',
+    legend: 'miska / vícenalev',
   };
 }
 

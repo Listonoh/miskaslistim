@@ -39,7 +39,6 @@ const availableTeas = await loadAvailableTeas(base, 3);
       <div class="features__grid">
         {[
           { icon: '🍵', title: 'miska',  text: 'Nejstarší způsob přípravy čaje. Malé množství čajových lístků se v misce koupe v horké, postupně chladnoucí vodě. Některé čaje zvládnou znovuzalití. Při pití si můžete prohlížet lístky.' },
-          { icon: '🍵', title: 'jednonálev',  text: 'Čajové lístky jsou zalité horkou vodou v objemu cca 0,5l na několik minut, potom je nálev přelitý do konvičky k servírování a lístky se zachytí po cestě v sítku. Čaj bez práce, chutná celou dobu stejně (i když občas se to mění, když chladne).' },
           { icon: '🍵', title: 'vícenálev',   text: 'Malý objem konvičky v poměru k množství čajových lístků dává možnost opakovaného zalévání horkou vodou. Lístky postupně uvolňují svou chuť do nálevů, a tak je každý trochu jiný. Můžete si hrát s přípravou a užít si čaj přesně podle své představy, nebo jen tak experimentovat.'  },
         ].map(f => (
           <div class="feature-card">
@@ -96,44 +95,7 @@ const availableTeas = await loadAvailableTeas(base, 3);
     </div>
   </section>
 
-  <!-- ── Latest news teaser ── -->
-  <section class="news-teaser section section--alt">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">novinky z čajovny</p>
-        <h2>články &amp; akce</h2>
-        <div class="divider divider--center"></div>
-      </div>
-      <div class="grid-2">
-        {[
-          {
-            img:  'https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=700&q=75',
-            date: 'červen 2026',
-            title:'Otvíráme!',
-            text: 'Přijďte na oslavu otevření',
-          },
-          {
-            img:  'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=700&q=75',
-            date: 'červen 2026',
-            title:'Co se bude dít?',
-            text: 'Chystáme ochutnávky, workshopy a tematické večery',
-          },
-        ].map(post => (
-          <div class="card news-card">
-            <img src={post.img} alt={post.title} class="card__img" loading="lazy" />
-            <div class="card__body">
-              <span class="card__tag">{post.date}</span>
-              <h3 class="card__title">{post.title}</h3>
-              <p class="card__text">{post.text}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-      <div style="text-align:center; margin-top:2.5rem">
-        <a href={`${base}news/`} class="btn btn--outline">více</a>
-      </div>
-    </div>
-  </section>
+  
 
   <Footer slot="footer" />
 </BaseLayout>
@@ -171,7 +133,7 @@ const availableTeas = await loadAvailableTeas(base, 3);
     font-family:    var(--ff-display);
     font-style:     italic;
     font-size:      1.2rem;
-    color:          var(--clr-gold);
+    color:          var(--clr-cream);
     margin-bottom:  .5rem;
   }
   .hero h1 { color: var(--clr-cream); }
