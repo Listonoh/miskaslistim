@@ -1,5 +1,4 @@
 import teaStock from './tea-stock.json';
-import prices from './prices.json';
 
 export type TeaStatus = 'skladem' | 'skoro dopité' | 'pripravuje se' | 'neni';
 

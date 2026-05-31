@@ -1,5 +1,6 @@
 import astro from "eslint-plugin-astro";
 import tsEslintPlugin from "@typescript-eslint/eslint-plugin";
+import tsParser from "@typescript-eslint/parser";
 
 const unusedVarsRule = [
   "error",
@@ -20,6 +21,9 @@ export default [
       "**/*.astro/*.js",
       "**/*.astro/*.ts"
     ],
+    languageOptions: {
+      parser: tsParser
+    },
     plugins: {
       "@typescript-eslint": tsEslintPlugin
     },

@@ -6,7 +6,6 @@ import prices from './prices.json';
 export type PricesCategories = {
   id: number;
   bowl: number;
-  perInfusion: number;
   gongfu: number; 
 }
 const teaPrices = prices as PricesCategories[];
