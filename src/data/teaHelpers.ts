@@ -2,6 +2,7 @@ import { getTeaStockMap, resolveTeaStatus } from './teaStatus';
 import type { TeaStatus, TeaStockItem } from './teaStatus';
 import teaStock from './tea-stock.json';
 import prices from './prices.json';
+const base = import.meta.env.BASE_URL;
 
 export type PricesCategories = {
   id: number;
@@ -103,12 +104,12 @@ export async function generateLooseLeafMenu(baseUrl: string): Promise<MenuCatego
   const items: MenuItem[] = teas
     .filter(tea => tea.status !== 'neni')
     .map(tea => mergeTeaData(tea, stockMap, mostRecentDate));
-  console.log('Generated menu items:', items);
+  console.log('Generated menu items:', baseUrl);
   return {
     id: 'loose-leaf',
     title: 'čaj',
     icon: '🍃',
-    img: 'https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=700&q=80',
+    img: `${baseUrl}teas.jpg`,
     imgAlt: 'čajové lístky',
     items: items,
     legend: 'miska / vícenalev',

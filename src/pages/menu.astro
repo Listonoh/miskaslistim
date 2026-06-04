@@ -5,8 +5,7 @@ import Footer     from '../components/Footer.astro';
 import { generateLooseLeafMenu } from '../data/teaHelpers';
 import type { MenuCategory, MenuItem } from '../data/teaHelpers';
 
-const { url } = Astro.request;
-const baseUrl = url.origin + '/';
+const baseUrl = import.meta.env.BASE_URL;
 const looseLeafMenu = await generateLooseLeafMenu(baseUrl);
 
 const categories: MenuCategory[] = [
@@ -14,9 +13,8 @@ const categories: MenuCategory[] = [
   {
     id:     'studené',
     title:  'studené nápoje',
-    icon:   '🪴',
-    img:    'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=700&q=80',
-    imgAlt: 'Gongfu tea ceremony setup on a wooden tray',
+    img:    '',
+    imgAlt: '',
     items: [
       { name: 'cold brew čaj', desc: 'za studena louhovaný čaj jemné chuti',   price: '80 Kč', },
       { name: 'domácí limonáda',  desc: 'sirup vařený z ovoce a cukru, konzervovaný kyselinou citrónovou',  price: '78 Kč', },
@@ -29,9 +27,8 @@ const categories: MenuCategory[] = [
   {
     id:     'specialty',
     title:  'čajové speciality',
-    icon:   '☕',
-    img:    'https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=700&q=80',
-    imgAlt: 'A beautifully presented specialty tea drink',
+    img:    '',
+    imgAlt: '',
     items: [
       { name: 'Masala',         desc: 'zázvor, skořice, kardamom, hřebíček, bílý pepř, černý čaj a mléko', price: '165 Kč',},
       { name: 'Matcha affogato',           desc: 'čersvě našlehaná matcha přelitá přes mangovou zmrzlinu',    price: '135 Kč' },
@@ -41,9 +38,8 @@ const categories: MenuCategory[] = [
   {
     id:     'necaje',
     title:  'nečaje',
-    icon:   '☕',
-    img:    'https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=700&q=80',
-    imgAlt: 'A beautifully presented specialty tea drink',
+    img:    '',
+    imgAlt: '',
     items: [
       { name: 'kakao',         desc: 'hrnek horkého kakaa', price: '85 Kč', },
       { name: 'rooibos',       desc: 'čajovník kapský, bez kofeinu',   price: '140 Kč'  },
@@ -58,9 +54,8 @@ const categories: MenuCategory[] = [
   {
     id:     'pastry',
     title:  'sladké i slané jídlo',
-    icon:   '🍰',
-    img:    'https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?w=700&q=80',
-    imgAlt: 'Cardamom pastry on a vintage plate',
+    img:    '',
+    imgAlt: '',
     items: [
       { name: 'sušené ovoce',        desc: 'jablka / mango / brusinky', price:  '68 Kč'   },
       { name: 'banana bread',      desc: 'vegan, s kousky hořké čokolády',          price: '71 Kč'                     },
@@ -91,7 +86,7 @@ const categories: MenuCategory[] = [
     <div class="container cat-nav__list">
       {categories.map(c => (
         <a href={`#${c.id}`} class="cat-nav__link">
-          <span>{c.icon}</span> {c.title}
+          {c.title}
         </a>
       ))}
     </div>
@@ -103,15 +98,17 @@ const categories: MenuCategory[] = [
       <div class="container">
         <div class="menu-section__head">
           <div class="menu-section__text-head">
-            <h3>{cat.icon} {cat.title}</h3>
+            <h3>{cat.title}</h3>
             <div class="divider"></div>
           </div>
-          <img
-            src={cat.img}
-            alt={cat.imgAlt}
-            class="menu-section__img"
-            loading="lazy"
-          />
+          {cat.img && (
+            <img
+              src={cat.img}
+              alt={cat.imgAlt}
+              class="menu-section__img"
+              loading="lazy"
+            />
+          )}
         </div>
 
         <div class="menu-items">
