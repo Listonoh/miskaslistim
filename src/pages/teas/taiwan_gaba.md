@@ -1,19 +1,17 @@
 ---
 layout: ../../layouts/TeaPostLayout.astro
-title: Nepal Kalapani White Forest
+title: Gaba oolong
 description: 
 source: klasek
-coverImage: teas/kalapani/kalapani_wf.jpg
+coverImage: teas/gaba/gaba.jpg
 galleryImages:
   - 
-addedDate: 31.5.2026
+addedDate: 4.6.2026
 ---
 ### Popis
 
 
-
 ### Původ
-
 
 
 
@@ -23,16 +21,8 @@ addedDate: 31.5.2026
 
 ### Appearance
 
-- 
+- ???
 
 ### Palate
 
-- 
-                                                  
-
-
-
-
-
-
-
+- ???                                     

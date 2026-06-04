@@ -2,8 +2,8 @@
 layout: ../../layouts/TeaPostLayout.astro
 title: Bio Thailand Chang Rai Hong Cha
 description: 
-source: SOURCE
-coverImage: 
+source: Klasek
+coverImage: teas/thailand/thailand_hc.jpg
 galleryImages:
   - 
 addedDate: 31.5.2026

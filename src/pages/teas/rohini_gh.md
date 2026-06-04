@@ -2,8 +2,8 @@
 layout: ../../layouts/TeaPostLayout.astro
 title: Rohini exotic golden Honey Oolong Tea
 description: 
-source: SOURCE
-coverImage: 
+source: Teagardenia
+coverImage: teas/rohini/Rohini_Oo1-900x900w.jpg
 galleryImages:
   - 
 addedDate: 31.5.2026
