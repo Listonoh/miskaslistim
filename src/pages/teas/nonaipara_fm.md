@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/TeaPostLayout.astro
 title: Nonaipara Forest Mist Black Tea — Ancient Wild Reserve
-description: This is not just a tea—it is a living reflection of a land where wilderness and soul exist in quiet unity, captured in every sip.
+description: 
 source: Teagardiena
 coverImage: teas/nonaipara_fm/Nonaipara0-1000x1000w.jpg
 galleryImages:
