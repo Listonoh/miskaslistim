@@ -17,23 +17,23 @@ const categories: MenuCategory[] = [
     imgAlt: '',
     items: [
       { name: 'cold brew čaj', desc: 'za studena louhovaný čaj jemné chuti',   price: '80 Kč', },
-      { name: 'domácí limonáda',  desc: 'sirup vařený z ovoce a cukru, konzervovaný kyselinou citrónovou',  price: '78 Kč', },
-      { name: 'matcha s kokosovou vodou', desc: 'ledové letní osvěžení',       price: '108 Kč'                           },
-      { name: 'ledové matcha latte', desc: 's kravským nebo ovesným mlékem',       price: '127 Kč'                           },
-      { name: 'ledové chai latte', desc: 's kravským nebo ovesným mlékem',       price: '127 Kč'                           },
+      // { name: 'domácí limonáda',  desc: 'sirup vařený z ovoce a cukru, konzervovaný kyselinou citrónovou',  price: '78 Kč', },
+      // { name: 'matcha s kokosovou vodou', desc: 'ledové letní osvěžení',       price: '108 Kč'                           },
+      // { name: 'ledové matcha latte', desc: 's kravským nebo ovesným mlékem',       price: '127 Kč'                           },
+      // { name: 'ledové chai latte', desc: 's kravským nebo ovesným mlékem',       price: '127 Kč'                           },
     
     ],
   },
-  {
-    id:     'specialty',
-    title:  'čajové speciality',
-    img:    '',
-    imgAlt: '',
-    items: [
-      { name: 'Masala',         desc: 'zázvor, skořice, kardamom, hřebíček, bílý pepř, černý čaj a mléko', price: '165 Kč',},
-      { name: 'Matcha affogato',           desc: 'čersvě našlehaná matcha přelitá přes mangovou zmrzlinu',    price: '135 Kč' },
-       ],
-  },
+  // {
+  //   id:     'specialty',
+  //   title:  'čajové speciality',
+  //   img:    '',
+  //   imgAlt: '',
+  //   items: [
+  //     { name: 'Masala',         desc: 'zázvor, skořice, kardamom, hřebíček, bílý pepř, černý čaj a mléko', price: '165 Kč',},
+  //     { name: 'Matcha affogato',           desc: 'čersvě našlehaná matcha přelitá přes mangovou zmrzlinu',    price: '135 Kč' },
+  //      ],
+  // },
 
   {
     id:     'necaje',
@@ -57,12 +57,12 @@ const categories: MenuCategory[] = [
     img:    '',
     imgAlt: '',
     items: [
-      { name: 'sušené ovoce',        desc: 'jablka / mango / brusinky', price:  '68 Kč'   },
-      { name: 'banana bread',      desc: 'vegan, s kousky hořké čokolády',          price: '71 Kč'                     },
-      { name: 'oříšky',          desc: 'mandle',                  price: '70 Kč'                     },
-      { name: 'quesadilla tousty',        desc: 'tortilla placky s fazolemi a sýrem',           price: '95 Kč'                     },
-      { name: 'hummus',        desc: 'cizrna, tahini, oliv. olej, citronová šťáva, česnek, sůl',           price: '95 Kč'                     },
-      { name: 'jídlo dne',       desc: 'od oběda do vyprodání',             price: '168 Kč'                     },
+      // { name: 'sušené ovoce',        desc: 'jablka / mango / brusinky', price:  '68 Kč'   },
+      { name: 'banana bread',      desc: 'vegan, s kousky hořké čokolády',          price: '70 Kč'                     },
+      // { name: 'oříšky',          desc: 'mandle',                  price: '70 Kč'                     },
+      // { name: 'quesadilla tousty',        desc: 'tortilla placky s fazolemi a sýrem',           price: '95 Kč'                     },
+      // { name: 'hummus',        desc: 'cizrna, tahini, oliv. olej, citronová šťáva, česnek, sůl',           price: '95 Kč'                     },
+      { name: 'jídlo dne',       desc: 'od oběda do vyprodání',             price: '150 Kč'                     },
     ],
   },
   
@@ -77,7 +77,6 @@ const categories: MenuCategory[] = [
     <div class="container">
       <p class="page-hero__eyebrow">naše nabídka</p>
       <h1>lístek nejen čajový</h1>
-      <p class="page-hero__subtitle">experimentální</p>
     </div>
   </section>
 
@@ -148,7 +147,7 @@ const categories: MenuCategory[] = [
   .cat-nav {
     background:  var(--clr-brown);
     position:    sticky;
-    top:         65px;
+    top:         var(--cat-nav-top, 65px);
     z-index:     90;
   }
   .cat-nav__list {
@@ -171,6 +170,12 @@ const categories: MenuCategory[] = [
     border-bottom:  2px solid transparent;
   }
   .cat-nav__link:hover { opacity: 1; border-color: var(--clr-gold); }
+
+  @media (max-width: 900px) {
+    .cat-nav {
+      display: none;
+    }
+  }
 
   /* Menu section */
   .menu-section__head {

@@ -24,17 +24,17 @@ export interface MenuItem {
   name: string;
   desc: string;
   price: string;
-  tag: string | null;
+  tag?: string;
 }
 
 export interface MenuCategory {
   id: string;
   title: string;
-  icon: string;
-  img: string;
-  imgAlt: string;
+  icon?: string;
+  img?: string;
+  imgAlt?: string;
   items: MenuItem[];
-  legend: string;
+  legend?: string;
 }
 
 const parseAddedDate = (dateStr: unknown): Date | null => {

@@ -79,5 +79,14 @@
     "updatedAt": "2026-05-31",
     "price": 2,
     "discountPercent": 0
+  },
+  {
+    "slug": "taiwan_gaba",
+    "status": "skladem",
+    "amountGrams": 1000,
+    "thresholdGrams": 250,
+    "updatedAt": "2026-05-31",
+    "price": 1,
+    "discountPercent": 0
   }
 ]
