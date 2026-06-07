@@ -2,7 +2,6 @@ import { getTeaStockMap, resolveTeaStatus } from './teaStatus';
 import type { TeaStatus, TeaStockItem } from './teaStatus';
 import teaStock from './tea-stock.json';
 import prices from './prices.json';
-const base = import.meta.env.BASE_URL;
 
 export type PricesCategories = {
   id: number;
