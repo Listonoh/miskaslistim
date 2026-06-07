@@ -111,7 +111,7 @@ export async function generateLooseLeafMenu(baseUrl: string): Promise<MenuCatego
     img: `${baseUrl}teas.jpg`,
     imgAlt: 'čajové lístky',
     items: items,
-    legend: 'miska / vícenalev',
+    legend: 'miska 250ml / vícenálev 800ml',
   };
 }
 
