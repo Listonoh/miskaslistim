@@ -2,27 +2,9 @@
 layout: ../../layouts/TeaPostLayout.astro
 title: Wild Red
 description: 
-source: SOURCE
+source: Klasek
 coverImage: teas/wild_red/wild_red.jpg
 galleryImages:
-  - 
 addedDate: 31.5.2026
 ---
-### Popis
-
-
-### Původ
-
-
-
-### Aroma
-
-- ???
-
-### Appearance
-
-- ???
-
-### Palate
-
-- ???                                     
+na popisu se usilovně pracuje :) 

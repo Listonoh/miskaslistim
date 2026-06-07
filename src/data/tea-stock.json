@@ -3,7 +3,7 @@
     "slug": "bhutan",
     "status": "skladem",
     "amountGrams": 1000,
-    "thresholdGrams": 150,
+    "thresholdGrams": 250,
     "updatedAt": "2026-05-21",
     "price": 2,
     "discountPercent": 0
@@ -12,7 +12,7 @@
     "slug": "nonaipara_fm",
     "status": "skladem",
     "amountGrams": 1000,
-    "thresholdGrams": 150,
+    "thresholdGrams": 250,
     "updatedAt": "2026-05-19",
     "price": 3,
     "discountPercent": 0
@@ -21,7 +21,7 @@
     "slug": "turzum_black",
     "status": "skladem",
     "amountGrams": 1000,
-    "thresholdGrams": 150,
+    "thresholdGrams": 250,
     "updatedAt": "2026-05-31",
     "price": 2,
     "discountPercent": 0
@@ -30,7 +30,7 @@
     "slug": "thailand_hc",
     "status": "skladem",
     "amountGrams": 1000,
-    "thresholdGrams": 150,
+    "thresholdGrams": 250,
     "updatedAt": "2026-05-31",
     "price": 1,
     "discountPercent": 0
@@ -39,7 +39,7 @@
     "slug": "wild_red",
     "status": "skladem",
     "amountGrams": 1000,
-    "thresholdGrams": 150,
+    "thresholdGrams": 250,
     "updatedAt": "2026-05-31",
     "price": 1,
     "discountPercent": 0
@@ -48,7 +48,7 @@
     "slug": "rohini_gh",
     "status": "skladem",
     "amountGrams": 1000,
-    "thresholdGrams": 150,
+    "thresholdGrams": 250,
     "updatedAt": "2026-05-31",
     "price": 3,
     "discountPercent": 0
@@ -57,7 +57,7 @@
     "slug": "taiwan_rj",
     "status": "skladem",
     "amountGrams": 1000,
-    "thresholdGrams": 150,
+    "thresholdGrams": 250,
     "updatedAt": "2026-05-31",
     "price": 3,
     "discountPercent": 0
@@ -66,7 +66,7 @@
     "slug": "kalapani_wf",
     "status": "skladem",
     "amountGrams": 1000,
-    "thresholdGrams": 150,
+    "thresholdGrams": 250,
     "updatedAt": "2026-05-31",
     "price": 1,
     "discountPercent": 0
@@ -75,7 +75,7 @@
     "slug": "nilgiri_wf",
     "status": "skladem",
     "amountGrams": 1000,
-    "thresholdGrams": 150,
+    "thresholdGrams": 250,
     "updatedAt": "2026-05-31",
     "price": 2,
     "discountPercent": 0

@@ -5,28 +5,9 @@ description:
 source: Klasek
 coverImage: teas/thailand/thailand_hc.jpg
 galleryImages:
-  - 
 addedDate: 31.5.2026
 ---
-### Popis
-
-
-### Původ
-
-
-
-### Aroma
-
-- ???
-### Appearance
-
-- 
-### Palate
-
-- 
-                                                  
-
-
+na popisu se usilovně pracuje :) 
 
 
 

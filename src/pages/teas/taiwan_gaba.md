@@ -2,27 +2,9 @@
 layout: ../../layouts/TeaPostLayout.astro
 title: Gaba oolong
 description: 
-source: klasek
+source: Klasek
 coverImage: teas/gaba/gaba.jpg
 galleryImages:
-  - 
 addedDate: 4.6.2026
 ---
-### Popis
-
-
-### Původ
-
-
-
-### Aroma
-
-- ???
-
-### Appearance
-
-- ???
-
-### Palate
-
-- ???                                     
+na popisu se usilovně pracuje :) 

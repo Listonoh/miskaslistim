@@ -5,24 +5,6 @@ description:
 source: Teagardenia
 coverImage: teas/nilgiri/Billimalai_White1-900x900w.jpg
 galleryImages:
-  - 
 addedDate: 31.5.2026
 ---
-### Popis
-
-
-### Původ
-
-
-
-### Aroma
-
-- ???
-
-### Appearance
-
-- ???
-
-### Palate
-
-- ???                                     
+na popisu se usilovně pracuje :) 

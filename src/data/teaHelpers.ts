@@ -135,10 +135,7 @@ export async function loadAllTeas(baseUrl: string): Promise<TeaCard[]> {
       return {
         slug,
         title: typeof frontmatter.title === 'string' ? frontmatter.title : slug,
-        description:
-          typeof frontmatter.description === 'string'
-            ? frontmatter.description
-            : 'Tea profile and brewing guide.',
+        description: frontmatter.description,
         source: typeof frontmatter.source === 'string' ? frontmatter.source : 'Unknown source',
         status,
         image,

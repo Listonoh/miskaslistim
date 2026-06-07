@@ -2,32 +2,12 @@
 layout: ../../layouts/TeaPostLayout.astro
 title: Nepal Kalapani White Forest
 description: 
-source: klasek
+source: Klasek
 coverImage: teas/kalapani/kalapani_wf.jpg
 galleryImages:
-  - 
 addedDate: 31.5.2026
 ---
-### Popis
-
-
-
-### Původ
-
-
-
-
-### Aroma
-
-- ???
-
-### Appearance
-
-- 
-
-### Palate
-
-- 
+na popisu se usilovně pracuje :) 
                                                   
 
 

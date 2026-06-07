@@ -9,22 +9,20 @@ const team = [
   {
     name:  'Michaela Clark',
     role:  'čajovnice zvědavá',
-    img:   '',
+    img:   `${base}misa_profil.jpg`,
     bio:   'Jsem od podstaty zvědavá bytost, a ta zvědavost mě vede ke zkoumání a propojování směrů, které spolu na první pohled nesouvisí. Hlavně výtvarné umění, pohyb a čaj. Hledám cestu, jak žít. A někde po cestě se objevila myšlenka na tvoření místa…',
   },
   {
     name:  'Jan "Lístek" Urban',
-    role:  'Co-Founder',
-    img:   '',
-    bio:   '',
+    role:  'čajovník obecný',
+    img:   `${base}listek_profil.jpg`,
+    bio:   'Když jedna cesta nevyjde, tak se vydám další. \
+    Tak trochu skáču z jednoho odvětví do jiného a baví mě zkoušet nové věci. \
+    Zároveň na cestě mě vždy provázel čaj a chuť vytvářet klidný prostor pro další lidi. \
+    Tak po vyhoření jako programátor jdu zkusit něco kde se používají ruce a komunikuje se víc s lidmi.',
   },
 ];
 
-const moto = [
-  'Vůně a chutě',
-  'Klid a mindfulness',
-  'Výdech po práci',
-];
 ---
 
 <BaseLayout title="About Us" description="Proč jsme založili čajovnu miska s listím a co pro nás znamená čaj.">
@@ -54,27 +52,10 @@ Sezení na židli je možnost, ale ne jediná. Zvířecí společnost vítaná u
       </div>
       <div class="story-img">
         <img
-          src="https://images.unsplash.com/photo-1556910110-5e0a26b88820?w=700&q=80"
-          alt="Rustic teahouse interior with warm lighting and wooden shelves"
+          src={`${base}tea_outside.jpg`}
+          alt="Čajování venku na dece"
           loading="lazy"
         />
-      </div>
-    </div>
-  </section>
-
-  <!-- Motto -->
-  <section class="section section--alt">
-    <div class="container">
-      <div class="section-head">
-        <h2>můžete u nás hledat</h2>
-        <div class="divider divider--center"></div>
-      </div>
-      <div class="values-grid">
-        {moto.map(v => (
-          <div class="value-card">
-            <p>{v}</p>
-          </div>
-        ))}
       </div>
     </div>
   </section>
@@ -152,9 +133,9 @@ Sezení na židli je možnost, ale ne jediná. Zvířecí společnost vítaná u
   .team-card:hover { transform: translateY(-4px); }
   .team-card__photo {
     width:      100%;
-    height:     260px;
+    height:     600px;
     object-fit: cover;
-    object-position: top;
+    object-position: center;
   }
   .team-card__body  { padding: 1.5rem; }
   .team-card__name  { font-size: 1.3rem; margin-bottom: .15rem; }
