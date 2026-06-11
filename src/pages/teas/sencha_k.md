@@ -1,11 +1,11 @@
 ---
 layout: ../../layouts/TeaPostLayout.astro
-title: long_name
+title: Shizuoka Sencha Kura
 description: 
-source: SOURCE
-coverImage: 
+source: Klasek
+coverImage: teas/sencha_k/sencha_klasek.jpg
 galleryImages:
   - 
-addedDate: 31.5.2026
+addedDate: 11.6.2026
 ---
 na popisu se usilovně pracuje :) 

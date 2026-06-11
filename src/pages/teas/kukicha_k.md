@@ -1,11 +1,11 @@
 ---
 layout: ../../layouts/TeaPostLayout.astro
-title: long_name
+title: Bio Kagoshima Kukicha
 description: 
-source: SOURCE
-coverImage: 
+source: Klasek
+coverImage: teas/kukicha_k/kukicha_klasek.jpg
 galleryImages:
   - 
-addedDate: 31.5.2026
+addedDate: 11.6.2026
 ---
 na popisu se usilovně pracuje :) 
