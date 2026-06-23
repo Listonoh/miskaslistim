@@ -22,6 +22,7 @@ export type TeaCard = {
 
 export interface MenuItem {
   name: string;
+  volume: string;
   desc: string;
   price: string;
   tag?: string;
@@ -71,9 +72,10 @@ function mergeTeaData(
   const price = prices ? `${prices.bowl} / ${prices.gongfu} Kč` : '';
   return {
     name: tea.title,
+    volume: `250 / 800 g`,
     desc: tea.description,
     price,
-    tag: tags.length > 0 ? tags.join(' ') : null,
+    tag: tags.length > 0 ? tags.join(' ') : "",
   };
 }
 
