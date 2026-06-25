@@ -88,5 +88,23 @@
     "updatedAt": "2026-05-31",
     "price": 1,
     "discountPercent": 0
+  },
+  {
+    "slug": "kukicha_k",
+    "status": "skladem",
+    "amountGrams": 1000,
+    "thresholdGrams": 150,
+    "updatedAt": "2026-06-25",
+    "price": 0,
+    "discountPercent": 0
+  },
+  {
+    "slug": "sencha_k",
+    "status": "skladem",
+    "amountGrams": 1000,
+    "thresholdGrams": 150,
+    "updatedAt": "2026-06-25",
+    "price": 0,
+    "discountPercent": 0
   }
 ]

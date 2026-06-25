@@ -72,7 +72,7 @@ function mergeTeaData(
   const price = prices ? `${prices.bowl} / ${prices.gongfu} Kč` : '';
   return {
     name: tea.title,
-    volume: `250 / 800 g`,
+    volume: `250 / 800 ml`,
     desc: tea.description,
     price,
     tag: tags.length > 0 ? tags.join(' ') : "",
