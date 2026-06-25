@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/ContentPostLayout.astro
-title: Ochutnávka čajů
-description: Ze zahrady Yoshida Tea Garden až k nám do čajovny - ochutnávka japonských čajů.
-subtitle: Ochutnávka & společné povídání o čajích 
+title: ochutnávka čajů
+description: ze zahrady Yoshida Tea Garden až k nám do čajovny - ochutnávka japonských čajů
+subtitle: ochutnávka & společné povídání o čajích 
 metaLabel: Datum
 date: TBA
 tag: až přijedou
