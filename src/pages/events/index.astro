@@ -1,0 +1,216 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const base = import.meta.env.BASE_URL;
+
+type EventCard = {
+  slug: string;
+  title: string;
+  description: string;
+  tag: string;
+  image: string | null;
+  dateValue: number | null;
+};
+
+const eventModules = Object.entries(import.meta.glob('./*.md', { eager: true }));
+
+const events: EventCard[] = eventModules
+  .map(([path, mod]) => {
+    const slug = path.replace('./', '').replace(/\.md$/, '');
+    const frontmatter = (mod as { frontmatter?: Record<string, unknown> }).frontmatter ?? {};
+    const rawImage = typeof frontmatter.coverImage === 'string' ? frontmatter.coverImage : null;
+    const image = rawImage ? `${base}${rawImage.replace(/^\/+/, '')}` : null;
+    const rawDate = typeof frontmatter.date === 'string' ? frontmatter.date : null;
+    const parsedDate = rawDate ? Date.parse(rawDate) : Number.NaN;
+    const dateValue = Number.isNaN(parsedDate) ? null : parsedDate;
+    const tag =
+      typeof frontmatter.tag === 'string'
+        ? frontmatter.tag
+        : typeof frontmatter.metaValue === 'string'
+          ? frontmatter.metaValue
+          : typeof frontmatter.date === 'string'
+            ? frontmatter.date
+            : 'Event';
+
+    return {
+      slug,
+      title: typeof frontmatter.title === 'string' ? frontmatter.title : slug,
+      description:
+        typeof frontmatter.description === 'string'
+          ? frontmatter.description
+          : 'Upcoming event details from the teahouse.',
+      tag,
+      image,
+      dateValue,
+    };
+  })
+  .sort((a, b) => {
+    if (a.dateValue !== null && b.dateValue !== null) {
+      return b.dateValue - a.dateValue;
+    }
+
+    if (a.dateValue !== null) {
+      return -1;
+    }
+
+    if (b.dateValue !== null) {
+      return 1;
+    }
+
+    return a.title.localeCompare(b.title);
+  });
+---
+
+<BaseLayout title="Events" description="Akce čajovny miska s listím.">
+  <Header slot="header" />
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="page-hero__eyebrow">co se chystá</p>
+      <h1>akce</h1>
+      <p class="page-hero__subtitle">Přehled plánovaných i proběhlých setkání.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      {events.length > 0 ? (
+        <>
+          <nav class="events-list" aria-label="Seznam akcí">
+            <h2 class="events-list__title">Seznam akcí</h2>
+            <ul class="events-list__items">
+              {events.map((event) => (
+                <li>
+                  <a href={`${base}events/${event.slug}/`} class="events-list__link">
+                    <span>{event.title}</span>
+                    <span class="events-list__meta">{event.tag}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <div class="event-cards-grid">
+            {events.map((event) => (
+              <a href={`${base}events/${event.slug}/`} class="event-card-link">
+                <article class="card event-card">
+                  {event.image ? (
+                    <img src={event.image} alt={event.title} class="card__img event-card__img" loading="lazy" />
+                  ) : (
+                    <div class="event-card__img event-card__img--fallback" aria-hidden="true"></div>
+                  )}
+                  <div class="card__body">
+                    <span class="card__tag">{event.tag}</span>
+                    <h2 class="card__title event-card__title">{event.title}</h2>
+                    <p class="card__text">{event.description}</p>
+                  </div>
+                </article>
+              </a>
+            ))}
+          </div>
+        </>
+      ) : (
+        <article class="card empty-state-card">
+          <div class="card__body">
+            <span class="card__tag">Events</span>
+            <h2 class="card__title">Zatím nejsou vypsané žádné akce</h2>
+            <p class="card__text">
+              Přidejte markdown soubor do složky src/pages/events a automaticky se zobrazí v seznamu i mezi kartami.
+            </p>
+          </div>
+        </article>
+      )}
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .events-list {
+    margin-bottom: 2rem;
+    border: 1px solid var(--clr-border-soft);
+    border-radius: var(--radius-md);
+    background: var(--clr-overlay-light-medium);
+    box-shadow: var(--shadow-soft);
+    padding: 1.2rem 1.2rem 1rem;
+  }
+
+  .events-list__title {
+    font-size: 1.35rem;
+    margin-bottom: .75rem;
+  }
+
+  .events-list__items {
+    list-style: none;
+    display: grid;
+    gap: .5rem;
+  }
+
+  .events-list__link {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    border: 1px solid var(--clr-border-soft);
+    border-radius: var(--radius-sm);
+    padding: .55rem .85rem;
+    transition: border-color .2s ease, background-color .2s ease;
+  }
+
+  .events-list__link:hover {
+    border-color: var(--clr-caramel);
+    background: var(--clr-overlay-light-strong);
+  }
+
+  .events-list__meta {
+    font-size: .8rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--clr-text-muted);
+    white-space: nowrap;
+  }
+
+  .event-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.8rem;
+  }
+
+  .event-card-link {
+    display: block;
+  }
+
+  .event-card {
+    height: 100%;
+  }
+
+  .event-card__img {
+    height: 240px;
+  }
+
+  .event-card__img--fallback {
+    background:
+      radial-gradient(circle at 25% 30%, var(--clr-accent-soft), var(--clr-transparent) 45%),
+      linear-gradient(140deg, var(--clr-parchment) 0%, var(--clr-cream) 55%, var(--clr-caramel) 100%);
+  }
+
+  .event-card__title {
+    font-size: 1.45rem;
+  }
+
+  .empty-state-card {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 640px) {
+    .events-list__link {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: .2rem;
+    }
+  }
+</style>
