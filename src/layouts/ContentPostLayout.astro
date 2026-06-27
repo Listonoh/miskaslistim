@@ -11,6 +11,7 @@ const eyebrow = typeof frontmatter?.eyebrow === 'string' ? frontmatter.eyebrow.t
 const subtitle = frontmatter?.subtitle ?? 'Read the full story.';
 const metaLabel = frontmatter?.metaLabel ?? 'Source';
 const metaValue = frontmatter?.metaValue ?? frontmatter?.source ?? null;
+const isEventPost = Astro.url.pathname.includes('/events/');
 const coverImage = frontmatter?.coverImage
   ? `${base}${String(frontmatter.coverImage).replace(/^\/+/, '')}`
   : null;
@@ -41,7 +42,7 @@ const galleryAltBase = frontmatter?.galleryAltBase ?? title;
         </figure>
       )}
 
-      <article class="prose-post">
+      <article class:list={["prose-post", { "prose-post--event": isEventPost }]}>
         <slot />
       </article>
 
