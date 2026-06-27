@@ -23,6 +23,25 @@ const team = [
   },
 ];
 
+const heroGallery = [
+  {
+    src: `${base}zvenku.jpg`,
+    alt: 'Pohled na cely exterier cajovny',
+  },
+  {
+    src: `${base}mistnost-2.jpg`,
+    alt: 'Interier cajovny s usporadanim stolu',
+  },
+  {
+    src: `${base}mistnost-1-1.jpg`,
+    alt: 'Klidna cast interieru s detailnim pohledem',
+  },
+  {
+    src: `${base}mistnost-1-2.jpg`,
+    alt: 'Druhy pohled na interier cajovny',
+  },
+];
+
 ---
 
 <BaseLayout title="About Us" description="Proč jsme založili čajovnu miska s listím a co pro nás znamená čaj.">
@@ -34,6 +53,16 @@ const team = [
       <p class="page-hero__eyebrow">o čajovně</p>
       <h1>miska s listím</h1>
       <p class="page-hero__subtitle">...</p>
+    </div>
+  </section>
+
+  <section class="about-gallery" aria-label="Fotky z cajovny">
+    <div class="about-gallery__track">
+      {heroGallery.map(photo => (
+        <figure class="about-gallery__item">
+          <img src={photo.src} alt={photo.alt} loading="lazy" />
+        </figure>
+      ))}
     </div>
   </section>
 
@@ -60,13 +89,7 @@ Vaříme jedno veganské jídlo za den - obědovou misku, která zasytí. Ve st�
 Za nás rozhodně ano, ale pokud preferujete studené pití, taky si u nás vyberete. Ledové, za studena louhované čaje (maceráty), domácí ovocnou limonádu, ovesné matcha latté, nebo naši specialitu - matchu s kokosovou vodou.
         </p>
       </div>
-      <div class="story-img">
-        <img
-          src={`${base}tea_outside.jpg`}
-          alt="Čajování venku na dece"
-          loading="lazy"
-        />
-      </div>
+     
     </div>
   </section>
 
@@ -152,5 +175,26 @@ Za nás rozhodně ano, ale pokud preferujete studené pití, taky si u nás vybe
     color:       var(--clr-caramel);
     font-size:   1.1rem;
     margin-bottom: .25rem;
+  }
+
+  .about-gallery {
+    width: 100vw;
+    margin-inline: calc(50% - 50vw);
+  }
+
+  .about-gallery__track {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: .35rem;
+  }
+
+  .about-gallery__item {
+    margin: 0;
+  }
+
+  .about-gallery__item img {
+    width: 100%;
+    height: clamp(120px, 20vw, 300px);
+    object-fit: cover;
   }
 </style>
