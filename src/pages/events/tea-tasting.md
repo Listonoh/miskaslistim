@@ -4,8 +4,8 @@ title: ochutnávka čajů
 description: ze zahrady Yoshida Tea Garden až k nám do čajovny - ochutnávka japonských čajů
 subtitle: ochutnávka & společné povídání o čajích 
 metaLabel: Datum
-date: TBA
-tag: až přijedou
+date: 2026-07.14
+tag: 14. 7. 2026
 coverImage: ochutnavka-caju.jpg
 ---
 
