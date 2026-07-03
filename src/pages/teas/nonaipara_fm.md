@@ -12,7 +12,7 @@ addedDate: 15.5.2026
 ---
 ### Popis
 
-Lehce oxidovaný čaj vhodný na více nálevů, probouzí zvědavost a činorodost. V každém nálevu se proměňuje. Ručně sbíraný, ručně rolovaný a sušený na slunci.
+Lehce oxidovaný čaj vhodný na více nálevů, probouzí zvědavost a činorodost. V každém nálevu se proměňuje. Ručně sbíraný, ručně rolovaný a sušený na slunci. Svou charakteristikou a dobou sklizně by se dalo říct, že chutná jako typický First flush.
 
 ### Původ
 Čajová zahrada Nonaipara se nachází v severovýchodní Indii (Assam) mezi řekou Nonai a bhútánskými horami. 
@@ -21,24 +21,12 @@ Lehce oxidovaný čaj vhodný na více nálevů, probouzí zvědavost a činorod
 
 ### Aroma
 
-- ???
-- Sweet
-- Floral
-- Oudh
+- Sladkost
+- Květiny
+- Jarní les v mlze
 
-### Appearance
 
-- Bright amber
 
-### Palate
-
-- Wild Jasmine
-- Rose
-- Malt
-- Wild Honey
-- Stone flower
-- Chestnut
-- cedarwood
                                                   
 
 
