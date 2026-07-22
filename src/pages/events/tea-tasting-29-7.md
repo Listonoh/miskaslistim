@@ -4,7 +4,7 @@ title: ochutnávka čajů
 description: Indie 5x jinak - ochutnávka indických čajů od TeaGardenia
 subtitle: ochutnávka & společné povídání o čajích 
 metaLabel: Datum
-date: 2026-07.29
+date: 2026-07-29
 tag: 29. 7. 2026
 coverImage: ochutnavka-caju.jpg
 ---
@@ -20,6 +20,8 @@ Ještě než jsme našli prostor na čajovnu, tak už jsme věděli, že v ní b
 KONEC: přibližně ve 20:30
 
 VSTUPNÉ: 250 kč/osobu
+
+ochutnávkou provede Míša Clark
 
 ### a teď to nejdůležitější - jaké čaje nás čekají?
 
