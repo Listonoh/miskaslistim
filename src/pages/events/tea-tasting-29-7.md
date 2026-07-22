@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/ContentPostLayout.astro
 title: ochutnávka čajů
-description: ze zahrady Yoshida Tea Garden až k nám do čajovny - ochutnávka japonských čajů
+description: Indie 5x jinak - ochutnávka indických čajů od TeaGardenia
 subtitle: ochutnávka & společné povídání o čajích 
 metaLabel: Datum
 date: 2026-07.29
