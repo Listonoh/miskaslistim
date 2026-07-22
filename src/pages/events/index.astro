@@ -48,7 +48,7 @@ const events: EventCard[] = eventModules
   })
   .sort((a, b) => {
     if (a.dateValue !== null && b.dateValue !== null) {
-      return b.dateValue - a.dateValue;
+      return a.dateValue - b.dateValue;
     }
 
     if (a.dateValue !== null) {
@@ -84,7 +84,7 @@ const pastEvents = events.filter((event) => event.dateValue !== null && event.da
       {upcomingEvents.length > 0 ? (
         <>
           <nav class="events-list" aria-label="Seznam akcí">
-            <h2 class="events-list__title">Seznam akcí</h2>
+            <h1 class="events-list__title">budoucí akce</h1>
             <ul class="events-list__items">
               {upcomingEvents.map((event) => (
                 <li>
