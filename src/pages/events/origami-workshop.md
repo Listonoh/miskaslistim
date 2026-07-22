@@ -4,7 +4,7 @@ title: origami workshopy
 description: praktický workshop skládání origami u čaje pro začátečníky i pokročilé
 subtitle: společné skládání, klidná atmosféra a šálek dobrého čaje
 metaLabel: Datum
-date: 2026-06-25 , 2026-07-02 , 2026-07-09 , 17. 7. 2026
+date: 2026-07-17
 tag: 25. 6. 2026 , 2. 7. 2026 , 9. 7. 2026 , 17. 7. 2026
 coverImage: origami-workshop.jpg
 ---

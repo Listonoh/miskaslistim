@@ -61,6 +61,11 @@ const events: EventCard[] = eventModules
 
     return a.title.localeCompare(b.title);
   });
+
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+const upcomingEvents = events.filter((event) => event.dateValue === null || event.dateValue >= today.getTime());
+const pastEvents = events.filter((event) => event.dateValue !== null && event.dateValue < today.getTime());
 ---
 
 <BaseLayout title="Events" description="Akce čajovny miska s listím.">
@@ -76,12 +81,12 @@ const events: EventCard[] = eventModules
 
   <section class="section">
     <div class="container">
-      {events.length > 0 ? (
+      {upcomingEvents.length > 0 ? (
         <>
           <nav class="events-list" aria-label="Seznam akcí">
             <h2 class="events-list__title">Seznam akcí</h2>
             <ul class="events-list__items">
-              {events.map((event) => (
+              {upcomingEvents.map((event) => (
                 <li>
                   <a href={`${base}events/${event.slug}/`} class="events-list__link">
                     <span>{event.title}</span>
@@ -93,7 +98,7 @@ const events: EventCard[] = eventModules
           </nav>
 
           <div class="event-cards-grid">
-            {events.map((event) => (
+            {upcomingEvents.map((event) => (
               <a href={`${base}events/${event.slug}/`} class="event-card-link">
                 <article class="card event-card">
                   {event.image ? (
@@ -124,6 +129,34 @@ const events: EventCard[] = eventModules
       )}
     </div>
   </section>
+
+  {pastEvents.length > 0 && (
+    <section class="section section--past-events" aria-labelledby="past-events-title">
+      <div class="container">
+        <div class="past-events-header">
+          <h2 id="past-events-title">Minulé akce</h2>
+        </div>
+        <div class="event-cards-grid past-events-grid">
+          {pastEvents.map((event) => (
+            <a href={`${base}events/${event.slug}/`} class="event-card-link">
+              <article class="card event-card">
+                {event.image ? (
+                  <img src={event.image} alt={event.title} class="card__img event-card__img" loading="lazy" />
+                ) : (
+                  <div class="event-card__img event-card__img--fallback" aria-hidden="true"></div>
+                )}
+                <div class="card__body">
+                  <span class="card__tag">{event.tag}</span>
+                  <h2 class="card__title event-card__title">{event.title}</h2>
+                  <p class="card__text">{event.description}</p>
+                </div>
+              </article>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 
   <Footer slot="footer" />
 </BaseLayout>
@@ -204,6 +237,28 @@ const events: EventCard[] = eventModules
   .empty-state-card {
     max-width: 680px;
     margin: 0 auto;
+  }
+
+  .section--past-events {
+    padding-top: 0;
+    padding-bottom: 3rem;
+  }
+
+  .past-events-header {
+    margin-bottom: 1.25rem;
+  }
+
+  .past-events-header h2 {
+    font-size: 1.55rem;
+    margin-bottom: .25rem;
+  }
+
+  .past-events-header p {
+    color: var(--clr-text-muted);
+  }
+
+  .past-events-grid {
+    gap: 1.25rem;
   }
 
   @media (max-width: 640px) {
