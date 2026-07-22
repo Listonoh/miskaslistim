@@ -11,7 +11,7 @@ coverImage: origami-workshop-dino.jpg
 
 ## Origami dinosauři všech druhů! 
 
-V sobotu 25.7. od 17h
+### V sobotu 25.7. od 17h
 
 Možnost hlasování, kterým modelem se začne. Na konci workshopu bude možnost navrhnout a odhlasovat až 4 další modely pro příště.
 
