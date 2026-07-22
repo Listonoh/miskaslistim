@@ -6,7 +6,7 @@ subtitle: společné skládání, klidná atmosféra a šálek dobrého čaje
 metaLabel: Datum
 date: 2026-07-25
 tag: 25. 7. 2026
-coverImage: origami-workshop.jpg
+coverImage: origami-workshop-dino.jpg
 ---
 
 ## Origami dinosauři všech druhů! 
