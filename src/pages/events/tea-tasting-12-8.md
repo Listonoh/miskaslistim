@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/ContentPostLayout.astro
 title: ochutnávka čajů
-description: Indie 5x jinak - ochutnávka indických čajů od TeaGardenia
+description: ochutnávka pěti různých čajů
 subtitle: ochutnávka & společné povídání o čajích 
 metaLabel: Datum
 date: 2026-08-12
