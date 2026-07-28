@@ -34,6 +34,8 @@
   --clr-shadow-tint-light: rgba(92, 61, 46, .06);
 
   --clr-accent-soft: rgba(221, 125, 91, .4);
+  --clr-alert-soft: #f5d2d2;
+  --clr-alert-strong: #b76d6d;
 
   --ff-display: 'Merriweather', serif;
   --ff-body:    'Lato', system-ui, sans-serif;
@@ -77,6 +79,18 @@ h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); }
 h3 { font-size: clamp(1.3rem, 2.5vw, 1.8rem); }
 
 /* ── Layout helpers ── */
+.site-banner {
+  width: 100%;
+  background: #b54a4a;
+  color: var(--clr-cream);
+  text-align: center;
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(92, 61, 46, 0.08);
+}
+
 .container {
   width:   min(90%, 1140px);
   margin:  0 auto;
