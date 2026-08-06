@@ -8,6 +8,7 @@ const { title, description = "čajovna miska s listím" } = Astro.props;
 
 // Build base URL respecting Astro's configured base
 const base = import.meta.env.BASE_URL;
+const showBanner = false; 
 ---
 
 <!doctype html>
@@ -33,9 +34,11 @@ const base = import.meta.env.BASE_URL;
   
 
   <body>
-    <div class="site-banner">
-      UPOZORNĚNÍ: ČAJOVNA BUDE 1. 8. ZAVŘENA. (BUDEME NA ČAJOVÉM FESTIVALU V KADANI)
-    </div>
+    {showBanner ? (
+      <div class="site-banner">
+        UPOZORNĚNÍ: ČAJOVNA BUDE 1. 8. ZAVŘENA. (BUDEME NA ČAJOVÉM FESTIVALU V KADANI)
+      </div>
+    ) : null}
     <slot name="header" />
     <main>
       <slot />
