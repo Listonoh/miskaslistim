@@ -11,7 +11,7 @@ coverImage: henna-7.jpg
 
 ### Henna 11.8. od 14:00
 #### Letní dočasné tetování
-V sobotu 18.7. budu v čajovně od 14h **do spotřebování zásoby henny** a nabízím, že ti něco nakreslím hennou na kůži. Můžeš přijít s přesnou představou/obrázkem v ruce, nebo s myšlenkou a společně najdeme motiv, nebo to nechat na mojí geometricko-květinové improvizaci. Pokud chceš mít jistotu, že na tebe přijde řada, napiš mi, v kolik chceš přijít. Nejsme zatím v kontaktu? - použij k tomu prosím e-mail **info@miskaslistim.cz**
+V úterý 11.8. budu v čajovně od 14h **do spotřebování zásoby henny nebo do 19h** a nabízím, že ti něco nakreslím hennou na kůži. Můžeš přijít s přesnou představou/obrázkem v ruce, nebo s myšlenkou a společně najdeme motiv, nebo to nechat na mojí geometricko-květinové improvizaci. Pokud chceš mít jistotu, že na tebe přijde řada, napiš mi, v kolik chceš přijít. Nejsme zatím v kontaktu? - použij k tomu prosím e-mail **info@miskaslistim.cz**
 
 ### praktické info
 Henna je prášek z rozemletých listů rostliny _Lawsonia inermis_. Pokud máš sklony k alergickým reakcím a hennu zatím nemáš vyzkoušenou, doporučuje se nejdřív testovací malá tečka na zápěstí nebo za uchem (ideální doba pro jistotu, že jsi bez alergie, je 48h).
