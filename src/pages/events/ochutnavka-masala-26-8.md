@@ -6,7 +6,7 @@ subtitle: masala - brána do čajovnového světa
 metaLabel: Datum
 date: 2026-08-26
 tag: 26. 8. 2026
-coverImage: uvod-fotka.jpg
+coverImage: ochutnavka-masala-26-8.jpg
 ---
 ### Co to tady tak krásně voní? ptá se návštěvník zimní čajovny
 Masala / Yogi / Chai, odpovídá mu čajovník
