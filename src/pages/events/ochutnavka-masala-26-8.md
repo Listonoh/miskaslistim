@@ -14,5 +14,7 @@ Masala / Yogi / Chai, odpovídá mu čajovník
 Sychravé dny jsou ještě daleko, ale na přípravy je pravý čas. Pojď se mnou ochutnat alespoň 5 různých verzí čajovnové klasiky a dej svůj hlas té, kterou pak budeme připravovat celou zimu. Budou verze s kravským i rostlinným mlékem, s černým čajem i rooibosem…prostě masalové žně.
 
 ZAČÁTEK: 18:30
+
 KONEC: cca ve 21h
+
 VSTUPNÉ: 200 kč
