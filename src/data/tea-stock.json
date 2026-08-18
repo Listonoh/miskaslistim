@@ -55,7 +55,7 @@
   },
   {
     "slug": "taiwan_rj",
-    "status": "skladem",
+    "status": "dopito",
     "amountGrams": 1000,
     "thresholdGrams": 250,
     "updatedAt": "2026-05-31",

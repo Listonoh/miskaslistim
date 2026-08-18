@@ -1,6 +1,6 @@
 import teaStock from './tea-stock.json';
 
-export type TeaStatus = 'skladem' | 'skoro dopité' | 'pripravuje se' | 'neni';
+export type TeaStatus = 'skladem' | 'skoro dopité' | 'pripravuje se' | 'dopito';
 
 export type TeaStockItem = {
   slug: string;
@@ -26,7 +26,7 @@ export function resolveTeaStatus(item?: TeaStockItem): TeaStatus | null {
 
   const { status, amountGrams, thresholdGrams=100 } = item;
 
-  if (typeof amountGrams === 'number' && amountGrams <= 0) return 'neni';
+  if (typeof amountGrams === 'number' && amountGrams <= 0) return 'dopito';
   if (status === 'skladem' && typeof amountGrams === 'number' && typeof thresholdGrams === 'number' && amountGrams <= thresholdGrams) {
     return 'skoro dopité';
   }
@@ -40,7 +40,7 @@ export function normalizeStatusLabel(status?: string | null): string {
   if (value === 'in stock' || value === 'available' || value === 'skladem') return 'Skladem';
   if (value === 'low stock' || value === 'almost out' || value === 'skoro dopite' || value === 'skoro dopité') return 'Skoro dopité';
   if (value === 'preparing' || value === 'pripravuje se') return 'Pripravuje se';
-  if (value === 'out of stock' || value === 'sold out' || value === 'neni' || value === 'vyprodano') return 'Neni';
+  if (value === 'out of stock' || value === 'sold out' || value === 'dopito' || value === 'vyprodano') return 'Dopito';
 
   return status ?? '';
 }
@@ -49,7 +49,7 @@ export function statusClassByLabel(label: string): string {
   if (label === 'Skladem') return 'tea-hero__availability--in-stock';
   if (label === 'Skoro dopité') return 'tea-hero__availability--low-stock';
   if (label === 'Pripravuje se') return 'tea-hero__availability--preparing';
-  if (label === 'Neni' || label === 'Vyprodano') return 'tea-hero__availability--out-of-stock';
+  if (label === 'Dopito' || label === 'Vyprodano') return 'tea-hero__availability--out-of-stock';
 
   return 'tea-hero__availability--on-request';
 }

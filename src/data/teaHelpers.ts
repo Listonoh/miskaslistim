@@ -103,7 +103,7 @@ export async function generateLooseLeafMenu(baseUrl: string): Promise<MenuCatego
   const stockMap = getTeaStockMap();
   const mostRecentDate = getMostRecentDate();
   const items: MenuItem[] = teas
-    .filter(tea => tea.status !== 'neni')
+    .filter(tea => tea.status !== 'dopito')
     .map(tea => mergeTeaData(tea, stockMap, mostRecentDate));
   console.log('Generated menu items:', baseUrl);
   return {
@@ -153,7 +153,7 @@ export async function loadAllTeas(baseUrl: string): Promise<TeaCard[]> {
 
 export async function loadAvailableTeas(baseUrl: string, limit?: number): Promise<TeaCard[]> {
   const allTeas = await loadAllTeas(baseUrl);
-  const availableTeas = allTeas.filter((tea) => tea.status !== 'neni');
+  const availableTeas = allTeas.filter((tea) => tea.status !== 'dopito');
 
   return typeof limit === 'number' ? availableTeas.slice(0, limit) : availableTeas;
 }
