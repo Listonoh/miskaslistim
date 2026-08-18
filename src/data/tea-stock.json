@@ -1,7 +1,7 @@
 [
   {
     "slug": "bhutan",
-    "status": "skladem",
+    "status": "skoro dopité",
     "amountGrams": 1000,
     "thresholdGrams": 250,
     "updatedAt": "2026-05-21",
@@ -19,7 +19,7 @@
   },
   {
     "slug": "turzum_black",
-    "status": "skladem",
+    "status": "skoro dopité",
     "amountGrams": 1000,
     "thresholdGrams": 250,
     "updatedAt": "2026-05-31",
@@ -46,7 +46,7 @@
   },
   {
     "slug": "rohini_gh",
-    "status": "skladem",
+    "status": "skoro dopité",
     "amountGrams": 1000,
     "thresholdGrams": 250,
     "updatedAt": "2026-05-31",
@@ -82,7 +82,7 @@
   },
   {
     "slug": "taiwan_gaba",
-    "status": "skladem",
+    "status": "skoro dopité",
     "amountGrams": 1000,
     "thresholdGrams": 250,
     "updatedAt": "2026-05-31",
