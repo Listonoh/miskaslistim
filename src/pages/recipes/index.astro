@@ -26,7 +26,7 @@ const recipes: RecipeCard[] = recipeModules
         ? frontmatter.tag
         : typeof frontmatter.category === 'string'
           ? frontmatter.category
-          : 'Recipe';
+          : 'Recept';
 
     return {
       slug,
@@ -34,7 +34,7 @@ const recipes: RecipeCard[] = recipeModules
       description:
         typeof frontmatter.description === 'string'
           ? frontmatter.description
-          : 'Recipe notes and serving guidance.',
+          : 'Poznámky k receptu a tipy k servírování.',
       tag,
       image,
     };
@@ -42,14 +42,14 @@ const recipes: RecipeCard[] = recipeModules
   .sort((a, b) => a.title.localeCompare(b.title));
 ---
 
-<BaseLayout title="Recipes" description="recepty z čajovny miska s listím.">
+<BaseLayout title="Recepty" description="Recepty z čajovny miska s listím.">
   <Header slot="header" />
 
   <section class="page-hero">
     <div class="container">
-      <p class="page-hero__eyebrow">Recipe Library</p>
-      <h1>All Recipes</h1>
-      <p class="page-hero__subtitle">Open a recipe card and read the full preparation notes.</p>
+      <p class="page-hero__eyebrow">aktuální</p>
+      <h1>recepty</h1>
+      <p class="page-hero__subtitle">Dobré věci k zakousnutí</p>
     </div>
   </section>
 
@@ -77,10 +77,10 @@ const recipes: RecipeCard[] = recipeModules
       ) : (
         <article class="card empty-state-card">
           <div class="card__body">
-            <span class="card__tag">Recipes</span>
-            <h2 class="card__title">No recipes yet</h2>
+            <span class="card__tag">Recepty</span>
+              <h2 class="card__title">Zatím tu žádné recepty nejsou</h2>
             <p class="card__text">
-              Add a markdown file to src/pages/recipes and it will automatically appear here with its own page.
+                Přidejte markdown soubor do src/pages/recipes a automaticky se zobrazí zde i na vlastní stránce.
             </p>
           </div>
         </article>
@@ -90,38 +90,3 @@ const recipes: RecipeCard[] = recipeModules
 
   <Footer slot="footer" />
 </BaseLayout>
-
-<style>
-  .content-cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.8rem;
-  }
-
-  .content-card-link {
-    display: block;
-  }
-
-  .content-card {
-    height: 100%;
-  }
-
-  .content-card__img {
-    height: 240px;
-  }
-
-  .content-card__img--fallback {
-    background:
-        radial-gradient(circle at 25% 30%, var(--clr-accent-soft), var(--clr-transparent) 45%),
-      linear-gradient(140deg, var(--clr-parchment) 0%, var(--clr-cream) 55%, var(--clr-caramel) 100%);
-  }
-
-  .content-card__title {
-    font-size: 1.45rem;
-  }
-
-  .empty-state-card {
-    max-width: 680px;
-    margin: 0 auto;
-  }
-</style>

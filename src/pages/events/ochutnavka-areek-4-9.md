@@ -16,15 +16,15 @@ Dováží čaje vysoké kvality z Japonska, přičemž každý čaj osobně ochu
 
 ### Na jaké čaje se můžeme těšit?
 
-Sencha Tengu Fukamushi - “Horský skřet” hluboce napařované sencha z hor Isagawa
++ Sencha Tengu Fukamushi - “Horský skřet” hluboce napařované sencha z hor Isagawa
 
-Matcha Kiwami - “Severní hvězda” vysoký grade ceremoniální organické matcha 
++ Matcha Kiwami - “Severní hvězda” vysoký grade ceremoniální organické matcha 
 
-Sugi No Moto - Sencha od kořenů cedru
++ Sugi No Moto - Sencha od kořenů cedru
 
-Tencha - výběrová tencha, čaj který se klasicky rozemele na matcha, ale chuťově je to požitek, který musíte ochutnat 
++ Tencha - výběrová tencha, čaj který se klasicky rozemele na matcha, ale chuťově je to požitek, který musíte ochutnat 
 
-Gyokuro Tenmei - nejvyšší sorta organického Gyokuro od legendárního mistra Sakamota
++ Gyokuro Tenmei - nejvyšší sorta organického Gyokuro od legendárního mistra Sakamota
 
 + překvapení
 
@@ -33,7 +33,7 @@ ZAČÁTEK: 17:30
 
 Vstupné: 600 Kč
 
-Registrace předem nutná - přes tento odkaz: https://luma.com/9zruf5gk
+Registrace předem nutná - přes tento odkaz: **https://luma.com/9zruf5gk**
 
 Počet míst je omezený, tak rozhoduj rychle…
 

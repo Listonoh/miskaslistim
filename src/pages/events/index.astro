@@ -206,39 +206,6 @@ const pastEvents = events.filter((event) => event.dateValue !== null && event.da
     white-space: nowrap;
   }
 
-  .event-cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.8rem;
-  }
-
-  .event-card-link {
-    display: block;
-  }
-
-  .event-card {
-    height: 100%;
-  }
-
-  .event-card__img {
-    height: 240px;
-  }
-
-  .event-card__img--fallback {
-    background:
-      radial-gradient(circle at 25% 30%, var(--clr-accent-soft), var(--clr-transparent) 45%),
-      linear-gradient(140deg, var(--clr-parchment) 0%, var(--clr-cream) 55%, var(--clr-caramel) 100%);
-  }
-
-  .event-card__title {
-    font-size: 1.45rem;
-  }
-
-  .empty-state-card {
-    max-width: 680px;
-    margin: 0 auto;
-  }
-
   .section--past-events {
     padding-top: 0;
     padding-bottom: 3rem;

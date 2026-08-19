@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Placeholder fotografie hummusu</title>
+  <desc id="desc">Teplá ilustrace misky s hummusem, která bude nahrazena fotografií.</desc>
+  <rect width="1200" height="700" fill="#f3e8d2"/>
+  <circle cx="600" cy="390" r="220" fill="#c8956c"/>
+  <ellipse cx="600" cy="350" rx="250" ry="145" fill="#ead9b9"/>
+  <ellipse cx="600" cy="345" rx="205" ry="112" fill="#d9a35f"/>
+  <path d="M470 345c80-56 180-56 260 0-80 56-180 56-260 0Z" fill="#c98b3e" opacity=".75"/>
+  <circle cx="530" cy="325" r="9" fill="#b5624a"/>
+  <circle cx="670" cy="370" r="9" fill="#b5624a"/>
+  <text x="600" y="620" text-anchor="middle" fill="#5c3d2e" font-family="Georgia, serif" font-size="32">Hummus</text>
+</svg>
