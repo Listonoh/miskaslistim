@@ -22,7 +22,7 @@ Zuzka je [ilustrátorka](https://www.lezu.cz/?utm_source=ig&utm_medium=social&ut
 
 + konec: 21:00
 
-+ počet míst: 5
++ počet míst: 5 (volné 4)
 
 + registrace: info@miskaslistim.cz
 
