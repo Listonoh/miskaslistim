@@ -4,11 +4,11 @@ title: tea meditation
 description: present moment, tea 
 subtitle:  "...the last drop contains the Universe..."
 metaLabel: Datum
-date: 2026-09-08
-tag: 8. 9. 2026
+date: 2026-09-12
+tag: 12. 9. 2026
 coverImage: tea-meditation.jpg
 ---
-### tea meditation on Saturday 8.9. from 17:00
+### tea meditation on Saturday 12.9. from 17:00
 
 As countries of origin in terms of tea culture, traditional tea ceremonies from Japan, China, or other Asian countries serve as the main reference for us tea lovers here in the West. While it is of great importance and benefit to value and respect the roots, the art of brewing tea can be implemented in many different ways. It is like a tool, adjustable to the cultural needs and preferences of the society in which drinking tea is enjoyed - as long as one knows how to use it.
 
