@@ -19,10 +19,10 @@ Hlavní náplní večera bude ochutnávání, sdílení přítomnosti a poslouch
 
 
 
-#### 17.9. večer 
+#### 17.9. od 18:18
 - rezervace na [**e-mail**](mailto:info@miskaslistim.cz) info@miskaslistim.cz
 
-- 13 druhů listů k ochutnání
+- 13 druhů listů k ochutnání - cesta kolem světa za 2h
 
 - vstupné: 500 kč (hotově na místě)
 
