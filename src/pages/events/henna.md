@@ -21,37 +21,3 @@ Po malování hennou bude obrázek podle velikosti nějakou dobu schnout a co ne
 
 #### Doporučený příspěvek
 Na čas a materiál podle velikosti a složitosti obrázku - malý o velikosti mince - 50 kč, střední přes půlku předloktí 200-300 Kč, celý rukáv 400-500 Kč (všechno jsou to odhady, ale hennu si míchám sama a kreslení věnuju čas a pozornost - jakýkoliv příspěvek je ve tvých možnostech je pro mě ok)
-### Galerie
-
-<section class="post-gallery" aria-label="Galerie henny">
-	<div class="post-gallery__grid">
-		<details class="gallery-lightbox post-gallery__item">
-			<summary class="gallery-lightbox__thumb"><img src="/henna-01.jpg" alt="Henna ukázka 1" loading="lazy" /></summary>
-			<div class="gallery-lightbox__overlay" aria-hidden="true"><img src="/henna-01.jpg" alt="Henna ukázka 1" loading="lazy" /></div>
-		</details>
-		<details class="gallery-lightbox post-gallery__item">
-			<summary class="gallery-lightbox__thumb"><img src="/henna-02.jpg" alt="Henna ukázka 2" loading="lazy" /></summary>
-			<div class="gallery-lightbox__overlay" aria-hidden="true"><img src="/henna-02.jpg" alt="Henna ukázka 2" loading="lazy" /></div>
-		</details>
-		<details class="gallery-lightbox post-gallery__item">
-			<summary class="gallery-lightbox__thumb"><img src="/henna-03.jpg" alt="Henna ukázka 3" loading="lazy" /></summary>
-			<div class="gallery-lightbox__overlay" aria-hidden="true"><img src="/henna-03.jpg" alt="Henna ukázka 3" loading="lazy" /></div>
-		</details>
-		<details class="gallery-lightbox post-gallery__item">
-			<summary class="gallery-lightbox__thumb"><img src="/henna-04.jpg" alt="Henna ukázka 4" loading="lazy" /></summary>
-			<div class="gallery-lightbox__overlay" aria-hidden="true"><img src="/henna-04.jpg" alt="Henna ukázka 4" loading="lazy" /></div>
-		</details>
-		<details class="gallery-lightbox post-gallery__item">
-			<summary class="gallery-lightbox__thumb"><img src="/navrh-01.jpg" alt="Návrh motivu 1" loading="lazy" /></summary>
-			<div class="gallery-lightbox__overlay" aria-hidden="true"><img src="/navrh-01.jpg" alt="Návrh motivu 1" loading="lazy" /></div>
-		</details>
-		<details class="gallery-lightbox post-gallery__item">
-			<summary class="gallery-lightbox__thumb"><img src="/navrh-02.jpg" alt="Návrh motivu 2" loading="lazy" /></summary>
-			<div class="gallery-lightbox__overlay" aria-hidden="true"><img src="/navrh-02.jpg" alt="Návrh motivu 2" loading="lazy" /></div>
-		</details>
-		<details class="gallery-lightbox post-gallery__item">
-			<summary class="gallery-lightbox__thumb"><img src="/navrh-03.jpg" alt="Návrh motivu 3" loading="lazy" /></summary>
-			<div class="gallery-lightbox__overlay" aria-hidden="true"><img src="/navrh-03.jpg" alt="Návrh motivu 3" loading="lazy" /></div>
-		</details>
-	</div>
-</section>
