@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/ContentPostLayout.astro
 title: tea meditation
-description: present moment, tea 
+description: present moment & tea 
 subtitle:  "...the last drop contains the Universe..."
 metaLabel: Datum
 date: 2026-09-12
