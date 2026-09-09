@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/ContentPostLayout.astro
-title: Surova cesta fermentovaného listu
+title: 13 čajů letem světem
 description: Co se stane, když se principy výroby čaje potkají s karpatskými bylinami? Přidejme k tomu toulavou duši a jeden Teabus…
 subtitle:  čaj, čas a co ještě?
 metaLabel: Datum
