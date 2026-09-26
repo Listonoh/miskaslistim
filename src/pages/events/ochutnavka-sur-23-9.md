@@ -4,8 +4,8 @@ title: 13 čajů letem světem
 description: Co se stane, když se principy výroby čaje potkají s karpatskými bylinami? Přidejme k tomu toulavou duši a jeden Teabus…
 subtitle:  čaj, čas a co ještě?
 metaLabel: Datum
-date: 2026-09-17
-tag: 17. 9. 2026
+date: 2026-09-23
+tag: 23. 9. 2026
 coverImage: sur-01.jpg
 ---
 Co se stane, když se principy výroby čaje potkají s karpatskými bylinami?
@@ -19,7 +19,7 @@ Hlavní náplní večera bude ochutnávání, sdílení přítomnosti a poslouch
 
 
 
-#### 17.9. od 18:18
+#### 23.9. od 18:18
 - rezervace na [**e-mail**](mailto:info@miskaslistim.cz) info@miskaslistim.cz
 
 - 13 druhů listů k ochutnání - cesta kolem světa za 2h
