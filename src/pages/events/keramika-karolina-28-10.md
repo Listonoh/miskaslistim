@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/ContentPostLayout.astro
 title: Workshop modelování keramické misky
-description: praktický workshop skládání origami s Hanou Machovou
-subtitle: společné skládání, klidná atmosféra a šálek dobrého čaje
+description: pít čaj z vlastní misky? to chceš!
+subtitle: společné modelování, klidná atmosféra a šálek dobrého čaje
 metaLabel: Datum
 date: 2026-10-28
 tag: 28. 10. 2026
