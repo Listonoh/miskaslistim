@@ -63,6 +63,15 @@
     "discountPercent": 0
   },
   {
+    "slug": "japan_wakocha_yoshida",
+    "status": "skladem",
+    "amountGrams": 1000,
+    "thresholdGrams": 250,
+    "updatedAt": "2026-09-31",
+    "price": 3,
+    "discountPercent": 0
+  },
+  {
     "slug": "kalapani_wf",
     "status": "skladem",
     "amountGrams": 1000,
