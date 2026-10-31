@@ -1,0 +1,369 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import tasteCategories from '../data/tea-taste-profile.json';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Tea tasting profile" description="Build and export a visual tea tasting profile.">
+  <Header slot="header" />
+  <meta slot="head" name="robots" content="noindex, nofollow" />
+
+  <section class="page-hero tasting-hero">
+    <div class="container">
+      <p class="page-hero__eyebrow">a moment to notice</p>
+      <h1>Tea tasting profile</h1>
+      <p class="page-hero__subtitle">Give each impression a little space. There are no wrong answers.</p>
+    </div>
+  </section>
+
+  <section class="tasting-section">
+    <div class="container">
+      <div class="tasting-intro">
+        <div>
+          <p class="tasting-kicker">Your cup, your senses</p>
+          <h2>What do you taste?</h2>
+        </div>
+        <p>Move the sliders from 0 to 5, then choose the notes and nuances that feel right.</p>
+      </div>
+
+      <div class="tasting-workspace">
+        <section class="chart-card" aria-labelledby="chart-title">
+          <div class="card-heading">
+            <div>
+              <p class="tasting-kicker">The shape of this tea</p>
+              <h2 id="chart-title">Tasting map</h2>
+            </div>
+            <span class="scale-note">0 — 5</span>
+          </div>
+          <svg id="taste-chart" class="taste-chart" viewBox="0 0 520 520" role="img" aria-label="Tea tasting octagon chart"></svg>
+          <p class="chart-caption">Each point follows its slider. Select a flavor note to add it to your profile.</p>
+        </section>
+
+        <section class="controls-panel" aria-label="Taste profile controls">
+          {tasteCategories.map((category) => (
+            <article class="category-control" style={`--category-color: ${category.color}`}>
+              <div class="category-heading">
+                <label for={`score-${category.id}`}>{category.label}</label>
+                <output id={`value-${category.id}`} for={`score-${category.id}`}>0</output>
+              </div>
+              <input
+                id={`score-${category.id}`}
+                class="category-slider"
+                type="range"
+                min="0"
+                max="5"
+                step="1"
+                value="0"
+                data-category-id={category.id}
+                aria-label={`${category.label} intensity`}
+              />
+              <div class="range-labels" aria-hidden="true"><span>0</span><span>5</span></div>
+              <details class="note-details">
+                <summary>Add subcategories &amp; taste notes</summary>
+                <div class="note-group">
+                  <p>Subcategories</p>
+                  <div class="note-options">
+                    {category.subcategories.map((note) => (
+                      <label class="note-option">
+                        <input type="checkbox" data-category-id={category.id} data-note-kind="subcategory" value={note} />
+                        <span>{note}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+                <div class="note-group">
+                  <p>Taste notes</p>
+                  <div class="note-options">
+                    {category.tasteNotes.map((note) => (
+                      <label class="note-option">
+                        <input type="checkbox" data-category-id={category.id} data-note-kind="tasteNote" value={note} />
+                        <span>{note}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+              </details>
+            </article>
+          ))}
+          <div class="export-row">
+            <button type="button" class="btn btn--primary export-button" id="download-png">
+              Download PNG
+            </button>
+            <button type="button" class="btn btn--outline export-button" id="download-json">
+              Download JSON
+            </button>
+            <p id="export-status" class="export-status" aria-live="polite"></p>
+          </div>
+        </section>
+      </div>
+      <p class="tasting-footnote">Download your scores and selected notes as JSON, or save a warm-toned PNG of your tasting map and notes.</p>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  import '../scripts/tea-tasting-profile';
+</script>
+
+<style>
+  .tasting-hero {
+    background:
+      radial-gradient(ellipse at 82% 18%, rgb(200 149 108 / 18%), transparent 36%),
+      linear-gradient(135deg, var(--clr-parchment), var(--clr-cream) 68%);
+  }
+
+  .tasting-section {
+    padding: 3.5rem 0 5rem;
+  }
+
+  .tasting-intro {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .tasting-intro h2,
+  .card-heading h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  .tasting-intro > p {
+    max-width: 430px;
+    color: var(--clr-text-muted);
+  }
+
+  .tasting-kicker {
+    margin-bottom: .35rem;
+    color: var(--clr-terracotta);
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+  }
+
+  .tasting-workspace {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, .92fr);
+    align-items: start;
+    gap: 1.5rem;
+  }
+
+  .chart-card,
+  .category-control {
+    background: rgb(255 252 247 / 78%);
+    border: 1px solid var(--clr-border-medium);
+    border-radius: 20px;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .chart-card {
+    position: sticky;
+    top: 6rem;
+    padding: clamp(1.25rem, 3vw, 2rem);
+  }
+
+  .card-heading,
+  .category-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .scale-note {
+    padding: .3rem .7rem;
+    border-radius: 999px;
+    background: var(--clr-parchment);
+    color: var(--clr-brown);
+    font-size: .8rem;
+    font-weight: 700;
+  }
+
+  .taste-chart {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin: .5rem auto 0;
+    overflow: visible;
+  }
+
+  .chart-caption,
+  .tasting-footnote {
+    color: var(--clr-text-muted);
+    font-size: .88rem;
+    text-align: center;
+  }
+
+  .controls-panel {
+    display: grid;
+    gap: .75rem;
+  }
+
+  .category-control {
+    padding: 1rem 1.15rem .8rem;
+    border: 1px solid color-mix(in srgb, var(--category-color) 38%, white);
+    border-left: 5px solid var(--category-color);
+    background: color-mix(in srgb, var(--category-color) 18%, #fffaf4);
+  }
+
+  .category-heading label {
+    padding: .25rem .7rem;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--category-color) 27%, #fffaf4);
+    color: var(--clr-brown);
+    font-family: var(--ff-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .category-heading output {
+    min-width: 2rem;
+    padding: .12rem .45rem;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--category-color) 25%, #fffaf4);
+    color: var(--clr-brown);
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-align: right;
+  }
+
+  .category-slider {
+    display: block;
+    width: 100%;
+    height: 1.25rem;
+    margin: .35rem 0 0;
+    accent-color: var(--category-color);
+    cursor: pointer;
+  }
+
+  .range-labels {
+    display: flex;
+    justify-content: space-between;
+    color: var(--clr-text-muted);
+    font-size: .7rem;
+    line-height: 1;
+  }
+
+  .note-details {
+    margin-top: .75rem;
+    border-top: 1px solid var(--clr-border-soft);
+    color: var(--clr-brown);
+    font-size: .85rem;
+  }
+
+  .note-details summary {
+    padding: .65rem 0 .1rem;
+    color: var(--clr-text-muted);
+    cursor: pointer;
+    font-size: .78rem;
+  }
+
+  .note-group {
+    margin-top: .7rem;
+  }
+
+  .note-group > p {
+    margin-bottom: .4rem;
+    color: var(--clr-brown);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+
+  .note-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem;
+  }
+
+  .note-option {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .note-option input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
+
+  .note-option span {
+    display: block;
+    padding: .3rem .65rem;
+    border: 1px solid var(--clr-border-medium);
+    border-radius: 999px;
+    color: var(--clr-text-muted);
+    font-size: .75rem;
+    transition: background .15s, color .15s, border-color .15s;
+  }
+
+  .note-option input:checked + span {
+    border-color: color-mix(in srgb, var(--category-color) 65%, var(--clr-brown));
+    background: color-mix(in srgb, var(--category-color) 30%, #fffaf4);
+    color: var(--clr-brown);
+    font-weight: 700;
+  }
+
+  .note-option input:focus-visible + span {
+    outline: 2px solid var(--category-color);
+    outline-offset: 2px;
+  }
+
+  .export-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .8rem 1rem;
+    padding-top: .5rem;
+  }
+
+  .export-button {
+    font: inherit;
+    font-size: .8rem;
+  }
+
+  .export-status {
+    flex: 1;
+    min-width: 180px;
+    color: var(--clr-text-muted);
+    font-size: .82rem;
+  }
+
+  .tasting-footnote {
+    max-width: 720px;
+    margin: 1.25rem auto 0;
+  }
+
+  @media (max-width: 850px) {
+    .tasting-workspace {
+      grid-template-columns: 1fr;
+    }
+
+    .chart-card {
+      position: static;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .tasting-section {
+      padding-top: 2.5rem;
+    }
+
+    .tasting-intro {
+      display: block;
+    }
+
+    .tasting-intro > p {
+      margin-top: .75rem;
+    }
+  }
+</style>

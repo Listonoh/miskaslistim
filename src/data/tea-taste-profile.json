@@ -1,0 +1,58 @@
+[
+  {
+    "id": "earthy",
+    "label": "Zemitá",
+    "color": "#71805b",
+    "subcategories": ["Dřevitá", "Živočišná", "Zemité", "Minerální", "Mořské"],
+    "tasteNotes": ["eukaliptus", "Dub", "Cedr", "Piliny", "Mokré dřevo", "Borovice", "Pyžmo", "Kůže"]
+  },
+  {
+    "id": "fire",
+    "label": "Ohnivá",
+    "color": "#b5624a",
+    "subcategories": ["Pražená", "Kouřová", "Opékaná"],
+    "tasteNotes": ["Pražené obilí", "Kakao", "Kouř", "Čerstvě upečený chléb", "Zuhelnatělé dřevo"]
+  },
+  {
+    "id": "spicy",
+    "label": "Kořeněná",
+    "color": "#a94f35",
+    "subcategories": ["Hřejivé koření", "Pepřová", "Aromatická"],
+    "tasteNotes": ["Skořice", "Zázvor", "Hřebíček", "Černý pepř", "Kardamom"]
+  },
+  {
+    "id": "nutty",
+    "label": "Oříšková",
+    "color": "#a87943",
+    "subcategories": ["Ořechy", "Semínka"],
+    "tasteNotes": ["Mandle", "Lískové oříšky", "Sezam", "Vlašské ořechy"]
+  },
+  {
+    "id": "sweet",
+    "label": "Sladká",
+    "color": "#c18a48",
+    "subcategories": ["Medová", "Karamelová", "Cukrová"],
+    "tasteNotes": ["Med", "Karamel", "Vanilka", "Třtinový cukr", "Javorový sirup"]
+  },
+  {
+    "id": "fruity",
+    "label": "Ovocná",
+    "color": "#c47754",
+    "subcategories": ["Peckoviny", "Citrusy", "Bobuloviny"],
+    "tasteNotes": ["Broskev", "Meruňka", "Citrusová kůra", "Lesní plody", "Sušené ovoce"]
+  },
+  {
+    "id": "floral",
+    "label": "Květinová",
+    "color": "#a66f7a",
+    "subcategories": ["Květinová", "Vonná", "Bylinkově květinová"],
+    "tasteNotes": ["Jasmín", "Růže", "Orchidej", "Zimolez", "Lípa"]
+  },
+  {
+    "id": "vegetal",
+    "label": "Rostlinná",
+    "color": "#6d8870",
+    "subcategories": ["Listová", "Travnatá", "Mořská"],
+    "tasteNotes": ["Čerstvá tráva", "Dušená zelenina", "Mořské řasy", "Cukrový hrášek", "Artyčok"]
+  }
+]

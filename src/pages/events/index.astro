@@ -65,9 +65,7 @@ const events: EventCard[] = eventModules
 const today = new Date();
 today.setHours(0, 0, 0, 0);
 const upcomingEvents = events.filter((event) => event.dateValue === null || event.dateValue >= today.getTime());
-const pastEvents = events
-  .filter((event) => event.dateValue !== null && event.dateValue < today.getTime())
-  .reverse();
+const pastEvents = events.filter((event) => event.dateValue !== null && event.dateValue < today.getTime());
 ---
 
 <BaseLayout title="Events" description="Akce čajovny miska s listím.">
