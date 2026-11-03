@@ -3,56 +3,193 @@
     "id": "earthy",
     "label": "Zemitá",
     "color": "#71805b",
-    "subcategories": ["Dřevitá", "Živočišná", "Zemité", "Minerální", "Mořské"],
-    "tasteNotes": ["eukaliptus", "Dub", "Cedr", "Piliny", "Mokré dřevo", "Borovice", "Pyžmo", "Kůže"]
+    "subcategories": [
+      "Dřevitá",
+      "Živočišná",
+      "Zemité",
+      "Minerální",
+      "Mořské"
+    ],
+    "tasteNotes": [
+      "eukaliptus",
+      "Dub",
+      "Cedr",
+      "Piliny",
+      "Mokré dřevo",
+      "Borovice",
+      "Pyžmo",
+      "Kůže",
+      "Zemina",
+      "Houby",
+      "Mech",
+      "Kompost",
+      "Vlhkost",
+      "Zatuchlost",
+      "Čerstvá hlína",
+      "Síra",
+      "Křída",
+      "Kov",
+      "Sůl",
+      "Umami"
+    ]
   },
   {
     "id": "fire",
-    "label": "Ohnivá",
+    "label": "Kouřová",
     "color": "#b5624a",
-    "subcategories": ["Pražená", "Kouřová", "Opékaná"],
-    "tasteNotes": ["Pražené obilí", "Kakao", "Kouř", "Čerstvě upečený chléb", "Zuhelnatělé dřevo"]
+    "subcategories": [
+      "Pražená",
+      "Kouřová",
+      "Opékaná"
+    ],
+    "tasteNotes": [
+      "Pražené obilí",
+      "Kakao",
+      "Kouř",
+      "Čerstvě upečený chléb",
+      "Zuhelnatělé dřevo",
+      "Popel",
+      "Spalený"
+    ]
   },
   {
     "id": "spicy",
     "label": "Kořeněná",
     "color": "#a94f35",
-    "subcategories": ["Hřejivé koření", "Pepřová", "Aromatická"],
-    "tasteNotes": ["Skořice", "Zázvor", "Hřebíček", "Černý pepř", "Kardamom"]
+    "subcategories": [
+      "Hřejivé koření",
+      "Pepřová",
+      "Aromatická"
+    ],
+    "tasteNotes": [
+      "Skořice",
+      "Zázvor",
+      "Hřebíček",
+      "Černý pepř",
+      "Kardamom",
+      "Anýz",
+      "Fenykl",
+      "Muškátový oříšek",
+      "Vanilka",
+      "Koriandr"
+    ]
   },
   {
     "id": "nutty",
     "label": "Oříšková",
     "color": "#a87943",
-    "subcategories": ["Ořechy", "Semínka"],
-    "tasteNotes": ["Mandle", "Lískové oříšky", "Sezam", "Vlašské ořechy"]
+    "subcategories": [
+      "Ořechy",
+      "Semínka"
+    ],
+    "tasteNotes": [
+      "Mandle",
+      "Lískové oříšky",
+      "Sezam",
+      "Vlašské ořechy",
+      "Pražené"
+    ]
   },
   {
     "id": "sweet",
     "label": "Sladká",
     "color": "#c18a48",
-    "subcategories": ["Medová", "Karamelová", "Cukrová"],
-    "tasteNotes": ["Med", "Karamel", "Vanilka", "Třtinový cukr", "Javorový sirup"]
+    "subcategories": [
+      "Medová",
+      "Karamelová",
+      "Cukrová"
+    ],
+    "tasteNotes": [
+      "Med",
+      "Karamel",
+      "Vanilka",
+      "Třtinový cukr",
+      "Javorový sirup",
+      "Slad"
+    ]
   },
   {
     "id": "fruity",
     "label": "Ovocná",
     "color": "#c47754",
-    "subcategories": ["Peckoviny", "Citrusy", "Bobuloviny"],
-    "tasteNotes": ["Broskev", "Meruňka", "Citrusová kůra", "Lesní plody", "Sušené ovoce"]
+    "subcategories": [
+      "Peckoviny",
+      "Citrusy",
+      "Bobuloviny",
+      "Tropické"
+    ],
+    "tasteNotes": [
+      "Broskev",
+      "Meruňka",
+      "Citrusová kůra",
+      "Lesní plody",
+      "Sušené ovoce",
+      "Jahoda",
+      "Ostružina",
+      "Malina",
+      "Borůvka",
+      "Ananas",
+      "Mango",
+      "Banán",
+      "Lichi",
+      "Meloun",
+      "Víno",
+      "Jablko",
+      "Hruška",
+      "Citron",
+      "Limetka",
+      "Bergamot",
+      "Pomeranč",
+      "Mandarinka"
+    ]
   },
   {
     "id": "floral",
     "label": "Květinová",
     "color": "#a66f7a",
-    "subcategories": ["Květinová", "Vonná", "Bylinkově květinová"],
-    "tasteNotes": ["Jasmín", "Růže", "Orchidej", "Zimolez", "Lípa"]
+    "subcategories": [
+      "Květinová",
+      "Vonná",
+      "Bylinkově květinová"
+    ],
+    "tasteNotes": [
+      "Jasmín",
+      "Růže",
+      "Lípa",
+      "Osmantus",
+      "Levandule",
+      "Heřmánek",
+      "Šeřík",
+      "Gardenie",
+      "Chryzantéma",
+      "Fialka"
+    ]
   },
   {
     "id": "vegetal",
     "label": "Rostlinná",
     "color": "#6d8870",
-    "subcategories": ["Listová", "Travnatá", "Mořská"],
-    "tasteNotes": ["Čerstvá tráva", "Dušená zelenina", "Mořské řasy", "Cukrový hrášek", "Artyčok"]
+    "subcategories": [
+      "Listová",
+      "Travnatá",
+      "Zeleninová",
+      "Byliná"
+    ],
+    "tasteNotes": [
+      "Čerstvá tráva",
+      "Namočená sláma",
+      "Čerstvé seno",
+      "Dušená zelenina",
+      "Cukrový hrášek",
+      "Špenát",
+      "Fazole",
+      "Bazalka",
+      "Máta",
+      "Petržel",
+      "Levandule",
+      "Tymián",
+      "Fenikl",
+      "Šalvěj"
+    ]
   }
 ]
