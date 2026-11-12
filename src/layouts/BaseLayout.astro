@@ -8,6 +8,57 @@ const { title, description = "čajovna miska s listím" } = Astro.props;
 
 // Build base URL respecting Astro's configured base
 const base = import.meta.env.BASE_URL;
+if (!Astro.site) {
+  throw new Error('Astro "site" must be configured to generate structured data.');
+}
+const siteUrl = new URL(base, Astro.site).toString();
+const isHomepage = Astro.url.pathname === new URL(base, Astro.site).pathname;
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    ...(isHomepage
+      ? [{
+          '@type': 'WebSite',
+          '@id': `${siteUrl}#website`,
+          url: siteUrl,
+          name: 'čajovna miska s listím',
+          inLanguage: 'cs-CZ',
+          publisher: { '@id': `${siteUrl}#teahouse` },
+        }]
+      : []),
+    {
+      '@type': 'CafeOrCoffeeShop',
+      '@id': `${siteUrl}#teahouse`,
+      name: 'čajovna miska s listím',
+      url: siteUrl,
+      description: 'Čajovna v Praze 9 s výběrem čajů, bylinkových nápojů a domácího jídla.',
+      image: new URL(`${base}zvenku.jpg`, Astro.site).toString(),
+      telephone: '+420 730 256 031',
+      email: 'info@miskaslistim.cz',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Poděbradská 242/10',
+        addressLocality: 'Praha',
+        postalCode: '190 00',
+        addressCountry: 'CZ',
+      },
+      openingHoursSpecification: [
+        {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: [
+            'https://schema.org/Tuesday',
+            'https://schema.org/Wednesday',
+            'https://schema.org/Thursday',
+            'https://schema.org/Friday',
+            'https://schema.org/Saturday',
+          ],
+          opens: '14:00',
+          closes: '22:00',
+        },
+      ],
+    },
+  ],
+};
 const showBanner = false; 
 ---
 
@@ -23,11 +74,14 @@ const showBanner = false;
 
       gtag('config', 'G-P53532MWR6');
     </script>
+    <meta name="google-site-verification" content="ibyLCklfICNVy28hX0MKmIosCuAmJpexjoplJ1llTnc" />
+  
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <link rel="icon" type="image/png" href={`${base}favicon-msl.png`} />
     <title>{title} | čajovna miska s listím</title>
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <slot name="head" />
