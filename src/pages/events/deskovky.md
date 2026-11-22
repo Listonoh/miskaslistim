@@ -4,7 +4,7 @@ title: deskovky
 description:  čaj & deskovky k sobě patří! 
 subtitle: posezení u dobrého čaje s fajn lidmi
 metaLabel: Datum
-date: 2029-04-09
+date: 2026-04-09
 tag: kdykoliv v otvírací době
 coverImage: deskovky.jpg
 ---

@@ -104,16 +104,16 @@
     "amountGrams": 1000,
     "thresholdGrams": 150,
     "updatedAt": "2026-06-25",
-    "price": 0,
+    "price": 1,
     "discountPercent": 0
   },
   {
     "slug": "sencha_k",
-    "status": "skladem",
+    "status": "dopito",
     "amountGrams": 1000,
     "thresholdGrams": 150,
     "updatedAt": "2026-06-25",
-    "price": 0,
+    "price": 1,
     "discountPercent": 0
   }
 ]
