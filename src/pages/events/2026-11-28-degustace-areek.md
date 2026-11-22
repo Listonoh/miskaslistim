@@ -1,12 +1,12 @@
 ---
 layout: ../../layouts/ContentPostLayout.astro
-title: Novinky z Japonska
+title: Novinky z Japonska s Areekem
 description: degustace
 subtitle: od Areeka
 metaLabel: Datum
-date: 2026-11-29
-tag: 29. 11. 2026
-coverImage: origami-workshop.jpg
+date: 2026-11-28
+tag: 28. 11. 2026
+coverImage: areek.jpeg
 ---
 
 ## Novinky z Japonska – degustace v čajovně Miska s listím
