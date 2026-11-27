@@ -16,8 +16,8 @@ const categories: MenuCategory[] = [
     img:    `${baseUrl}cold_drinks.jpg`,
     imgAlt: 'Studené nápoje',
     items: [
-      { name: 'cold brew čaj', volume: '400 ml', desc: 'za studena louhovaný čaj jemné chuti',   price: '80 Kč', },
-      { name: 'ovocná limonáda vlastní výroby (dle denní nabídky)',  volume: '400 ml', desc: 'sirup vařený z ovoce a cukru, konzervovaný kyselinou citrónovou',  price: '80 Kč', },
+      // { name: 'cold brew čaj', volume: '400 ml', desc: 'za studena louhovaný čaj jemné chuti',   price: '80 Kč', },
+      { name: 'limonáda (dle denní nabídky)',  volume: '400 ml', desc: 'od nekalim.cz',  price: '80 Kč', },
       { name: 'ledový nečaj (rooibos nebo bylinky)', volume: '400 ml', desc: 'osvěžující nápoj bez kofeinu', price: '80 Kč' },
       { name: 'ledové matcha latte', volume: '400 ml', desc: 's ovesným mlékem',       price: '111 Kč'                           },
       { name: 'matcha s kokosovou vodou', volume: '400 ml', desc: 'ledové letní osvěžení',       price: '123 Kč'                           },
@@ -30,9 +30,11 @@ const categories: MenuCategory[] = [
      img:    '',
      imgAlt: '',
      items: [
-  //   { name: 'masala',  volume: '500 ml', desc: 'zázvor, skořice, kardamom, hřebíček, bílý pepř, černý čaj a mléko', price: '185 Kč',},
-       { name: 'matcha affogato', volume: '40 ml + 1 kopeček', desc: 'se zmrzlinou dle denní nabídky',       price: '108 Kč'                           },
+       { name: 'masala',  volume: '500 ml', desc: 'zázvor, skořice, kardamom, hřebíček, bílý pepř, černý čaj a mléko (kravské nebo ovesné)', price: '200 Kč',},
+      // { name: 'matcha affogato', volume: '40 ml + 1 kopeček', desc: 'se zmrzlinou dle denní nabídky',       price: '108 Kč'                           },
        { name: 'touareg', volume: '250 / 500 ml', desc: 'zelený čaj s marockou mátou, slazený',    price: '90 / 160 Kč' },
+       { name: 'kakao',         volume: '250 ml', desc: 'hrnek horkého kakaa - mléko kravské nebo ovesné', price: '85 Kč', },
+      { name: 'horká čokoláda',         volume: '250 ml', desc: 'rozpuštěné kousky čokolády z čokoládovny Lyra v mléku kravském nebo ovesném ', price: '90 Kč', },
         ],
   },
 
@@ -42,14 +44,14 @@ const categories: MenuCategory[] = [
     img:    '',
     imgAlt: '',
     items: [
-      { name: 'kakao',         volume: '250 ml', desc: 'hrnek horkého kakaa', price: '85 Kč', },
+      
       { name: 'rooibos',       volume: '250 / 500 ml', desc: 'čajovník kapský, bez kofeinu',   price: '77 / 150 Kč'  },
-      // { name: 'zázvor',         volume: '250 / 500 ml', desc: 'čerstvý strouhaný zázvor s citronem a medem',  price: '85 / 160 Kč'                   },
+      { name: 'zázvor',         volume: '250 / 500 ml', desc: 'zázvor s citronem od nekalim.cz',  price: '77 / 150 Kč'                   },
       { name: 'máta',      volume: '250 / 500 ml', desc: 'nálev ze sušených lístků máty peprné',  price: '77 / 150 Kč'                   },
       { name: 'lípa',      volume: '250 / 500 ml', desc: 'nálev ze sušených lístků lípy srdčité',  price: '77 / 150 Kč'                   },
       { name: 'maliník',      volume: '250 / 500 ml', desc: 'nálev ze sušených lístků ostružiníku maliníku',  price: '77 / 150 Kč'                   },
       { name: 'šípek',      volume: '250 / 500 ml', desc: 'nálev ze sušených drcených plodů šípku',  price: '90 / 180 Kč'                   },
-      // { name: 'kontryhel',      volume: '250 / 500 ml', desc: 'nálev ze sušených lístků kontryhelu obecného',  price: '77 / 150 Kč'                   },
+      { name: 'kontryhel',      volume: '250 / 500 ml', desc: 'nálev ze sušených lístků kontryhelu obecného',  price: '77 / 150 Kč'                   },
    
     ],
   },
@@ -61,10 +63,11 @@ const categories: MenuCategory[] = [
     items: [
       // { name: 'sušené ovoce',        desc: 'jablka / mango / brusinky', price:  '68 Kč'   },
       { name: 'banana bread',   volume: '110 g', desc: 'vegan, s kousky hořké čokolády', price: '70 Kč'   },
-      // { name: 'oříšky',  desc: 'mandle',  price: '70 Kč'    },
+      { name: 'kešu oříšky',  volume: '50 g', desc: 'kešu oříšky',  price: '50 Kč'    },
       // { name: 'quesadilla tousty',        desc: 'tortilla placky s fazolemi a sýrem',  price: '95 Kč' },
-      { name: 'hummus',        volume: '140 g', desc: 'cizrna, tahini, oliv. olej, citronová šťáva, česnek, sůl + pečivo',   price: '60 Kč'                     },
-      { name: 'jídlo dne',       volume: '', desc: 'od oběda do vyprodání',  price: '150 Kč'                     },
+      { name: 'hummus',        volume: '140 g', desc: 'cizrna, tahini, oliv. olej, citronová šťáva, česnek, sůl + pečivo',   price: '80 Kč'                     },
+      { name: 'jídlo dne',       volume: '400 g', desc: 'vegan červenočočkové kari s rýží / onigirazu / zapečené tortilly',  price: '150 Kč'                     },
+      { name: 'ramen',       volume: '400 g', desc: 'vegan',  price: '222 Kč'                     },
     ],
   },
   

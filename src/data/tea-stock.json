@@ -1,7 +1,7 @@
 [
   {
     "slug": "bhutan",
-    "status": "skoro dopité",
+    "status": "skladem",
     "amountGrams": 1000,
     "thresholdGrams": 250,
     "updatedAt": "2026-05-21",
@@ -19,7 +19,7 @@
   },
   {
     "slug": "turzum_black",
-    "status": "skoro dopité",
+    "status": "dopito",
     "amountGrams": 1000,
     "thresholdGrams": 250,
     "updatedAt": "2026-05-31",
@@ -114,6 +114,15 @@
     "thresholdGrams": 150,
     "updatedAt": "2026-06-25",
     "price": 1,
+    "discountPercent": 0
+  },
+  {
+    "slug": "doomni_yellow",
+    "status": "skladem",
+    "amountGrams": 1000,
+    "thresholdGrams": 150,
+    "updatedAt": "2026-11-27",
+    "price": 3,
     "discountPercent": 0
   }
 ]
